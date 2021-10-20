@@ -365,7 +365,7 @@ if ($('#yandex').length > 0) {
                 },
                 {
                     iconLayout: 'default#image',
-                    iconImageHref: '/img/icons/point.svg',
+                    iconImageHref: 'img/icons/point.svg',
                     iconImageSize: [40, 44],
                     iconImageOffset: [-20, -22],
                     // hideIconOnBalloonOpen: false,
@@ -415,7 +415,7 @@ if ($('#yandex').length > 0) {
                 },
                 {
                     iconLayout: 'default#image',
-                    iconImageHref: '/img/icons/point.svg',
+                    iconImageHref: 'img/icons/point.svg',
                     iconImageSize: [40, 44],
                     iconImageOffset: [-20, -22],
                     // hideIconOnBalloonOpen: false,
