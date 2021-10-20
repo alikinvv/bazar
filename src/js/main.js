@@ -437,3 +437,13 @@ $('.scrolltop').css('left', $('.container').offset().left + $('.container').oute
 $('body').on('click', '.scrolltop', (e) => {
     $('html, body').stop().animate({ scrollTop: 0 }, 500, 'swing');
 });
+
+$('body').on('click', '.sidebar__toggle', (e) => {
+    $(e.currentTarget).toggleClass('active');
+    $(e.currentTarget).next().slideToggle();
+});
+
+$('body').on('click', '.sidebar__more', (e) => {
+    $(e.currentTarget).next().slideToggle();
+    $(e.currentTarget).remove();
+});

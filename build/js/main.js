@@ -328,3 +328,11 @@ $('body').on('click', '.scrolltop', function (e) {
     scrollTop: 0
   }, 500, 'swing');
 });
+$('body').on('click', '.sidebar__toggle', function (e) {
+  $(e.currentTarget).toggleClass('active');
+  $(e.currentTarget).next().slideToggle();
+});
+$('body').on('click', '.sidebar__more', function (e) {
+  $(e.currentTarget).next().slideToggle();
+  $(e.currentTarget).remove();
+});
