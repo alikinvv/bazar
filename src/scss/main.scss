@@ -2467,7 +2467,7 @@ h3 {
     }
 
     .radio {
-        margin-bottom: 8px;
+        margin-bottom: 15px;
 
         label {
             color: rgba(49, 49, 49, 0.68);
@@ -2480,5 +2480,161 @@ h3 {
         color: $red;
         font-size: 13px;
         font-weight: 400;
+    }
+}
+
+.tags {
+    @include flexlist(10px);
+
+    &__item {
+        color: $red;
+        padding: 14px 0;
+        border: 1px solid $red;
+        border-radius: 3px;
+        @include flexitem(25%, 10px);
+        transition: $trans;
+        @include fcc;
+        cursor: pointer;
+        user-select: none;
+
+        &.active {
+            border-color: transparent;
+            background: #F6F6F6;
+            color: $text;
+
+            &:hover {
+                border-color: transparent;
+                background: #F6F6F6;
+                color: $text;
+    
+                svg {
+                    display: block;
+                position: relative;
+                top: 1px;
+                }
+            }
+
+            svg {
+                display: block;
+                position: relative;
+                top: 1px;
+            }
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover {
+            background: $red;
+            color: #fff;
+        }
+
+        svg {
+            margin-left: 10px;
+            font-size: 13px;
+            fill: rgba(0, 0, 0, 0.28);
+            transition: $trans;
+            display: none;
+        }
+    }
+
+    &__show {
+        margin-top: 13px;
+        text-align: right;
+        margin-bottom: 24px;
+
+        span {
+            font-weight: 500;
+            color: rgba(49, 49, 49, 0.68);
+            cursor: pointer;
+            transition: $trans;
+
+            &:hover {
+                color: $red;
+            }
+        }
+    }
+}
+
+.select {
+    @include fcn;
+    flex-wrap: wrap;
+    padding-bottom: 28px;
+    border-bottom: 1px solid #F0F0F0;
+    margin-bottom: 24px;
+
+    &__item {
+        padding: 6px 18px 7px;
+        border-radius: 50px;
+        border: 1px solid #D9D9D9;
+        margin-right: 19px;
+        cursor: pointer;
+        transition: $trans;
+        @include fcn;
+
+        &:hover {
+            .select__close {
+                background: #E4E4E4;
+            }
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__close {
+        @include fcc;
+        border-radius: 50%;
+        transition: $trans;
+        flex-shrink: 0;
+        width: 25px;
+        height: 25px;
+        margin-left: 7px;
+        position: relative;
+        top: 1px;
+
+        svg {
+            font-size: 12px;
+            fill: rgba(0, 0, 0, 0.61);
+        }
+    }
+}
+
+.sort {
+    @include fcsb;
+
+    &__item {
+        @include fcn;
+        cursor: pointer;
+
+        &.active {
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+
+        span {
+            color: #939393;
+            margin-right: 5px;
+        }
+
+        svg {
+            transition: $trans;
+            fill: $red;
+            font-size: 7px;
+            margin-left: 7px;
+            position: relative;
+            top: 3px;
+        }
+    }
+}
+
+.catalog {
+    @include flexlist(12px);
+
+    .item {
+        @include flexitem(33.33%, 12px, 37px);
     }
 }

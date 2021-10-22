@@ -253,6 +253,26 @@ someHeight('.reviews', '.reviews__title');
 someHeight('.reviews', '.reviews__text');
 someHeight('.journal', '.journal__title');
 
+
+let titleHeight = 0;
+let titleArr = [];
+
+for (let i = 0; i < $('.catalog .item').length; i++) {
+    let $step = $('.catalog .item').eq(i);
+
+    if (titleHeight % 3 === 0) {
+        console.log('1');
+        
+    } else {
+        console.log('2');
+        
+        // titleArr.push($step);
+        // if ($step.find('.item__title').height() > titleHeight) {
+        //     titleHeight = $step.find('.item__title').height()
+        // }
+    }
+}
+
 $('body').on('mouseenter', '.rating g', (e) => {
     $(e.currentTarget).closest('.rating').find('g').removeClass('active');
 
@@ -446,4 +466,12 @@ $('body').on('click', '.sidebar__toggle', (e) => {
 $('body').on('click', '.sidebar__more', (e) => {
     $(e.currentTarget).next().slideToggle();
     $(e.currentTarget).remove();
+});
+
+$('body').on('click', '.tags__item', (e) => {
+    $(e.currentTarget).toggleClass('active');
+});
+
+$('body').on('click', '.sort__item', (e) => {
+    $(e.currentTarget).toggleClass('active');
 });
