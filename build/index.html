@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
+    <link rel="stylesheet" href="css/nouislider.min.css" />
     <link rel="stylesheet" href="css/main.css" />
 
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -112,7 +113,7 @@
                 </svg>
             </a>
             <a href="javascript:void(0)">Строительная техника</a>
-            <a href="javascript:void(0)">
+            <a href="javascript:void(0)" class="active">
                 Садовая техника
                 <svg class="icon">
                     <use xlink:href="img/symbol-defs.svg#icon-arrow-down"></use>
@@ -129,10 +130,32 @@
     <ul>
         <li><a href="main.html">Главная</a></li>
         <li><a href="catalog.html">Каталог</a></li>
+        <li><a href="product.html">Продукт</a></li>
     </ul>
 </div>
 
 <!-- END CONTENT  -->
+<section class="subscribe">
+    <div class="container">
+        <h2>Подписка на скидки и акции</h2>
+        <div class="subscribe__text">Подписывайтесь и получайте самые интересные предложения первыми!</div>
+
+        <form action="">
+            <div class="form-group">
+                <input type="text" placeholder="Имя *">
+                <input type="text" placeholder="E-mail *">
+                <button class="btn btn-fill">Подписаться</button>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox">
+                <label>Я даю свое согласие на обработку персональных данных и соглашаюсь
+                    с <a href="javascript:void(0)">условиями</a> и <a href="javascript:void(0)">политикой
+                        конфиденциальности</a></label>
+            </div>
+        </form>
+    </div>
+</section>
+
 <footer class="footer">
     <div class="container">
         <div class="footer__menu">
@@ -292,6 +315,8 @@
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>" type="text/javascript"></script>
+<script src="js/wNumb.min.js"></script>
+<script src="js/nouislider.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 

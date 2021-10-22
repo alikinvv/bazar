@@ -1,9 +1,58 @@
+if ($('.menu .active').length > 0) {
+    $('.menu .bar').animate({ left: $('.menu .active').offset().left - $('.container').offset().left, width: $('.menu .active').outerWidth() });
+}
+
 $('body').on('mouseenter', '.menu a', (e) => {
     $('.menu .bar').animate({ left: $(e.currentTarget).offset().left - $('.container').offset().left, width: $(e.currentTarget).outerWidth() });
 });
 
 $('body').on('mouseleave', '.menu', (e) => {
-    $('.menu .bar').animate({ left: 0, width: 0 });
+    if ($('.menu .active').length > 0) {
+        $('.menu .bar').animate({ left: $('.menu .active').offset().left - $('.container').offset().left, width: $('.menu .active').outerWidth() });
+    } else {
+        $('.menu .bar').animate({ left: 0, width: 0 });
+    }
+});
+
+if ($('.tabs .active').length > 0) {
+    $('.tabs .bar').animate({ left: $('.tabs .active').offset().left - $('.container').offset().left, width: $('.tabs .active').outerWidth() });
+}
+
+$('body').on('mouseenter', '.tabs a', (e) => {
+    $('.tabs .bar').animate({ left: $(e.currentTarget).offset().left - $('.container').offset().left, width: $(e.currentTarget).outerWidth() });
+});
+
+$('body').on('mouseleave', '.tabs', (e) => {
+    if ($('.tabs .active').length > 0) {
+        $('.tabs .bar').animate({ left: $('.tabs .active').offset().left - $('.container').offset().left, width: $('.tabs .active').outerWidth() });
+    } else {
+        $('.tabs .bar').animate({ left: 0, width: 0 });
+    }
+});
+
+$('body').on('click', '.tabs a', (e) => {
+    $('.tabs a').removeClass('active');
+    $(e.currentTarget).addClass('active');
+    $('.tab').removeClass('active');
+    $(`.tab[data-tab="${$(e.currentTarget).attr('data-tab')}"]`).addClass('active');
+    $('.tabs .bar').animate({ left: $(e.currentTarget).offset().left - $('.container').offset().left, width: $(e.currentTarget).outerWidth() });
+});
+
+var productNav = new Swiper('.product__nav .swiper', {
+    spaceBetween: 17,
+    slidesPerView: 4,
+    direction: 'vertical',
+    watchSlidesProgress: true,
+});
+var productMain = new Swiper('.product__main', {
+    spaceBetween: 10,
+    thumbs: {
+        swiper: productNav,
+    },
+    navigation: {
+        nextEl: '.product__nav .swiper-button-next',
+        prevEl: '.product__nav .swiper-button-prev',
+    },
 });
 
 let main = new Swiper('.main .swiper', {
@@ -253,23 +302,31 @@ someHeight('.reviews', '.reviews__title');
 someHeight('.reviews', '.reviews__text');
 someHeight('.journal', '.journal__title');
 
-
 let titleHeight = 0;
-let titleArr = [];
+let items = [];
 
-for (let i = 0; i < $('.catalog .item').length; i++) {
-    let $step = $('.catalog .item').eq(i);
+for (let i = 1; i < $('.catalog .item').length + 1; i++) {
+    let $step = $('.catalog .item').eq(i - 1);
 
-    if (titleHeight % 3 === 0) {
-        console.log('1');
-        
+    if (i !== 0 && i % 3 === 0) {
+        if ($step.find('.item__title').height() > titleHeight) {
+            titleHeight = $step.find('.item__title').height();
+        }
+
+        items.push(i - 1);
+
+        for (let j = 0; j < items.length; j++) {
+            $('.catalog .item').eq(items[j]).find('.item__title').height(titleHeight);
+        }
+
+        items = [];
+        titleHeight = 0;
     } else {
-        console.log('2');
-        
-        // titleArr.push($step);
-        // if ($step.find('.item__title').height() > titleHeight) {
-        //     titleHeight = $step.find('.item__title').height()
-        // }
+        items.push(i - 1);
+
+        if ($step.find('.item__title').height() > titleHeight) {
+            titleHeight = $step.find('.item__title').height();
+        }
     }
 }
 
@@ -452,6 +509,10 @@ $('body').on('click', '.question', (e) => {
     $(e.currentTarget).next().slideToggle();
 });
 
+$('body').on('click', '.item__controls a', (e) => {
+    $(e.currentTarget).toggleClass('active');
+});
+
 $('.scrolltop').css('left', $('.container').offset().left + $('.container').outerWidth() + 63);
 
 $('body').on('click', '.scrolltop', (e) => {
@@ -463,9 +524,19 @@ $('body').on('click', '.sidebar__toggle', (e) => {
     $(e.currentTarget).next().slideToggle();
 });
 
-$('body').on('click', '.sidebar__more', (e) => {
-    $(e.currentTarget).next().slideToggle();
+$('body').on('click', '.sidebar__more:not(.active)', (e) => {
+    $(e.currentTarget).prev().slideToggle(300);
+    $(e.currentTarget).toggleClass('active').text('Свернуть');
+});
+
+$('body').on('click', '.product__toggle', (e) => {
+    $(e.currentTarget).prev().slideToggle(300);
     $(e.currentTarget).remove();
+});
+
+$('body').on('click', '.sidebar__more.active', (e) => {
+    $(e.currentTarget).prev().slideToggle(300);
+    $(e.currentTarget).toggleClass('active').text('Показать еще 6');
 });
 
 $('body').on('click', '.tags__item', (e) => {
@@ -475,3 +546,27 @@ $('body').on('click', '.tags__item', (e) => {
 $('body').on('click', '.sort__item', (e) => {
     $(e.currentTarget).toggleClass('active');
 });
+
+if ($('#price-slider').length > 0) {
+    var priceSlider = document.getElementById('price-slider');
+    var input0 = document.getElementById('from');
+    var input1 = document.getElementById('to');
+    var inputs = [input0, input1];
+
+    noUiSlider.create(priceSlider, {
+        start: [1000, 500000],
+        connect: true,
+        range: {
+            min: 0,
+            max: 700000,
+        },
+        format: wNumb({
+            thousand: ' ',
+            decimals: 0,
+        }),
+    });
+
+    priceSlider.noUiSlider.on('update', function (values, handle) {
+        inputs[handle].value = values[handle];
+    });
+}
