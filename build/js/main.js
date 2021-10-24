@@ -470,3 +470,12 @@ if ($('#price-slider').length > 0) {
     inputs[handle].value = values[handle];
   });
 }
+
+$('body').on('click', '.reviews__more:not(.active)', function (e) {
+  $(e.currentTarget).next().slideToggle(300);
+  $(e.currentTarget).toggleClass('active').text('Скрыть ответ');
+});
+$('body').on('click', '.reviews__more.active', function (e) {
+  $(e.currentTarget).next().slideToggle(300);
+  $(e.currentTarget).toggleClass('active').text('Показать ответ');
+});
