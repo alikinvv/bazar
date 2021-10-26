@@ -172,14 +172,249 @@
     </div>
 </footer>
 
+<div class="backdrop">
+    <div class="modal sale" data-modal="sale">
+        <div class="modal__content">
+            <div class="modal__close"></div>
+            <div class="modal__body">
+                <div class="sale__header">
+                    <img src="img/sale.png" width="241" alt="">
+                    <div>
+                        <div class="sale__title">Снизим цену, если нашли <br>
+                            нужный товар дешевле</div>
+                        <div class="sale__desc">Понравился товар, но&nbsp;нашли в&nbsp;другом магазине подешевле?
+                            Сообщите
+                            нам об&nbsp;этом&nbsp;&mdash; и&nbsp;мы&nbsp;гарантированно<span class="red">*</span> снизим
+                            цену.</div>
+                        <div class="sale__date">акция действует: до 30.08.2021</div>
+                    </div>
+                </div>
+                <div class="sale__body">
+                    <div class="sale__name">Как это работает?</div>
+                    <div class="sale__list custom-scroll">
+                        <div class="sale__item">
+                            <span>1</span>
+                            Выберите товар, кликните на значок «Нашли дешевле» в правом меню карточки.
+                        </div>
+                        <div class="sale__item">
+                            <span>2</span>
+                            Заполните появившуюся форму, укажите свои действительные контакты
+                            и ссылку на товар, который вы нашли в другом магазине.
+
+                        </div>
+                        <div class="sale__item">
+                            <span>3</span>
+                            После проверки информации в заявке для дальнейших действий с вами свяжется наш специалист.
+                        </div>
+                        <div class="sale__item">
+                            <span>1</span>
+                            Выберите товар, кликните на значок «Нашли дешевле» в правом меню карточки.
+                        </div>
+                        <div class="sale__item">
+                            <span>2</span>
+                            Заполните появившуюся форму, укажите свои действительные контакты
+                            и ссылку на товар, который вы нашли в другом магазине.
+
+                        </div>
+                        <div class="sale__item">
+                            <span>3</span>
+                            После проверки информации в заявке для дальнейших действий с вами свяжется наш специалист.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal sale" data-modal="sale-send">
+        <div class="modal__content">
+            <div class="modal__close"></div>
+            <div class="modal__body">
+                <div class="sale__header">
+                    <img src="img/sale.png" width="241" alt="">
+                    <div>
+                        <div class="sale__title">Снизим цену, если нашли <br>
+                            нужный товар дешевле</div>
+                        <div class="sale__desc">Понравился товар, но&nbsp;нашли в&nbsp;другом магазине подешевле?
+                            Сообщите
+                            нам об&nbsp;этом&nbsp;&mdash; и&nbsp;мы&nbsp;гарантированно<span class="red">*</span> снизим
+                            цену.</div>
+                        <div class="sale__date">акция действует: до 30.08.2021</div>
+                    </div>
+                </div>
+                <div class="sale__body">
+                    <form action="" class="sale__form">
+                        <div class="sale__title">Отправить заявку</div>
+                        <div class="sale__desc">Заполните форму и отправьте заявку, мы свяжемся с вами в ближайшее время
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" placeholder="Имя">
+                            <input type="text" placeholder="Телефон *" class="phone-mask">
+                        </div>
+
+                        <div class="sale__controls">
+                            <div class="checkbox">
+                                <input type="checkbox">
+                                <label>Я даю свое согласие на обработку <br> персональных данных и соглашаюсь <br> с <a
+                                        href="javascript:void(0)">условиями</a> и <a href="javascript:void(0)">политикой
+                                        <br>
+                                        конфиденциальности</a></label>
+                            </div>
+                            <button class="btn btn-fill" data-modal="thanks">ОТПРАВИТЬ</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal message" data-modal="thanks">
+        <div class="modal__content">
+            <div class="modal__close"></div>
+            <div class="modal__body">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-letter"></use>
+                </svg>
+
+                <div class="message__title">Спасибо!</div>
+                <div class="message__text">Ваше сообщение отправлено</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal call" data-modal="call">
+        <div class="modal__content">
+            <div class="modal__close"></div>
+            <div class="modal__body">
+                <div class="call__title">Заказать звонок</div>
+                <div class="call__text">Заполните форму и отправьте заявку, <br>
+                    консультант свяжется с вами в ближайшее время</div>
+                <div class="sale__body">
+                    <form action="" class="sale__form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Имя">
+                            <input type="text" placeholder="Телефон *" class="phone-mask">
+                        </div>
+
+                        <div class="sale__controls">
+                            <div class="checkbox">
+                                <input type="checkbox">
+                                <label>Я даю свое согласие на обработку <br> персональных данных и соглашаюсь <br> с <a
+                                        href="javascript:void(0)">условиями</a> и <a href="javascript:void(0)">политикой
+                                        <br>
+                                        конфиденциальности</a></label>
+                            </div>
+                            <button class="btn btn-fill" data-modal="thanks">ОТПРАВИТЬ</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal call" data-modal="order">
+        <div class="modal__content">
+            <div class="modal__close"></div>
+            <div class="modal__body">
+                <div class="call__title">Быстрый заказ</div>
+                <div class="call__text">Заполните форму и отправьте заявку, <br>
+                    консультант свяжется с вами в ближайшее время</div>
+                <div class="sale__body">
+                    <form action="" class="sale__form">
+                        <input type="text" placeholder="ФИО *">
+
+                        <div class="form-group">
+                            <input type="text" placeholder="Телефон *" class="phone-mask">
+                            <input type="text" placeholder="E-mail *">
+                        </div>
+
+                        <textarea placeholder="Комментарий к заказу"></textarea>
+
+                        <div class="sale__controls">
+                            <div class="checkbox">
+                                <input type="checkbox">
+                                <label>Я даю свое согласие на обработку <br> персональных данных и соглашаюсь <br> с <a
+                                        href="javascript:void(0)">условиями</a> и <a href="javascript:void(0)">политикой
+                                        <br>
+                                        конфиденциальности</a></label>
+                            </div>
+                            <button class="btn btn-fill" data-modal="thanks">ОТПРАВИТЬ</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal city" data-modal="city">
+        <div class="modal__content">
+            <div class="modal__close"></div>
+            <div class="modal__body">
+                <div class="city__title">Выбор города</div>
+                <form action="" class="header__search">
+                    <input type="text" placeholder="Введите город">
+                    <button>
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-search"></use>
+                        </svg>
+                    </button>
+                </form>
+
+                <div class="city__list custom-scroll">
+                    <div class="city__col">
+                        <a href="javascript:void(0)">БЕЛГОРОД</a>
+                        <a href="javascript:void(0)">ВЕЛИКИЕ ЛУКИ</a>
+                        <a href="javascript:void(0)">ВЕЛИКИЙ НОВГОРОД</a>
+                        <a href="javascript:void(0)">ВОЛГОГРАД</a>
+                        <a href="javascript:void(0)">ВОРОНЕЖ</a>
+                        <a href="javascript:void(0)">БЕЛГОРОД</a>
+                        <a href="javascript:void(0)">ВЕЛИКИЕ ЛУКИ</a>
+                        <a href="javascript:void(0)">ВЕЛИКИЙ НОВГОРОД</a>
+                        <a href="javascript:void(0)">ВОЛГОГРАД</a>
+                        <a href="javascript:void(0)">ВОРОНЕЖ</a>
+                    </div>
+                    <div class="city__col">
+                        <a href="javascript:void(0)">ЛИПЕЦК</a>
+                        <a href="javascript:void(0)">НАБЕРЕЖНЫЕ ЧЕЛНЫ</a>
+                        <a href="javascript:void(0)">НИЖНИЙ НОВГОРОД</a>
+                        <a href="javascript:void(0)">НИЖНИЙ ТАГИЛ</a>
+                        <a href="javascript:void(0)">ЛИПЕЦК</a>
+                        <a href="javascript:void(0)">НАБЕРЕЖНЫЕ ЧЕЛНЫ</a>
+                        <a href="javascript:void(0)">НИЖНИЙ НОВГОРОД</a>
+                        <a href="javascript:void(0)">НИЖНИЙ ТАГИЛ</a>
+                    </div>
+                    <div class="city__col">
+                        <a href="javascript:void(0)">САРАТОВ</a>
+                        <a href="javascript:void(0)">СОЧИ</a>
+                        <a href="javascript:void(0)">ТАГАНРОГ</a>
+                        <a href="javascript:void(0)">ТОЛЬЯТТИ</a>
+                        <a href="javascript:void(0)">УЛЬЯНОВСК</a>
+                        <a href="javascript:void(0)">УФА</a>
+                        <a href="javascript:void(0)">САРАТОВ</a>
+                        <a href="javascript:void(0)">СОЧИ</a>
+                        <a href="javascript:void(0)">ТАГАНРОГ</a>
+                        <a href="javascript:void(0)">ТОЛЬЯТТИ</a>
+                        <a href="javascript:void(0)">УЛЬЯНОВСК</a>
+                        <a href="javascript:void(0)">УФА</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="scrolltop"><img src="img/icons/arrow-top.svg" alt=""></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>" type="text/javascript"></script>
+<script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+<script src="https://unpkg.com/imask"></script>
 <script src="js/wNumb.min.js"></script>
 <script src="js/nouislider.min.js"></script>
+<script src="js/sticky.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 

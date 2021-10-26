@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
     <link rel="stylesheet" href="css/nouislider.min.css" />
     <link rel="stylesheet" href="css/main.css" />
 
@@ -21,18 +22,28 @@
     <section class="top">
         <div class="container">
             <div class="top__menu">
-                <a href="javascript:void(0)">Москва</a>
+                <a href="javascript:void(0)" data-modal="city">Москва</a>
                 <a href="javascript:void(0)">Магазины</a>
                 <div class="top__divier"></div>
                 <a href="javascript:void(0)">Оплата</a>
                 <a href="javascript:void(0)">Доставка</a>
                 <a href="javascript:void(0)">Статус заказа</a>
-                <a href="javascript:void(0)">
-                    <span>Клиенту</span>
-                    <svg class="icon">
-                        <use xlink:href="img/symbol-defs.svg#icon-arrow-down"></use>
-                    </svg>
-                </a>
+                <div class="top__menu-link">
+                    <div class="parent">
+                        <span>Клиенту</span>
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-arrow-down"></use>
+                        </svg>
+                    </div>
+
+                    <div class="top__menu-dropdown">
+                        <a href="javascript:void(0)">Акции</a>
+                        <a href="javascript:void(0)">Оплата</a>
+                        <a href="javascript:void(0)">Доставка</a>
+                        <a href="javascript:void(0)">Статус заказа</a>
+                        <a href="javascript:void(0)">Сервисные центры</a>
+                    </div>
+                </div>
                 <a href="javascript:void(0)">Компаниям</a>
             </div>
             <div class="top__phone">
@@ -42,6 +53,85 @@
                     <svg class="icon">
                         <use xlink:href="img/symbol-defs.svg#icon-arrow-down"></use>
                     </svg>
+                    <div class="top__dropdown">
+                        <a href="javascript:void(0)" class="btn" data-modal="call">Заказать звонок</a>
+                        <div class="top__links">
+                            <a href="mailto:info@stroybazar.ru">
+                                <svg class="icon">
+                                    <use xlink:href="img/symbol-defs.svg#icon-mail"></use>
+                                </svg>
+                                info@stroybazar.ru
+                            </a>
+                            <div>
+                                <svg class="icon">
+                                    <use xlink:href="img/symbol-defs.svg#icon-time"></use>
+                                </svg>
+                                пн-вс 8:00 - 21:00
+                            </div>
+                        </div>
+                        <div class="footer__social">
+                            <span>звоните и пишите:</span>
+                            <div>
+                                <a href="javascript:void(0)">
+                                    <img src="img/icons/whatsapp.svg" alt="">
+                                </a>
+                                <a href="javascript:void(0)">
+                                    <img src="img/icons/viber.svg" alt="">
+                                </a>
+                                <a href="javascript:void(0)">
+                                    <img src="img/icons/telegram.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="footer__social">
+                            <span>мы в соцсетях:</span>
+                            <div>
+                                <a href="javascript:void(0)">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M15.9519 4.70166C15.913 3.8501 15.7777 3.26855 15.58 2.75977C15.3792 2.22595 15.0642 1.74243 14.6572 1.34277C14.2577 0.935791 13.774 0.620728 13.2402 0.4198C12.7313 0.222168 12.1499 0.0870361 11.2983 0.0483398C10.4452 0.00927734 10.1726 0 8 0C5.82739 0 5.55481 0.00927734 4.70166 0.0480957C3.8501 0.0870361 3.26868 0.22229 2.75977 0.420044C2.22595 0.62085 1.74243 0.935791 1.34277 1.34277C0.935791 1.74231 0.620728 2.22583 0.4198 2.75964C0.222168 3.26855 0.0870361 3.8501 0.0483398 4.70154C0.00927734 5.55481 0 5.82727 0 7.99988C0 10.1726 0.00927734 10.4452 0.0483398 11.2983C0.0871582 12.1498 0.222412 12.7313 0.420166 13.2402C0.620972 13.7739 0.935913 14.2576 1.3429 14.6571C1.74243 15.0641 2.22607 15.379 2.75989 15.5798C3.26868 15.7777 3.85022 15.9128 4.70178 15.9518C5.55505 15.9907 5.82751 15.9999 8.00012 15.9999C10.1727 15.9999 10.4453 15.9907 11.2985 15.9518C12.15 15.9128 12.7314 15.7777 13.2404 15.5798C14.3149 15.1643 15.1644 14.3148 15.58 13.2402C15.7778 12.7313 15.913 12.1498 15.9519 11.2983C15.9907 10.4451 16 10.1726 16 8C16 5.82727 15.9907 5.55481 15.9519 4.70166ZM14.5118 11.2328C14.4763 12.0128 14.3459 12.4364 14.2365 12.7183C13.9673 13.416 13.4159 13.9674 12.7181 14.2366C12.4363 14.3461 12.0127 14.4764 11.2327 14.512C10.3893 14.5505 10.1362 14.5586 8 14.5586C5.86365 14.5586 5.61072 14.5505 4.76721 14.512C3.9873 14.4764 3.56372 14.3461 3.28174 14.2366C2.93433 14.1083 2.62 13.9038 2.36194 13.6381C2.09619 13.38 1.89172 13.0658 1.76343 12.7183C1.65393 12.4364 1.52356 12.0128 1.48804 11.2328C1.44958 10.3893 1.44141 10.1362 1.44141 8.00012C1.44141 5.86389 1.44958 5.61096 1.48804 4.76733C1.52368 3.9873 1.65393 3.56372 1.76343 3.28186C1.89172 2.93433 2.09631 2.62 2.36194 2.36194C2.62 2.09619 2.93433 1.89172 3.28186 1.76355C3.56372 1.65393 3.9873 1.52368 4.76733 1.48804C5.61084 1.44958 5.86389 1.44141 8 1.44141H7.99988C10.136 1.44141 10.389 1.44958 11.2327 1.48816C12.0127 1.52368 12.4362 1.65405 12.7181 1.76355C13.0656 1.89185 13.3799 2.09631 13.6379 2.36194C13.9037 2.62 14.1082 2.93433 14.2363 3.28186C14.3459 3.56372 14.4763 3.9873 14.5118 4.76733C14.5503 5.61084 14.5585 5.86389 14.5585 8C14.5585 10.1362 14.5504 10.3892 14.5118 11.2328Z"
+                                            fill="url(#paint0_linear_60:31)" />
+                                        <path
+                                            d="M7.99988 3.8916C5.73108 3.8916 3.89185 5.73096 3.89185 7.99976C3.89185 10.2686 5.73108 12.1078 7.99988 12.1078C10.2688 12.1078 12.108 10.2686 12.108 7.99976C12.108 5.73096 10.2688 3.8916 7.99988 3.8916ZM7.99988 10.6664C6.52722 10.6663 5.33325 9.47241 5.33337 7.99963C5.33337 6.52698 6.52722 5.33301 8 5.33301C9.47278 5.33313 10.6666 6.52698 10.6666 7.99963C10.6666 9.47241 9.47266 10.6664 7.99988 10.6664Z"
+                                            fill="url(#paint1_linear_60:31)" />
+                                        <path
+                                            d="M13.2303 3.72961C13.2303 4.25977 12.8005 4.68958 12.2704 4.68958C11.7401 4.68958 11.3103 4.25977 11.3103 3.72961C11.3103 3.19934 11.7401 2.76953 12.2704 2.76953C12.8005 2.76953 13.2303 3.19934 13.2303 3.72961Z"
+                                            fill="url(#paint2_linear_60:31)" />
+                                        <defs>
+                                            <linearGradient id="paint0_linear_60:31" x1="1.34272" y1="14.6572"
+                                                x2="14.6573" y2="1.3426" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#FFD600" />
+                                                <stop offset="0.5" stop-color="#FF0100" />
+                                                <stop offset="1" stop-color="#D800B9" />
+                                            </linearGradient>
+                                            <linearGradient id="paint1_linear_60:31" x1="5.09507" y1="10.9046"
+                                                x2="10.9048" y2="5.09487" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#FF6400" />
+                                                <stop offset="0.5" stop-color="#FF0100" />
+                                                <stop offset="1" stop-color="#FD0056" />
+                                            </linearGradient>
+                                            <linearGradient id="paint2_linear_60:31" x1="11.5915" y1="4.4084"
+                                                x2="12.9492" y2="3.05072" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#F30072" />
+                                                <stop offset="1" stop-color="#E50097" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+
+                                </a>
+                                <a href="javascript:void(0)">
+                                    <img src="img/icons/fb.svg" alt="">
+                                </a>
+                                <a href="javascript:void(0)">
+                                    <img src="img/icons/vk.svg" alt="">
+                                </a>
+                                <a href="javascript:void(0)">
+                                    <img src="img/icons/youtube.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -94,6 +184,1267 @@
                     <span>Корзина</span>
                 </a>
             </div>
+
+            <div class="dropdown">
+                <div class="dropdown__close"></div>
+
+                <h3 class="dropdown__title">Каталог</h3>
+
+                <form action="" class="header__search">
+                    <input type="text" placeholder="Поиск по каталогу">
+                    <button>
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-search"></use>
+                        </svg>
+                    </button>
+                </form>
+
+                <div class="dropdown__back">
+                    <svg class="icon">
+                        <use xlink:href="img/symbol-defs.svg#icon-arrow-left"></use>
+                    </svg>
+
+                    Назад
+                </div>
+
+                <div class="dropdown__menu custom-scroll">
+                    <a href="javascript:void(0)" class="active" data-page="1">Садовая техника</a>
+                    <a href="javascript:void(0)" data-page="2">Электроинструменты</a>
+                    <a href="javascript:void(0)" data-page="1">Силовая и строительная техника</a>
+                    <a href="javascript:void(0)" data-page="2">Климатическое оборудование</a>
+                    <a href="javascript:void(0)" data-page="1">Расходные материалы и оснастка</a>
+                    <a href="javascript:void(0)" data-page="2">Ручные инструменты и приспособления</a>
+                    <a href="javascript:void(0)" data-page="1">FISKARS</a>
+                    <a href="javascript:void(0)" data-page="2">Измерительные инструменты</a>
+                    <a href="javascript:void(0)" data-page="1">Пневматическое оборудование</a>
+                    <a href="javascript:void(0)" data-page="2">Снегоуборочная техника</a>
+                    <a href="javascript:void(0)" data-page="1">Компрессоры</a>
+                    <a href="javascript:void(0)" data-page="2">Моечное и уборочное оборудование</a>
+                    <a href="javascript:void(0)" data-page="1">Насосы</a>
+                    <a href="javascript:void(0)" data-page="2">Двигатель</a>
+                    <a href="javascript:void(0)" data-page="1">Садовый инструмент и инвентарь</a>
+                    <a href="javascript:void(0)" data-page="2">Станки</a>
+                </div>
+                <div class="dropdown__body">
+                    <div class="dropdown__page active custom-scroll" data-page="1">
+                        <div class="dropdown__col">
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Аккумуляторный инструмент</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Болгарки (ушм)</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Гайковерты</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Генераторы (электростанции)</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Граверы</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Дрели</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Заклепочники</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Измерительные приборы и инструмент</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Инструмент и оборудование по видам работ</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Клуппы электрические</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Компрессоры</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Краскопульты</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Лобзики</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Многофункциональные реноваторы</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Наборы инструментов</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Аккумуляторный инструмент</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Болгарки (ушм)</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Гайковерты</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Генераторы (электростанции)</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Граверы</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Дрели</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Заклепочники</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Измерительные приборы и инструмент</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Инструмент и оборудование по видам работ</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Клуппы электрические</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Компрессоры</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Краскопульты</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Лобзики</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Многофункциональные реноваторы</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Наборы инструментов</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown__col">
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Ножницы по металлу</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Отбойные молотки</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Паяльное оборудование</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Перфораторы</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Пилы</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Пистолеты</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Пневмоинструмент</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Пневмоподготовка</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Пневмошуруповерты</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Сварочное оборудование</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Степлеры (гвоздезабиватели)
+                                    сталелитейные</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Фены строительные</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Фрезеры</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Шлифовальные машинки</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Штроборезы (бороздоделы)</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Ножницы по металлу</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Отбойные молотки</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Паяльное оборудование</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Перфораторы</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Пилы</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Пистолеты</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Пневмоинструмент</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Пневмоподготовка</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Пневмошуруповерты</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Сварочное оборудование</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Степлеры (гвоздезабиватели)
+                                    сталелитейные</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Фены строительные</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Фрезеры</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Шлифовальные машинки</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Штроборезы (бороздоделы)</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dropdown__page custom-scroll" data-page="2">
+                        <div class="dropdown__col">
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Ножницы по металлу</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Отбойные молотки</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Паяльное оборудование</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Перфораторы</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Пилы</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Пистолеты</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Пневмоинструмент</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Пневмоподготовка</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Пневмошуруповерты</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Сварочное оборудование</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Степлеры (гвоздезабиватели)
+                                    сталелитейные</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Фены строительные</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Фрезеры</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Шлифовальные машинки</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Штроборезы (бороздоделы)</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Ножницы по металлу</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Отбойные молотки</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Паяльное оборудование</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Перфораторы</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Пилы</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Пистолеты</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Пневмоинструмент</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Пневмоподготовка</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Пневмошуруповерты</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Сварочное оборудование</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Степлеры (гвоздезабиватели)
+                                    сталелитейные</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Фены строительные</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Фрезеры</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Шлифовальные машинки</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Штроборезы (бороздоделы)</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown__col">
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Аккумуляторный инструмент</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Болгарки (ушм)</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Гайковерты</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Генераторы (электростанции)</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Граверы</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Дрели</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Заклепочники</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Измерительные приборы и инструмент</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Инструмент и оборудование по видам работ</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Клуппы электрические</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Компрессоры</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Краскопульты</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Лобзики</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Многофункциональные реноваторы</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Наборы инструментов</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Аккумуляторный инструмент</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Болгарки (ушм)</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Гайковерты</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Генераторы (электростанции)</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Граверы</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Дрели</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Заклепочники</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Измерительные приборы и инструмент</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Инструмент и оборудование по видам работ</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Клуппы электрические</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Компрессоры</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Краскопульты</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Лобзики</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Многофункциональные реноваторы</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown__item">
+                                <div class="dropdown__link"><span></span> Наборы инструментов</div>
+                                <div class="dropdown__hide">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Аккумуляторные</a></li>
+                                        <li><a href="javascript:void(0)">Прямошлифовальные машины </a></li>
+                                        <li><a href="javascript:void(0)">Электрические</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -106,19 +1457,87 @@
                 <span class="count">35</span>
             </a>
             <a href="javascript:void(0)" class="bold">Распродажа</a>
-            <a href="javascript:void(0)">
-                Электроинструмент
-                <svg class="icon">
-                    <use xlink:href="img/symbol-defs.svg#icon-arrow-down"></use>
-                </svg>
-            </a>
+            <div>
+                <div class="parent ">
+                    Электроинструмент
+                    <svg class="icon">
+                        <use xlink:href="img/symbol-defs.svg#icon-arrow-down"></use>
+                    </svg>
+                </div>
+
+                <div class="dropdown">
+                    <div class="dropdown__menu custom-scroll">
+                        <a href="javascript:void(0)" class="active" data-page="1">Садовая техника</a>
+                        <a href="javascript:void(0)" data-page="2">Электроинструменты</a>
+                        <a href="javascript:void(0)" data-page="1">Силовая и строительная техника</a>
+                        <a href="javascript:void(0)" data-page="2">Климатическое оборудование</a>
+                        <a href="javascript:void(0)" data-page="1">Расходные материалы и оснастка</a>
+                        <a href="javascript:void(0)" data-page="2">Ручные инструменты и приспособления</a>
+                        <a href="javascript:void(0)" data-page="1">FISKARS</a>
+                        <a href="javascript:void(0)" data-page="2">Измерительные инструменты</a>
+                        <a href="javascript:void(0)" data-page="1">Пневматическое оборудование</a>
+                        <a href="javascript:void(0)" data-page="2">Снегоуборочная техника</a>
+                        <a href="javascript:void(0)" data-page="1">Компрессоры</a>
+                        <a href="javascript:void(0)" data-page="2">Моечное и уборочное оборудование</a>
+                    </div>
+                    <div class="dropdown__body">
+                        <div class="dropdown__page active" data-page="1">
+                            <div class="dropdown__list">
+                                <a href="javascript:void(0)">Садовая техника</a>
+                                <a href="javascript:void(0)">Электроинструменты</a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown__page" data-page="2">
+                            <div class="dropdown__list">
+                                <a href="javascript:void(0)" data-page="1">Пневматическое оборудование</a>
+                                <a href="javascript:void(0)" data-page="2">Снегоуборочная техника</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <a href="javascript:void(0)">Строительная техника</a>
-            <a href="javascript:void(0)" class="active">
-                Садовая техника
-                <svg class="icon">
-                    <use xlink:href="img/symbol-defs.svg#icon-arrow-down"></use>
-                </svg>
-            </a>
+            <div>
+                <div class="parent active">
+                    Садовая техника
+                    <svg class="icon">
+                        <use xlink:href="img/symbol-defs.svg#icon-arrow-down"></use>
+                    </svg>
+                </div>
+
+                <div class="dropdown">
+                    <div class="dropdown__menu  custom-scroll">
+                        <a href="javascript:void(0)" class="active" data-page="1">Садовая техника</a>
+                        <a href="javascript:void(0)" data-page="2">Электроинструменты</a>
+                        <a href="javascript:void(0)" data-page="1">Силовая и строительная техника</a>
+                        <a href="javascript:void(0)" data-page="2">Климатическое оборудование</a>
+                        <a href="javascript:void(0)" data-page="1">Расходные материалы и оснастка</a>
+                        <a href="javascript:void(0)" data-page="2">Ручные инструменты и приспособления</a>
+                        <a href="javascript:void(0)" data-page="1">FISKARS</a>
+                        <a href="javascript:void(0)" data-page="2">Измерительные инструменты</a>
+                        <a href="javascript:void(0)" data-page="1">Пневматическое оборудование</a>
+                        <a href="javascript:void(0)" data-page="2">Снегоуборочная техника</a>
+                        <a href="javascript:void(0)" data-page="1">Компрессоры</a>
+                        <a href="javascript:void(0)" data-page="2">Моечное и уборочное оборудование</a>
+                    </div>
+                    <div class="dropdown__body">
+                        <div class="dropdown__page active" data-page="1">
+                            <div class="dropdown__list">
+                                <a href="javascript:void(0)">Садовая техника</a>
+                                <a href="javascript:void(0)">Электроинструменты</a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown__page" data-page="2">
+                            <div class="dropdown__list">
+                                <a href="javascript:void(0)" data-page="1">Пневматическое оборудование</a>
+                                <a href="javascript:void(0)" data-page="2">Снегоуборочная техника</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <a href="javascript:void(0)">Климатическое оборудование</a>
             <a href="javascript:void(0)">Ручные инструменты</a>
         </div>
@@ -128,12 +1547,15 @@
 <section class="main">
     <div class="swiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background: linear-gradient(93.72deg, #ff4f4f 31.1%, #eb0000 76.09%);">
+            <div class="swiper-slide" style="background: linear-gradient(93.72deg, #ff4f4f 31.1%, #eb0000 76.09%)">
                 <div class="container">
                     <div class="main__info">
-                        <div class="main__title">Получите скидку <br>
-                            на следующий заказ</div>
-                        <div class="main__text">При покупке на сумму от 4 000 руб. <br>
+                        <div class="main__title">
+                            Получите скидку <br />
+                            на следующий заказ
+                        </div>
+                        <div class="main__text">
+                            При покупке на сумму от 4 000 руб. <br />
                             получите скидку на следующий заказ
                         </div>
                         <div class="main__controls">
@@ -141,15 +1563,18 @@
                             <a href="javascript:void(0)" class="btn btn-white">Подробнее</a>
                         </div>
                     </div>
-                    <img src="img/slide1.png" width="638" alt="">
+                    <img src="img/slide1.png" width="638" alt="" />
                 </div>
             </div>
-            <div class="swiper-slide" style="background: linear-gradient(117.32deg, #515151 27.24%, #323232 84.38%);">
+            <div class="swiper-slide" style="background: linear-gradient(117.32deg, #515151 27.24%, #323232 84.38%)">
                 <div class="container full">
                     <div class="main__info white">
-                        <div class="main__title">Получите скидку <br>
-                            на следующий заказ</div>
-                        <div class="main__text">При покупке на сумму от 4 000 руб. <br>
+                        <div class="main__title">
+                            Получите скидку <br />
+                            на следующий заказ
+                        </div>
+                        <div class="main__text">
+                            При покупке на сумму от 4 000 руб. <br />
                             получите скидку на следующий заказ
                         </div>
                         <div class="main__controls">
@@ -158,18 +1583,21 @@
                         </div>
                     </div>
                     <div class="main__images">
-                        <img src="img/slide2-1.png" width="316" alt="">
-                        <img src="img/slide2-2.png" width="316" alt="">
-                        <img src="img/slide2-3.png" width="316" alt="">
+                        <img src="img/slide2-1.png" width="316" alt="" />
+                        <img src="img/slide2-2.png" width="316" alt="" />
+                        <img src="img/slide2-3.png" width="316" alt="" />
                     </div>
                 </div>
             </div>
-            <div class="swiper-slide" style="background: linear-gradient(117.32deg, #515151 27.24%, #323232 84.38%);">
+            <div class="swiper-slide" style="background: linear-gradient(117.32deg, #515151 27.24%, #323232 84.38%)">
                 <div class="container">
                     <div class="main__info white">
-                        <div class="main__title">Получите скидку <br>
-                            на следующий заказ</div>
-                        <div class="main__text">При покупке на сумму от 4 000 руб. <br>
+                        <div class="main__title">
+                            Получите скидку <br />
+                            на следующий заказ
+                        </div>
+                        <div class="main__text">
+                            При покупке на сумму от 4 000 руб. <br />
                             получите скидку на следующий заказ
                         </div>
                         <div class="main__controls">
@@ -177,15 +1605,18 @@
                             <a href="javascript:void(0)" class="btn">Подробнее</a>
                         </div>
                     </div>
-                    <img src="img/slide3.png" width="635" alt="">
+                    <img src="img/slide3.png" width="635" alt="" />
                 </div>
             </div>
-            <div class="swiper-slide" style="background: linear-gradient(93.72deg, #cdf1ff 31.1%, #a2e1fa 76.09%);">
+            <div class="swiper-slide" style="background: linear-gradient(93.72deg, #cdf1ff 31.1%, #a2e1fa 76.09%)">
                 <div class="container">
                     <div class="main__info">
-                        <div class="main__title">Получите скидку <br>
-                            на следующий заказ</div>
-                        <div class="main__text">При покупке на сумму от 4 000 руб. <br>
+                        <div class="main__title">
+                            Получите скидку <br />
+                            на следующий заказ
+                        </div>
+                        <div class="main__text">
+                            При покупке на сумму от 4 000 руб. <br />
                             получите скидку на следующий заказ
                         </div>
                         <div class="main__controls">
@@ -193,15 +1624,18 @@
                             <a href="javascript:void(0)" class="btn">Подробнее</a>
                         </div>
                     </div>
-                    <img src="img/slide4.png" width="638" alt="">
+                    <img src="img/slide4.png" width="638" alt="" />
                 </div>
             </div>
-            <div class="swiper-slide" style="background: linear-gradient(93.72deg, #ff4f4f 31.1%, #eb0000 76.09%);">
+            <div class="swiper-slide" style="background: linear-gradient(93.72deg, #ff4f4f 31.1%, #eb0000 76.09%)">
                 <div class="container">
                     <div class="main__info white">
-                        <div class="main__title">Получите скидку <br>
-                            на следующий заказ</div>
-                        <div class="main__text">При покупке на сумму от 4 000 руб. <br>
+                        <div class="main__title">
+                            Получите скидку <br />
+                            на следующий заказ
+                        </div>
+                        <div class="main__text">
+                            При покупке на сумму от 4 000 руб. <br />
                             получите скидку на следующий заказ
                         </div>
                         <div class="main__controls">
@@ -209,7 +1643,7 @@
                             <a href="javascript:void(0)" class="btn btn-white">Подробнее</a>
                         </div>
                     </div>
-                    <img src="img/slide5.png" width="638" alt="">
+                    <img src="img/slide5.png" width="638" alt="" />
                 </div>
             </div>
         </div>
@@ -231,24 +1665,39 @@
             <div class="swiper">
                 <div class="swiper-wrapper">
                     <a href="javascript:void(0)" class="swiper-slide catalog__item">
-                        <div class="catalog__title">Торцовые <br> пилы</div>
-                        <img src="img/item1.png" alt="">
+                        <div class="catalog__title">
+                            Торцовые <br />
+                            пилы
+                        </div>
+                        <img src="img/item1.png" alt="" />
                     </a>
                     <a href="javascript:void(0)" class="swiper-slide catalog__item">
-                        <div class="catalog__title">Циркулярные <br> пилы</div>
-                        <img src="img/item2.png" alt="">
+                        <div class="catalog__title">
+                            Циркулярные <br />
+                            пилы
+                        </div>
+                        <img src="img/item2.png" alt="" />
                     </a>
                     <a href="javascript:void(0)" class="swiper-slide catalog__item">
-                        <div class="catalog__title">Монтажные <br> пилы</div>
-                        <img src="img/item3.png" alt="">
+                        <div class="catalog__title">
+                            Монтажные <br />
+                            пилы
+                        </div>
+                        <img src="img/item3.png" alt="" />
                     </a>
                     <a href="javascript:void(0)" class="swiper-slide catalog__item">
-                        <div class="catalog__title">Отбойные <br> молотки</div>
-                        <img src="img/item4.png" alt="">
+                        <div class="catalog__title">
+                            Отбойные <br />
+                            молотки
+                        </div>
+                        <img src="img/item4.png" alt="" />
                     </a>
                     <a href="javascript:void(0)" class="swiper-slide catalog__item">
-                        <div class="catalog__title">Дрели <br> сетевые</div>
-                        <img src="img/item5.png" alt="">
+                        <div class="catalog__title">
+                            Дрели <br />
+                            сетевые
+                        </div>
+                        <img src="img/item5.png" alt="" />
                     </a>
                 </div>
             </div>
@@ -270,23 +1719,30 @@
                 <div class="swiper-wrapper">
                     <a href="javascript:void(0)" class="swiper-slide catalog__item">
                         <div class="catalog__title">Культиваторы</div>
-                        <img src="img/item6.png" alt="">
+                        <img src="img/item6.png" alt="" />
                     </a>
                     <a href="javascript:void(0)" class="swiper-slide catalog__item">
                         <div class="catalog__title">Триммеры</div>
-                        <img src="img/item7.png" alt="">
+                        <img src="img/item7.png" alt="" />
                     </a>
                     <a href="javascript:void(0)" class="swiper-slide catalog__item">
                         <div class="catalog__title">Мотопомпы</div>
-                        <img src="img/item8.png" alt="">
+                        <img src="img/item8.png" alt="" />
                     </a>
                     <a href="javascript:void(0)" class="swiper-slide catalog__item">
-                        <div class="catalog__title">Цепные <br> электрические <br> пилы</div>
-                        <img src="img/item9.png" alt="">
+                        <div class="catalog__title">
+                            Цепные <br />
+                            электрические <br />
+                            пилы
+                        </div>
+                        <img src="img/item9.png" alt="" />
                     </a>
                     <a href="javascript:void(0)" class="swiper-slide catalog__item">
-                        <div class="catalog__title">Кусторезы <br> и ножницы</div>
-                        <img src="img/item10.png" alt="">
+                        <div class="catalog__title">
+                            Кусторезы <br />
+                            и ножницы
+                        </div>
+                        <img src="img/item10.png" alt="" />
                     </a>
                 </div>
             </div>
@@ -307,24 +1763,33 @@
             <div class="swiper">
                 <div class="swiper-wrapper">
                     <a href="javascript:void(0)" class="swiper-slide catalog__item">
-                        <div class="catalog__title">Генераторы <br> и электростанции</div>
-                        <img src="img/item11.png" alt="">
+                        <div class="catalog__title">
+                            Генераторы <br />
+                            и электростанции
+                        </div>
+                        <img src="img/item11.png" alt="" />
                     </a>
                     <a href="javascript:void(0)" class="swiper-slide catalog__item">
-                        <div class="catalog__title">Сварочное <br> оборудование</div>
-                        <img src="img/item12.png" alt="">
+                        <div class="catalog__title">
+                            Сварочное <br />
+                            оборудование
+                        </div>
+                        <img src="img/item12.png" alt="" />
                     </a>
                     <a href="javascript:void(0)" class="swiper-slide catalog__item">
                         <div class="catalog__title">Виброплиты</div>
-                        <img src="img/item13.png" alt="">
+                        <img src="img/item13.png" alt="" />
                     </a>
                     <a href="javascript:void(0)" class="swiper-slide catalog__item">
                         <div class="catalog__title">Швонарезчик</div>
-                        <img src="img/item14.png" alt="">
+                        <img src="img/item14.png" alt="" />
                     </a>
                     <a href="javascript:void(0)" class="swiper-slide catalog__item">
-                        <div class="catalog__title">Вибраторы <br> глубинные</div>
-                        <img src="img/item15.png" alt="">
+                        <div class="catalog__title">
+                            Вибраторы <br />
+                            глубинные
+                        </div>
+                        <img src="img/item15.png" alt="" />
                     </a>
                 </div>
             </div>
@@ -342,42 +1807,42 @@
         <div class="about__list">
             <div class="about__item">
                 <div class="about__icon">
-                    <img src="img/icons/badge.svg" alt="">
+                    <img src="img/icons/badge.svg" alt="" />
                 </div>
-                Более 70 000 <br>
-                сертифицированных <br>
+                Более 70 000 <br />
+                сертифицированных <br />
                 товаров
             </div>
             <div class="about__item">
                 <div class="about__icon">
-                    <img src="img/icons/sale.svg" alt="">
+                    <img src="img/icons/sale.svg" alt="" />
                 </div>
-                Гарантия <br>
-                самой низкой <br>
+                Гарантия <br />
+                самой низкой <br />
                 цены
             </div>
             <div class="about__item">
                 <div class="about__icon">
-                    <img src="img/icons/purse.svg" alt="">
+                    <img src="img/icons/purse.svg" alt="" />
                 </div>
-                Удобные <br>
-                способы <br>
+                Удобные <br />
+                способы <br />
                 оплаты
             </div>
             <div class="about__item">
                 <div class="about__icon">
-                    <img src="img/icons/delivery.svg" alt="">
+                    <img src="img/icons/delivery.svg" alt="" />
                 </div>
-                Доставка во все <br>
-                регионы РФ, <br>
+                Доставка во все <br />
+                регионы РФ, <br />
                 Беларусь и Украину
             </div>
             <div class="about__item">
                 <div class="about__icon">
-                    <img src="img/icons/settings.svg" alt="">
+                    <img src="img/icons/settings.svg" alt="" />
                 </div>
-                Гарантийное <br>
-                обслуживание <br>
+                Гарантийное <br />
+                обслуживание <br />
                 товаров
             </div>
         </div>
@@ -406,19 +1871,24 @@
         <div class="swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide stock__item"
-                    style="background: linear-gradient(104.8deg, #ffd7cf 5.1%, #ffe4df 78.61%);">
-                    <div class="stock__title">Снизим цену, если нашли <br>
-                        нужный товар дешевле</div>
-                    <a href="javascript:void(0)" class="btn">Подробнее</a>
+                    style="background: linear-gradient(104.8deg, #ffd7cf 5.1%, #ffe4df 78.61%)">
+                    <div class="stock__title">
+                        Снизим цену, если нашли <br />
+                        нужный товар дешевле
+                    </div>
+                    <a href="javascript:void(0)" class="btn" data-modal="sale">Подробнее</a>
                     <div class="stock__date">акция действует: до 30.08.2021</div>
-                    <img src="img/sale.png" width="241" alt="">
+                    <img src="img/sale.png" width="241" alt="" />
                 </div>
                 <div class="swiper-slide stock__item"
-                    style="background: linear-gradient(104.8deg, #fff5da 5.1%, #ffe7a9 78.61%);">
-                    <div class="stock__title">Дарим промокод на покупку <br> садовой техники</div>
-                    <a href="javascript:void(0)" class="btn">Подробнее</a>
+                    style="background: linear-gradient(104.8deg, #fff5da 5.1%, #ffe7a9 78.61%)">
+                    <div class="stock__title">
+                        Дарим промокод на покупку <br />
+                        садовой техники
+                    </div>
+                    <a href="javascript:void(0)" class="btn" data-modal="sale-send">Подробнее</a>
                     <div class="stock__date">акция действует: до 30.08.2021</div>
-                    <img src="img/phone.png" class="phone" width="141" alt="">
+                    <img src="img/phone.png" class="phone" width="141" alt="" />
                 </div>
             </div>
         </div>
@@ -450,13 +1920,13 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide item">
                     <div class="item__tags">
-                        <span style="background: #FFCDCD;">Хит продаж</span>
-                        <span style="background: #E2FFA4;">Распродажа</span>
-                        <span style="background: #CEF6FF;">Новинка</span>
-                        <span style="background: #FFEBA4;">Акция</span>
-                        <span style="background: #E2E5FF;">%</span>
+                        <span style="background: #ffcdcd">Хит продаж</span>
+                        <span style="background: #e2ffa4">Распродажа</span>
+                        <span style="background: #cef6ff">Новинка</span>
+                        <span style="background: #ffeba4">Акция</span>
+                        <span style="background: #e2e5ff">%</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png');"></div>
+                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -509,8 +1979,8 @@
                         </svg>
                     </div>
 
-                    <div class="item__title">Ультра-легкие открытые очки с&nbsp;янтарными линзами
-                        из&nbsp;поликарбоната HONEYWELL</div>
+                    <div class="item__title">Ультра-легкие открытые очки с&nbsp;янтарными линзами из&nbsp;поликарбоната
+                        HONEYWELL</div>
                     <div class="item__price-label">цена</div>
                     <div class="item__price-wrap">
                         <div class="item__price-old">35 000 руб.</div>
@@ -545,11 +2015,11 @@
                 </div>
                 <div class="swiper-slide item">
                     <div class="item__tags">
-                        <span style="background: #FFCDCD;">Хит продаж</span>
-                        <span style="background: #E2FFA4;">Распродажа</span>
-                        <span style="background: #CEF6FF;">Новинка</span>
+                        <span style="background: #ffcdcd">Хит продаж</span>
+                        <span style="background: #e2ffa4">Распродажа</span>
+                        <span style="background: #cef6ff">Новинка</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png');"></div>
+                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -636,9 +2106,9 @@
                 </div>
                 <div class="swiper-slide item">
                     <div class="item__tags">
-                        <span style="background: #FFCDCD;">Хит продаж</span>
+                        <span style="background: #ffcdcd">Хит продаж</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png');"></div>
+                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -725,9 +2195,9 @@
                 </div>
                 <div class="swiper-slide item">
                     <div class="item__tags">
-                        <span style="background: #FFCDCD;">Хит продаж</span>
+                        <span style="background: #ffcdcd">Хит продаж</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png');"></div>
+                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -842,13 +2312,13 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide item">
                     <div class="item__tags">
-                        <span style="background: #FFCDCD;">Хит продаж</span>
-                        <span style="background: #E2FFA4;">Распродажа</span>
-                        <span style="background: #CEF6FF;">Новинка</span>
-                        <span style="background: #FFEBA4;">Акция</span>
-                        <span style="background: #E2E5FF;">%</span>
+                        <span style="background: #ffcdcd">Хит продаж</span>
+                        <span style="background: #e2ffa4">Распродажа</span>
+                        <span style="background: #cef6ff">Новинка</span>
+                        <span style="background: #ffeba4">Акция</span>
+                        <span style="background: #e2e5ff">%</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png');"></div>
+                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -901,8 +2371,8 @@
                         </svg>
                     </div>
 
-                    <div class="item__title">Ультра-легкие открытые очки с&nbsp;янтарными линзами
-                        из&nbsp;поликарбоната HONEYWELL</div>
+                    <div class="item__title">Ультра-легкие открытые очки с&nbsp;янтарными линзами из&nbsp;поликарбоната
+                        HONEYWELL</div>
                     <div class="item__price-label">цена</div>
                     <div class="item__price-wrap">
                         <div class="item__price-old">35 000 руб.</div>
@@ -937,11 +2407,11 @@
                 </div>
                 <div class="swiper-slide item">
                     <div class="item__tags">
-                        <span style="background: #FFCDCD;">Хит продаж</span>
-                        <span style="background: #E2FFA4;">Распродажа</span>
-                        <span style="background: #CEF6FF;">Новинка</span>
+                        <span style="background: #ffcdcd">Хит продаж</span>
+                        <span style="background: #e2ffa4">Распродажа</span>
+                        <span style="background: #cef6ff">Новинка</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png');"></div>
+                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -1028,9 +2498,9 @@
                 </div>
                 <div class="swiper-slide item">
                     <div class="item__tags">
-                        <span style="background: #FFCDCD;">Хит продаж</span>
+                        <span style="background: #ffcdcd">Хит продаж</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png');"></div>
+                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -1117,9 +2587,9 @@
                 </div>
                 <div class="swiper-slide item">
                     <div class="item__tags">
-                        <span style="background: #FFCDCD;">Хит продаж</span>
+                        <span style="background: #ffcdcd">Хит продаж</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png');"></div>
+                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -1234,13 +2704,13 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide item">
                     <div class="item__tags">
-                        <span style="background: #FFCDCD;">Хит продаж</span>
-                        <span style="background: #E2FFA4;">Распродажа</span>
-                        <span style="background: #CEF6FF;">Новинка</span>
-                        <span style="background: #FFEBA4;">Акция</span>
-                        <span style="background: #E2E5FF;">%</span>
+                        <span style="background: #ffcdcd">Хит продаж</span>
+                        <span style="background: #e2ffa4">Распродажа</span>
+                        <span style="background: #cef6ff">Новинка</span>
+                        <span style="background: #ffeba4">Акция</span>
+                        <span style="background: #e2e5ff">%</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png');"></div>
+                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -1293,8 +2763,8 @@
                         </svg>
                     </div>
 
-                    <div class="item__title">Ультра-легкие открытые очки с&nbsp;янтарными линзами
-                        из&nbsp;поликарбоната HONEYWELL</div>
+                    <div class="item__title">Ультра-легкие открытые очки с&nbsp;янтарными линзами из&nbsp;поликарбоната
+                        HONEYWELL</div>
                     <div class="item__price-label">цена</div>
                     <div class="item__price-wrap">
                         <div class="item__price-old">35 000 руб.</div>
@@ -1329,11 +2799,11 @@
                 </div>
                 <div class="swiper-slide item">
                     <div class="item__tags">
-                        <span style="background: #FFCDCD;">Хит продаж</span>
-                        <span style="background: #E2FFA4;">Распродажа</span>
-                        <span style="background: #CEF6FF;">Новинка</span>
+                        <span style="background: #ffcdcd">Хит продаж</span>
+                        <span style="background: #e2ffa4">Распродажа</span>
+                        <span style="background: #cef6ff">Новинка</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png');"></div>
+                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -1420,9 +2890,9 @@
                 </div>
                 <div class="swiper-slide item">
                     <div class="item__tags">
-                        <span style="background: #FFCDCD;">Хит продаж</span>
+                        <span style="background: #ffcdcd">Хит продаж</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png');"></div>
+                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -1509,9 +2979,9 @@
                 </div>
                 <div class="swiper-slide item">
                     <div class="item__tags">
-                        <span style="background: #FFCDCD;">Хит продаж</span>
+                        <span style="background: #ffcdcd">Хит продаж</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png');"></div>
+                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -1610,7 +3080,7 @@
         </svg>
     </div>
     <div class="add__name">Товар добавлен в корзину</div>
-    <img src="img/item5.png" alt="">
+    <img src="img/item5.png" alt="" />
     <div class="add__title">Ультра-легкие открытые очки с&nbsp;янтарными линзами из&nbsp;поликарбоната HONEYWELL</div>
     <a href="javascript:void(0)" class="btn btn-green btn-fill">
         <svg class="icon">
@@ -1632,30 +3102,30 @@
             <div class="features__col">
                 <h2>Как оплатить товар</h2>
                 <div class="features__item">
-                    <div class="features__icon"><img src="img/icons/wallet.svg" alt=""></div>
+                    <div class="features__icon"><img src="img/icons/wallet.svg" alt="" /></div>
                     Наличными или картой при получении заказа
                 </div>
                 <div class="features__item">
-                    <div class="features__icon"><img src="img/icons/cards.svg" alt=""></div>
+                    <div class="features__icon"><img src="img/icons/cards.svg" alt="" /></div>
                     Картой при оформлении заказа на сайте
                 </div>
                 <div class="features__item">
-                    <div class="features__icon"><img src="img/icons/bill.svg" alt=""></div>
+                    <div class="features__icon"><img src="img/icons/bill.svg" alt="" /></div>
                     Безналичная оплата для юр. лиц и ИП
                 </div>
             </div>
             <div class="features__col">
                 <h2>Как получить товар</h2>
                 <div class="features__item">
-                    <div class="features__icon"><img src="img/icons/box.svg" alt=""></div>
+                    <div class="features__icon"><img src="img/icons/box.svg" alt="" /></div>
                     Самовывоз из магазинов СтройБазар
                 </div>
                 <div class="features__item">
-                    <div class="features__icon"><img src="img/icons/person.svg" alt=""></div>
+                    <div class="features__icon"><img src="img/icons/person.svg" alt="" /></div>
                     Доставка транспортными компаниями
                 </div>
                 <div class="features__item">
-                    <div class="features__icon"><img src="img/icons/car.svg" alt=""></div>
+                    <div class="features__icon"><img src="img/icons/car.svg" alt="" /></div>
                     Курьерская доставка по Москве и Московской области
                 </div>
             </div>
@@ -1694,8 +3164,10 @@
                     <div class="reviews__user">
                         <div class="reviews__photo"></div>
                         <div>
-                            <div class="reviews__name">Константиновский <br>
-                                Игорь</div>
+                            <div class="reviews__name">
+                                Константиновский <br />
+                                Игорь
+                            </div>
                             <div class="stars" data-count="4">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.2 14">
                                     <g class="active" data-star="1">
@@ -1733,18 +3205,23 @@
                         </div>
                     </div>
                     <div class="reviews__label">отзыв о товаре</div>
-                    <a href="javascript:void(0)" class="reviews__title">Лейка для душа BRADEX <br>
+                    <a href="javascript:void(0)" class="reviews__title">Лейка для душа BRADEX <br />
                         ПРИЛИВ СИЛ TD 0367</a>
-                    <div class="reviews__text">В&nbsp;целом неплохая, была такая&nbsp;же с&nbsp;китая, но&nbsp;там режим
-                        массажа сильнее, здесь мягкий, а&nbsp;так неплохая, не&nbsp;считая, что немного на&nbsp;месте
-                        крепления шланга немного капает вода, но&nbsp;это устраняется кольцом.</div>
+                    <div class="reviews__text">
+                        В&nbsp;целом неплохая, была такая&nbsp;же с&nbsp;китая, но&nbsp;там режим массажа сильнее, здесь
+                        мягкий, а&nbsp;так неплохая,
+                        не&nbsp;считая, что немного на&nbsp;месте крепления шланга немного капает вода, но&nbsp;это
+                        устраняется кольцом.
+                    </div>
                 </div>
                 <div class="swiper-slide reviews__item">
                     <div class="reviews__user">
                         <div class="reviews__photo"></div>
                         <div>
-                            <div class="reviews__name">Иванов <br>
-                                Игорь</div>
+                            <div class="reviews__name">
+                                Иванов <br />
+                                Игорь
+                            </div>
                             <div class="stars" data-count="4">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.2 14">
                                     <g class="active" data-star="1">
@@ -1783,16 +3260,20 @@
                     </div>
                     <div class="reviews__label">отзыв о товаре</div>
                     <a href="javascript:void(0)" class="reviews__title">Лейка для душа BRADEX</a>
-                    <div class="reviews__text">В&nbsp;целом неплохая, была такая&nbsp;же с&nbsp;китая, но&nbsp;там режим
-                        массажа сильнее, здесь мягкий, а&nbsp;так неплохая, не&nbsp;считая, что немного на&nbsp;месте.
+                    <div class="reviews__text">
+                        В&nbsp;целом неплохая, была такая&nbsp;же с&nbsp;китая, но&nbsp;там режим массажа сильнее, здесь
+                        мягкий, а&nbsp;так неплохая,
+                        не&nbsp;считая, что немного на&nbsp;месте.
                     </div>
                 </div>
                 <div class="swiper-slide reviews__item">
                     <div class="reviews__user">
-                        <div class="reviews__photo" style="background-image: url('img/user.png');"></div>
+                        <div class="reviews__photo" style="background-image: url('img/user.png')"></div>
                         <div>
-                            <div class="reviews__name">Константиновский <br>
-                                Игорь</div>
+                            <div class="reviews__name">
+                                Константиновский <br />
+                                Игорь
+                            </div>
                             <div class="stars" data-count="4">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.2 14">
                                     <g class="active" data-star="1">
@@ -1830,11 +3311,14 @@
                         </div>
                     </div>
                     <div class="reviews__label">отзыв о товаре</div>
-                    <a href="javascript:void(0)" class="reviews__title">Лейка для душа BRADEX <br>
+                    <a href="javascript:void(0)" class="reviews__title">Лейка для душа BRADEX <br />
                         ПРИЛИВ СИЛ TD 0367</a>
-                    <div class="reviews__text">В&nbsp;целом неплохая, была такая&nbsp;же с&nbsp;китая, но&nbsp;там режим
-                        массажа сильнее, здесь мягкий, а&nbsp;так неплохая, не&nbsp;считая, что немного на&nbsp;месте
-                        крепления шланга немного капает вода, но&nbsp;это устраняется кольцом.</div>
+                    <div class="reviews__text">
+                        В&nbsp;целом неплохая, была такая&nbsp;же с&nbsp;китая, но&nbsp;там режим массажа сильнее, здесь
+                        мягкий, а&nbsp;так неплохая,
+                        не&nbsp;считая, что немного на&nbsp;месте крепления шланга немного капает вода, но&nbsp;это
+                        устраняется кольцом.
+                    </div>
                 </div>
             </div>
         </div>
@@ -1868,8 +3352,10 @@
                     <div class="reviews__user">
                         <div class="reviews__photo"></div>
                         <div>
-                            <div class="reviews__name">Константиновский <br>
-                                Игорь</div>
+                            <div class="reviews__name">
+                                Константиновский <br />
+                                Игорь
+                            </div>
                             <div class="stars" data-count="4">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.2 14">
                                     <g class="active" data-star="1">
@@ -1906,16 +3392,21 @@
                             </div>
                         </div>
                     </div>
-                    <div class="reviews__text">В&nbsp;целом неплохая, была такая&nbsp;же с&nbsp;китая, но&nbsp;там режим
-                        массажа сильнее, здесь мягкий, а&nbsp;так неплохая, не&nbsp;считая, что немного на&nbsp;месте
-                        крепления шланга немного капает вода, но&nbsp;это устраняется кольцом.</div>
+                    <div class="reviews__text">
+                        В&nbsp;целом неплохая, была такая&nbsp;же с&nbsp;китая, но&nbsp;там режим массажа сильнее, здесь
+                        мягкий, а&nbsp;так неплохая,
+                        не&nbsp;считая, что немного на&nbsp;месте крепления шланга немного капает вода, но&nbsp;это
+                        устраняется кольцом.
+                    </div>
                 </div>
                 <div class="swiper-slide reviews__item">
                     <div class="reviews__user">
-                        <div class="reviews__photo" style="background-image: url('img/user.png');"></div>
+                        <div class="reviews__photo" style="background-image: url('img/user.png')"></div>
                         <div>
-                            <div class="reviews__name">Константиновский <br>
-                                Игорь</div>
+                            <div class="reviews__name">
+                                Константиновский <br />
+                                Игорь
+                            </div>
                             <div class="stars" data-count="4">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.2 14">
                                     <g class="active" data-star="1">
@@ -1952,9 +3443,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="reviews__text">В&nbsp;целом неплохая, была такая&nbsp;же с&nbsp;китая, но&nbsp;там режим
-                        массажа сильнее, здесь мягкий, а&nbsp;так неплохая, не&nbsp;считая, что немного на&nbsp;месте
-                        крепления шланга немного капает вода, но&nbsp;это устраняется кольцом.</div>
+                    <div class="reviews__text">
+                        В&nbsp;целом неплохая, была такая&nbsp;же с&nbsp;китая, но&nbsp;там режим массажа сильнее, здесь
+                        мягкий, а&nbsp;так неплохая,
+                        не&nbsp;считая, что немного на&nbsp;месте крепления шланга немного капает вода, но&nbsp;это
+                        устраняется кольцом.
+                    </div>
                 </div>
             </div>
         </div>
@@ -1985,7 +3479,7 @@
         <div class="swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide platform__item">
-                    <img src="img/yandex.png" alt="">
+                    <img src="img/yandex.png" alt="" />
                     <div class="stars" data-count="4">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.2 14">
                             <g class="active" data-star="1">
@@ -2023,12 +3517,12 @@
                     <a href="javascript:void(0)">Смотреть в источнике</a>
                 </div>
                 <div class="swiper-slide platform__item">
-                    <img src="img/google.png" alt="">
+                    <img src="img/google.png" alt="" />
                     <div class="platform__rating"><span>4.5</span> из <span>5</span></div>
                     <a href="javascript:void(0)">Смотреть в источнике</a>
                 </div>
                 <div class="swiper-slide platform__item">
-                    <img src="img/2gis.png" alt="">
+                    <img src="img/2gis.png" alt="" />
                     <div class="stars" data-count="4">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.2 14">
                             <g class="active" data-star="1">
@@ -2066,7 +3560,7 @@
                     <a href="javascript:void(0)">Смотреть в источнике</a>
                 </div>
                 <div class="swiper-slide platform__item">
-                    <img src="img/zoon.png" alt="">
+                    <img src="img/zoon.png" alt="" />
                     <div class="platform__rating"><span>4.5</span> из <span>5</span></div>
                     <a href="javascript:void(0)">Смотреть в источнике</a>
                 </div>
@@ -2101,26 +3595,35 @@
                 <div class="swiper-slide cert__item">
                     <div class="cert__img" href="img/cert1.jpg" data-fancybox>
                         <div class="wrap">
-                            <img src="img/cert1.jpg" alt="">
+                            <img src="img/cert1.jpg" alt="" />
                         </div>
                     </div>
-                    <div class="cert__title">Компания «Трейдер Инн», <br> Москва</div>
+                    <div class="cert__title">
+                        Компания «Трейдер Инн», <br />
+                        Москва
+                    </div>
                 </div>
                 <div class="swiper-slide cert__item">
                     <div class="cert__img" href="img/cert2.jpg" data-fancybox>
                         <div class="wrap">
-                            <img src="img/cert2.jpg" alt="">
+                            <img src="img/cert2.jpg" alt="" />
                         </div>
                     </div>
-                    <div class="cert__title">Компания «Трейдер Инн», <br> Москва</div>
+                    <div class="cert__title">
+                        Компания «Трейдер Инн», <br />
+                        Москва
+                    </div>
                 </div>
                 <div class="swiper-slide cert__item">
                     <div class="cert__img" href="img/cert3.jpg" data-fancybox>
                         <div class="wrap">
-                            <img src="img/cert3.jpg" alt="">
+                            <img src="img/cert3.jpg" alt="" />
                         </div>
                     </div>
-                    <div class="cert__title">Компания «Трейдер Инн», <br> Москва</div>
+                    <div class="cert__title">
+                        Компания «Трейдер Инн», <br />
+                        Москва
+                    </div>
                 </div>
             </div>
         </div>
@@ -2133,17 +3636,22 @@
     <div class="container">
         <div class="video__info">
             <h2>О компании СтройБазар</h2>
-            <div class="video__text">Интернет-магазин &laquo;СтройБазар&raquo;&nbsp;&mdash; это самая большая площадка
-                по&nbsp;продаже садовой техники, электро- и&nbsp;бензоинструментов. У&nbsp;нас в&nbsp;наличии есть
-                товар, который всегда пользуется спросом, а&nbsp;также редкие и&nbsp;даже эксклюзивные изделия.
-                В&nbsp;СтройБазар вы&nbsp;сможете найти&nbsp;то, что искали уже очень давно. <br> <br>
+            <div class="video__text">
+                Интернет-магазин &laquo;СтройБазар&raquo;&nbsp;&mdash; это самая большая площадка по&nbsp;продаже
+                садовой техники, электро-
+                и&nbsp;бензоинструментов. У&nbsp;нас в&nbsp;наличии есть товар, который всегда пользуется спросом,
+                а&nbsp;также редкие и&nbsp;даже эксклюзивные
+                изделия. В&nbsp;СтройБазар вы&nbsp;сможете найти&nbsp;то, что искали уже очень давно. <br />
+                <br />
                 Мы&nbsp;сотрудничаем с&nbsp;крупнейшими производителями, от&nbsp;которых получаем товары напрямую. Все,
-                что продается в&nbsp;нашем интернет-магазине сертифицировано, соответствует всем нормам качества
-                и&nbsp;имеет гарантию от&nbsp;производителя. При случае&nbsp;&mdash; вы&nbsp;сможете обратиться
-                в&nbsp;наш сервисный центр.</div>
+                что продается в&nbsp;нашем
+                интернет-магазине сертифицировано, соответствует всем нормам качества и&nbsp;имеет гарантию
+                от&nbsp;производителя. При случае&nbsp;&mdash;
+                вы&nbsp;сможете обратиться в&nbsp;наш сервисный центр.
+            </div>
         </div>
         <div class="video__item" href="https://www.youtube.com/watch?v=K0uAIFbuPm8&t=3s" data-fancybox>
-            <img src="img/video.jpg" alt="">
+            <img src="img/video.jpg" alt="" />
             <div class="video__desc">Обзор складов интернет-магазина «СтройБазар»</div>
         </div>
     </div>
@@ -2155,61 +3663,73 @@
 
         <div class="service__list">
             <div class="service__col">
-                <a href="javascript:void(0)" class="service__item full" style="background-color: #FFE4DF;">
-                    <div class="service__title">Сервисные центры <br>
-                        производителей</div>
+                <a href="javascript:void(0)" class="service__item full" style="background-color: #ffe4df">
+                    <div class="service__title">
+                        Сервисные центры <br />
+                        производителей
+                    </div>
                     <div class="service__icon">
                         <svg class="icon">
                             <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
                         </svg>
                     </div>
-                    <img src="img/tools.png" width="429" alt="">
+                    <img src="img/tools.png" width="429" alt="" />
                 </a>
             </div>
             <div class="service__col">
-                <a href="javascript:void(0)" class="service__item" style="background-color: #FFF5DA;">
-                    <div class="service__title">Как сделать <br> заказ</div>
+                <a href="javascript:void(0)" class="service__item" style="background-color: #fff5da">
+                    <div class="service__title">
+                        Как сделать <br />
+                        заказ
+                    </div>
                     <div class="service__icon">
                         <svg class="icon">
                             <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
                         </svg>
                     </div>
-                    <img src="img/phone-cart.png" class="phone" width="84" alt="">
+                    <img src="img/phone-cart.png" class="phone" width="84" alt="" />
                 </a>
-                <a href="javascript:void(0)" class="service__item" style="background-color: #F1F1F1;">
-                    <div class="service__title">Отследить <br>
-                        заказ</div>
+                <a href="javascript:void(0)" class="service__item" style="background-color: #f1f1f1">
+                    <div class="service__title">
+                        Отследить <br />
+                        заказ
+                    </div>
                     <div class="service__icon">
                         <svg class="icon">
                             <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
                         </svg>
                     </div>
-                    <img src="img/pin.png" class="pin" width="111" alt="">
+                    <img src="img/pin.png" class="pin" width="111" alt="" />
                 </a>
-                <a href="javascript:void(0)" class="service__item" style="background-color: #F1F1F1;">
-                    <div class="service__title">Гарантия <br>
-                        на товары</div>
+                <a href="javascript:void(0)" class="service__item" style="background-color: #f1f1f1">
+                    <div class="service__title">
+                        Гарантия <br />
+                        на товары
+                    </div>
                     <div class="service__icon">
                         <svg class="icon">
                             <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
                         </svg>
                     </div>
-                    <img src="img/stamp.png" width="93" alt="">
+                    <img src="img/stamp.png" width="93" alt="" />
                 </a>
-                <a href="javascript:void(0)" class="service__item" style="background-color: #FFE4DF;">
-                    <div class="service__title">Возврат <br> товаров</div>
+                <a href="javascript:void(0)" class="service__item" style="background-color: #ffe4df">
+                    <div class="service__title">
+                        Возврат <br />
+                        товаров
+                    </div>
                     <div class="service__icon">
                         <svg class="icon">
                             <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
                         </svg>
                     </div>
-                    <img src="img/rotate.png" width="143" alt="">
+                    <img src="img/rotate.png" width="143" alt="" />
                 </a>
             </div>
         </div>
 
         <a href="javascript:void(0)" class="service__item"
-            style="background-image: url(img/docs.png);background-color: #FFF5DA;">
+            style="background-image: url(img/docs.png); background-color: #fff5da">
             <div class="service__title">Бизнес-клиентам</div>
             <div class="service__icon">
                 <svg class="icon">
@@ -2244,29 +3764,38 @@
                 <div class="swiper-slide cert__item">
                     <div class="cert__img" href="img/cert1.jpg" data-fancybox>
                         <div class="wrap">
-                            <img src="img/cert1.jpg" alt="">
+                            <img src="img/cert1.jpg" alt="" />
                         </div>
                     </div>
                     <div class="cert__divider"></div>
-                    <div class="cert__title">Компания «Трейдер Инн», <br> Москва</div>
+                    <div class="cert__title">
+                        Компания «Трейдер Инн», <br />
+                        Москва
+                    </div>
                 </div>
                 <div class="swiper-slide cert__item">
                     <div class="cert__img" href="img/cert2.jpg" data-fancybox>
                         <div class="wrap">
-                            <img src="img/cert2.jpg" alt="">
+                            <img src="img/cert2.jpg" alt="" />
                         </div>
                     </div>
                     <div class="cert__divider"></div>
-                    <div class="cert__title">Компания «Трейдер Инн», <br> Москва</div>
+                    <div class="cert__title">
+                        Компания «Трейдер Инн», <br />
+                        Москва
+                    </div>
                 </div>
                 <div class="swiper-slide cert__item">
                     <div class="cert__img" href="img/cert3.jpg" data-fancybox>
                         <div class="wrap">
-                            <img src="img/cert3.jpg" alt="">
+                            <img src="img/cert3.jpg" alt="" />
                         </div>
                     </div>
                     <div class="cert__divider"></div>
-                    <div class="cert__title">Компания «Трейдер Инн», <br> Москва</div>
+                    <div class="cert__title">
+                        Компания «Трейдер Инн», <br />
+                        Москва
+                    </div>
                 </div>
             </div>
         </div>
@@ -2280,51 +3809,51 @@
         <div class="swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <div class="command__item" style="background-image: url(img/p1.jpg);" href="img/p1.jpg"
+                    <div class="command__item" style="background-image: url(img/p1.jpg)" href="img/p1.jpg"
                         data-fancybox></div>
-                    <div class="command__item" style="background-image: url(img/p2.jpg);" href="img/p2.jpg"
-                        data-fancybox></div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="command__item" style="background-image: url(img/p3.jpg);" href="img/p3.jpg"
-                        data-fancybox></div>
-                    <div class="command__item" style="background-image: url(img/p4.jpg);" href="img/p4.jpg"
+                    <div class="command__item" style="background-image: url(img/p2.jpg)" href="img/p2.jpg"
                         data-fancybox></div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="command__item" style="background-image: url(img/p5.jpg);" href="img/p5.jpg"
+                    <div class="command__item" style="background-image: url(img/p3.jpg)" href="img/p3.jpg"
                         data-fancybox></div>
-                    <div class="command__item" style="background-image: url(img/p6.jpg);" href="img/p6.jpg"
-                        data-fancybox></div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="command__item" style="background-image: url(img/p7.jpg);" href="img/p7.jpg"
-                        data-fancybox></div>
-                    <div class="command__item" style="background-image: url(img/p1.jpg);" href="img/p1.jpg"
+                    <div class="command__item" style="background-image: url(img/p4.jpg)" href="img/p4.jpg"
                         data-fancybox></div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="command__item" style="background-image: url(img/p2.jpg);" href="img/p2.jpg"
+                    <div class="command__item" style="background-image: url(img/p5.jpg)" href="img/p5.jpg"
                         data-fancybox></div>
-                    <div class="command__item" style="background-image: url(img/p3.jpg);" href="img/p3.jpg"
-                        data-fancybox></div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="command__item" style="background-image: url(img/p4.jpg);" href="img/p4.jpg"
-                        data-fancybox></div>
-                    <div class="command__item" style="background-image: url(img/p5.jpg);" href="img/p5.jpg"
+                    <div class="command__item" style="background-image: url(img/p6.jpg)" href="img/p6.jpg"
                         data-fancybox></div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="command__item" style="background-image: url(img/p6.jpg);" href="img/p6.jpg"
+                    <div class="command__item" style="background-image: url(img/p7.jpg)" href="img/p7.jpg"
                         data-fancybox></div>
-                    <div class="command__item" style="background-image: url(img/p7.jpg);" href="img/p7.jpg"
+                    <div class="command__item" style="background-image: url(img/p1.jpg)" href="img/p1.jpg"
                         data-fancybox></div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="command__item" style="background-image: url(img/p1.jpg);" href="img/p1.jpg"
+                    <div class="command__item" style="background-image: url(img/p2.jpg)" href="img/p2.jpg"
                         data-fancybox></div>
-                    <div class="command__item" style="background-image: url(img/p2.jpg);" href="img/p2.jpg"
+                    <div class="command__item" style="background-image: url(img/p3.jpg)" href="img/p3.jpg"
+                        data-fancybox></div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="command__item" style="background-image: url(img/p4.jpg)" href="img/p4.jpg"
+                        data-fancybox></div>
+                    <div class="command__item" style="background-image: url(img/p5.jpg)" href="img/p5.jpg"
+                        data-fancybox></div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="command__item" style="background-image: url(img/p6.jpg)" href="img/p6.jpg"
+                        data-fancybox></div>
+                    <div class="command__item" style="background-image: url(img/p7.jpg)" href="img/p7.jpg"
+                        data-fancybox></div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="command__item" style="background-image: url(img/p1.jpg)" href="img/p1.jpg"
+                        data-fancybox></div>
+                    <div class="command__item" style="background-image: url(img/p2.jpg)" href="img/p2.jpg"
                         data-fancybox></div>
                 </div>
             </div>
@@ -2334,8 +3863,10 @@
     <div class="command__wrap">
         <div class="container">
             <div class="command__info">
-                <h2>Работа и жизнь <br>
-                    команды СтройБазар</h2>
+                <h2>
+                    Работа и жизнь <br />
+                    команды СтройБазар
+                </h2>
 
                 <div class="slider__controls">
                     <div class="swiper-button-prev outline">
@@ -2362,20 +3893,26 @@
 
         <div class="questions__item">
             <div class="question">
-                <div>Возможна ли рассрочка на покупку товара и какие условия рассрочки? <br>
-                    С какими банками вы сотрудничаете?</div>
+                <div>
+                    Возможна ли рассрочка на покупку товара и какие условия рассрочки? <br />
+                    С какими банками вы сотрудничаете?
+                </div>
                 <div class="question__icon">
                     <svg class="icon">
                         <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
                     </svg>
                 </div>
             </div>
-            <div class="answer">Доставка в&nbsp;регионы осуществляется только после 100% предоплаты заказа. Минимальная
-                сумма заказа 3&nbsp;000&nbsp;рублей. Товар может быть доставлен в&nbsp;Ваш город с&nbsp;помощью любой
-                транспортной компании (как пример DPD, СДЭК, ПЭК, Деловые линии) имеющей представительство в&nbsp;городе
-                Москва и&nbsp;в&nbsp;Вашем городе (в&nbsp;этом случае&nbsp;Вы производите оплату с&nbsp;учетом доставки
-                по&nbsp;Москве, до&nbsp;офиса транспортной компании в&nbsp;соответствии с&nbsp;тарифами нашей курьерской
-                службы доставки).</div>
+            <div class="answer">
+                Доставка в&nbsp;регионы осуществляется только после 100% предоплаты заказа. Минимальная сумма заказа
+                3&nbsp;000&nbsp;рублей. Товар может быть
+                доставлен в&nbsp;Ваш город с&nbsp;помощью любой транспортной компании (как пример DPD, СДЭК, ПЭК,
+                Деловые линии) имеющей представительство
+                в&nbsp;городе Москва и&nbsp;в&nbsp;Вашем городе (в&nbsp;этом случае&nbsp;Вы производите оплату
+                с&nbsp;учетом доставки по&nbsp;Москве,
+                до&nbsp;офиса транспортной компании в&nbsp;соответствии с&nbsp;тарифами нашей курьерской службы
+                доставки).
+            </div>
         </div>
         <div class="questions__item">
             <div class="question">
@@ -2387,28 +3924,36 @@
                     </svg>
                 </div>
             </div>
-            <div class="answer">Доставка в&nbsp;регионы осуществляется только после 100% предоплаты заказа. Минимальная
-                сумма заказа 3&nbsp;000&nbsp;рублей. Товар может быть доставлен в&nbsp;Ваш город с&nbsp;помощью любой
-                транспортной компании (как пример DPD, СДЭК, ПЭК, Деловые линии) имеющей представительство в&nbsp;городе
-                Москва и&nbsp;в&nbsp;Вашем городе (в&nbsp;этом случае&nbsp;Вы производите оплату с&nbsp;учетом доставки
-                по&nbsp;Москве, до&nbsp;офиса транспортной компании в&nbsp;соответствии с&nbsp;тарифами нашей курьерской
-                службы доставки).</div>
+            <div class="answer">
+                Доставка в&nbsp;регионы осуществляется только после 100% предоплаты заказа. Минимальная сумма заказа
+                3&nbsp;000&nbsp;рублей. Товар может быть
+                доставлен в&nbsp;Ваш город с&nbsp;помощью любой транспортной компании (как пример DPD, СДЭК, ПЭК,
+                Деловые линии) имеющей представительство
+                в&nbsp;городе Москва и&nbsp;в&nbsp;Вашем городе (в&nbsp;этом случае&nbsp;Вы производите оплату
+                с&nbsp;учетом доставки по&nbsp;Москве,
+                до&nbsp;офиса транспортной компании в&nbsp;соответствии с&nbsp;тарифами нашей курьерской службы
+                доставки).
+            </div>
         </div>
         <div class="questions__item">
             <div class="question">
-                <div>Возможна ли рассрочка на покупку товара и какие условия рассрочки? </div>
+                <div>Возможна ли рассрочка на покупку товара и какие условия рассрочки?</div>
                 <div class="question__icon">
                     <svg class="icon">
                         <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
                     </svg>
                 </div>
             </div>
-            <div class="answer">Доставка в&nbsp;регионы осуществляется только после 100% предоплаты заказа. Минимальная
-                сумма заказа 3&nbsp;000&nbsp;рублей. Товар может быть доставлен в&nbsp;Ваш город с&nbsp;помощью любой
-                транспортной компании (как пример DPD, СДЭК, ПЭК, Деловые линии) имеющей представительство в&nbsp;городе
-                Москва и&nbsp;в&nbsp;Вашем городе (в&nbsp;этом случае&nbsp;Вы производите оплату с&nbsp;учетом доставки
-                по&nbsp;Москве, до&nbsp;офиса транспортной компании в&nbsp;соответствии с&nbsp;тарифами нашей курьерской
-                службы доставки).</div>
+            <div class="answer">
+                Доставка в&nbsp;регионы осуществляется только после 100% предоплаты заказа. Минимальная сумма заказа
+                3&nbsp;000&nbsp;рублей. Товар может быть
+                доставлен в&nbsp;Ваш город с&nbsp;помощью любой транспортной компании (как пример DPD, СДЭК, ПЭК,
+                Деловые линии) имеющей представительство
+                в&nbsp;городе Москва и&nbsp;в&nbsp;Вашем городе (в&nbsp;этом случае&nbsp;Вы производите оплату
+                с&nbsp;учетом доставки по&nbsp;Москве,
+                до&nbsp;офиса транспортной компании в&nbsp;соответствии с&nbsp;тарифами нашей курьерской службы
+                доставки).
+            </div>
         </div>
         <div class="questions__item">
             <div class="question">
@@ -2420,28 +3965,36 @@
                     </svg>
                 </div>
             </div>
-            <div class="answer">Доставка в&nbsp;регионы осуществляется только после 100% предоплаты заказа. Минимальная
-                сумма заказа 3&nbsp;000&nbsp;рублей. Товар может быть доставлен в&nbsp;Ваш город с&nbsp;помощью любой
-                транспортной компании (как пример DPD, СДЭК, ПЭК, Деловые линии) имеющей представительство в&nbsp;городе
-                Москва и&nbsp;в&nbsp;Вашем городе (в&nbsp;этом случае&nbsp;Вы производите оплату с&nbsp;учетом доставки
-                по&nbsp;Москве, до&nbsp;офиса транспортной компании в&nbsp;соответствии с&nbsp;тарифами нашей курьерской
-                службы доставки).</div>
+            <div class="answer">
+                Доставка в&nbsp;регионы осуществляется только после 100% предоплаты заказа. Минимальная сумма заказа
+                3&nbsp;000&nbsp;рублей. Товар может быть
+                доставлен в&nbsp;Ваш город с&nbsp;помощью любой транспортной компании (как пример DPD, СДЭК, ПЭК,
+                Деловые линии) имеющей представительство
+                в&nbsp;городе Москва и&nbsp;в&nbsp;Вашем городе (в&nbsp;этом случае&nbsp;Вы производите оплату
+                с&nbsp;учетом доставки по&nbsp;Москве,
+                до&nbsp;офиса транспортной компании в&nbsp;соответствии с&nbsp;тарифами нашей курьерской службы
+                доставки).
+            </div>
         </div>
         <div class="questions__item">
             <div class="question">
-                <div>Возможна ли рассрочка на покупку товара и какие условия рассрочки? </div>
+                <div>Возможна ли рассрочка на покупку товара и какие условия рассрочки?</div>
                 <div class="question__icon">
                     <svg class="icon">
                         <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
                     </svg>
                 </div>
             </div>
-            <div class="answer">Доставка в&nbsp;регионы осуществляется только после 100% предоплаты заказа. Минимальная
-                сумма заказа 3&nbsp;000&nbsp;рублей. Товар может быть доставлен в&nbsp;Ваш город с&nbsp;помощью любой
-                транспортной компании (как пример DPD, СДЭК, ПЭК, Деловые линии) имеющей представительство в&nbsp;городе
-                Москва и&nbsp;в&nbsp;Вашем городе (в&nbsp;этом случае&nbsp;Вы производите оплату с&nbsp;учетом доставки
-                по&nbsp;Москве, до&nbsp;офиса транспортной компании в&nbsp;соответствии с&nbsp;тарифами нашей курьерской
-                службы доставки).</div>
+            <div class="answer">
+                Доставка в&nbsp;регионы осуществляется только после 100% предоплаты заказа. Минимальная сумма заказа
+                3&nbsp;000&nbsp;рублей. Товар может быть
+                доставлен в&nbsp;Ваш город с&nbsp;помощью любой транспортной компании (как пример DPD, СДЭК, ПЭК,
+                Деловые линии) имеющей представительство
+                в&nbsp;городе Москва и&nbsp;в&nbsp;Вашем городе (в&nbsp;этом случае&nbsp;Вы производите оплату
+                с&nbsp;учетом доставки по&nbsp;Москве,
+                до&nbsp;офиса транспортной компании в&nbsp;соответствии с&nbsp;тарифами нашей курьерской службы
+                доставки).
+            </div>
         </div>
     </div>
 </section>
@@ -2469,31 +4022,31 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide brands__item">
                     <div class="brands__img">
-                        <img src="img/dewaly.png" alt="">
+                        <img src="img/dewaly.png" alt="" />
                     </div>
                     <div class="brands__title">Dewalt</div>
                 </div>
                 <div class="swiper-slide brands__item">
                     <div class="brands__img">
-                        <img src="img/hus.png" alt="">
+                        <img src="img/hus.png" alt="" />
                     </div>
                     <div class="brands__title">Husqvarna</div>
                 </div>
                 <div class="swiper-slide brands__item">
                     <div class="brands__img">
-                        <img src="img/hilti.png" alt="">
+                        <img src="img/hilti.png" alt="" />
                     </div>
                     <div class="brands__title">Hilti</div>
                 </div>
                 <div class="swiper-slide brands__item">
                     <div class="brands__img">
-                        <img src="img/bosch.png" alt="">
+                        <img src="img/bosch.png" alt="" />
                     </div>
                     <div class="brands__title">Bosch</div>
                 </div>
                 <div class="swiper-slide brands__item">
                     <div class="brands__img">
-                        <img src="img/markita.png" alt="">
+                        <img src="img/markita.png" alt="" />
                     </div>
                     <div class="brands__title">Makita</div>
                 </div>
@@ -2528,7 +4081,7 @@
         <div class="swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide journal__item">
-                    <img src="img/j1.jpg" alt="">
+                    <img src="img/j1.jpg" alt="" />
 
                     <div class="journal__tags">
                         <span>обзоры</span>
@@ -2536,8 +4089,10 @@
                         <span>статьи</span>
                     </div>
 
-                    <div class="journal__title">Новое поступление линейки дрелей <br>
-                        и перфораторов Makita</div>
+                    <div class="journal__title">
+                        Новое поступление линейки дрелей <br />
+                        и перфораторов Makita
+                    </div>
 
                     <a href="javascript:void(0)" class="journal__link">
                         <svg class="icon">
@@ -2546,7 +4101,7 @@
                     </a>
                 </div>
                 <div class="swiper-slide journal__item">
-                    <img src="img/j2.jpg" alt="">
+                    <img src="img/j2.jpg" alt="" />
 
                     <div class="journal__tags">
                         <span>обзоры</span>
@@ -2562,14 +4117,16 @@
                     </a>
                 </div>
                 <div class="swiper-slide journal__item">
-                    <img src="img/j3.jpg" alt="">
+                    <img src="img/j3.jpg" alt="" />
 
                     <div class="journal__tags">
                         <span>обзоры</span>
                     </div>
 
-                    <div class="journal__title">Новое поступление линейки дрелей <br>
-                        и перфораторов Makita</div>
+                    <div class="journal__title">
+                        Новое поступление линейки дрелей <br />
+                        и перфораторов Makita
+                    </div>
 
                     <a href="javascript:void(0)" class="journal__link">
                         <svg class="icon">
@@ -2606,24 +4163,28 @@
         <div class="swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide youtube__item">
-                    <div class="youtube__img" style="background-image: url(img/video1.png);"
+                    <div class="youtube__img" style="background-image: url(img/video1.png)"
                         href="https://www.youtube.com/watch?v=K0uAIFbuPm8&t=3s" data-fancybox></div>
-                    <div class="youtube__title">Обзор возможностей <br>
-                        электропилы Makita</div>
+                    <div class="youtube__title">
+                        Обзор возможностей <br />
+                        электропилы Makita
+                    </div>
                 </div>
                 <div class="swiper-slide youtube__item">
-                    <div class="youtube__img" style="background-image: url(img/video2.png);"
+                    <div class="youtube__img" style="background-image: url(img/video2.png)"
                         href="https://www.youtube.com/watch?v=K0uAIFbuPm8&t=3s" data-fancybox></div>
                     <div class="youtube__title">Работа наших доставщиков</div>
                 </div>
                 <div class="swiper-slide youtube__item">
-                    <div class="youtube__img" style="background-image: url(img/video3.png);"
+                    <div class="youtube__img" style="background-image: url(img/video3.png)"
                         href="https://www.youtube.com/watch?v=K0uAIFbuPm8&t=3s" data-fancybox></div>
-                    <div class="youtube__title">Обзор возможностей <br>
-                        электропилы Makita</div>
+                    <div class="youtube__title">
+                        Обзор возможностей <br />
+                        электропилы Makita
+                    </div>
                 </div>
                 <div class="swiper-slide youtube__item">
-                    <div class="youtube__img" style="background-image: url(img/video4.png);"
+                    <div class="youtube__img" style="background-image: url(img/video4.png)"
                         href="https://www.youtube.com/watch?v=K0uAIFbuPm8&t=3s" data-fancybox></div>
                     <div class="youtube__title">Обзор дрелей разных марок</div>
                 </div>
@@ -2636,28 +4197,33 @@
 
 <section class="callback bg-gray">
     <div class="container">
-        <h2>Не можете выбрать товар? <br>
+        <h2>
+            Не можете выбрать товар? <br />
             <span class="red">Консультант поможет!</span>
         </h2>
 
-        <div class="callback__text">Заполните форму и отправьте заявку, консультант <br>
-            свяжется с вами в указанное время</div>
+        <div class="callback__text">
+            Заполните форму и отправьте заявку, консультант <br />
+            свяжется с вами в указанное время
+        </div>
 
         <form action="">
             <div class="form-group">
-                <input type="text" placeholder="Имя *">
-                <input type="text" placeholder="Телефон *">
+                <input type="text" placeholder="Имя *" />
+                <input type="text" placeholder="Телефон *" class="phone-mask" />
             </div>
             <div class="form-group">
-                <input type="text" placeholder="E-mail *">
-                <input type="text" placeholder="Время звонка *">
+                <input type="text" placeholder="E-mail *" />
+                <input type="text" placeholder="Время звонка *" />
             </div>
             <textarea placeholder="Сообщение"></textarea>
             <div class="callback__controls">
                 <div class="checkbox">
-                    <input type="checkbox">
-                    <label>Я даю свое согласие на обработку <br> персональных данных и соглашаюсь <br>
-                        с <a href="javascript:void(0)">условиями</a> и <a href="javascript:void(0)">политикой <br>
+                    <input type="checkbox" />
+                    <label>Я даю свое согласие на обработку <br />
+                        персональных данных и соглашаюсь <br />
+                        с <a href="javascript:void(0)">условиями</a> и
+                        <a href="javascript:void(0)">политикой <br />
                             конфиденциальности</a></label>
                 </div>
                 <button class="btn btn-fill">Отправить</button>
@@ -2841,14 +4407,249 @@
     </div>
 </footer>
 
+<div class="backdrop">
+    <div class="modal sale" data-modal="sale">
+        <div class="modal__content">
+            <div class="modal__close"></div>
+            <div class="modal__body">
+                <div class="sale__header">
+                    <img src="img/sale.png" width="241" alt="">
+                    <div>
+                        <div class="sale__title">Снизим цену, если нашли <br>
+                            нужный товар дешевле</div>
+                        <div class="sale__desc">Понравился товар, но&nbsp;нашли в&nbsp;другом магазине подешевле?
+                            Сообщите
+                            нам об&nbsp;этом&nbsp;&mdash; и&nbsp;мы&nbsp;гарантированно<span class="red">*</span> снизим
+                            цену.</div>
+                        <div class="sale__date">акция действует: до 30.08.2021</div>
+                    </div>
+                </div>
+                <div class="sale__body">
+                    <div class="sale__name">Как это работает?</div>
+                    <div class="sale__list custom-scroll">
+                        <div class="sale__item">
+                            <span>1</span>
+                            Выберите товар, кликните на значок «Нашли дешевле» в правом меню карточки.
+                        </div>
+                        <div class="sale__item">
+                            <span>2</span>
+                            Заполните появившуюся форму, укажите свои действительные контакты
+                            и ссылку на товар, который вы нашли в другом магазине.
+
+                        </div>
+                        <div class="sale__item">
+                            <span>3</span>
+                            После проверки информации в заявке для дальнейших действий с вами свяжется наш специалист.
+                        </div>
+                        <div class="sale__item">
+                            <span>1</span>
+                            Выберите товар, кликните на значок «Нашли дешевле» в правом меню карточки.
+                        </div>
+                        <div class="sale__item">
+                            <span>2</span>
+                            Заполните появившуюся форму, укажите свои действительные контакты
+                            и ссылку на товар, который вы нашли в другом магазине.
+
+                        </div>
+                        <div class="sale__item">
+                            <span>3</span>
+                            После проверки информации в заявке для дальнейших действий с вами свяжется наш специалист.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal sale" data-modal="sale-send">
+        <div class="modal__content">
+            <div class="modal__close"></div>
+            <div class="modal__body">
+                <div class="sale__header">
+                    <img src="img/sale.png" width="241" alt="">
+                    <div>
+                        <div class="sale__title">Снизим цену, если нашли <br>
+                            нужный товар дешевле</div>
+                        <div class="sale__desc">Понравился товар, но&nbsp;нашли в&nbsp;другом магазине подешевле?
+                            Сообщите
+                            нам об&nbsp;этом&nbsp;&mdash; и&nbsp;мы&nbsp;гарантированно<span class="red">*</span> снизим
+                            цену.</div>
+                        <div class="sale__date">акция действует: до 30.08.2021</div>
+                    </div>
+                </div>
+                <div class="sale__body">
+                    <form action="" class="sale__form">
+                        <div class="sale__title">Отправить заявку</div>
+                        <div class="sale__desc">Заполните форму и отправьте заявку, мы свяжемся с вами в ближайшее время
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" placeholder="Имя">
+                            <input type="text" placeholder="Телефон *" class="phone-mask">
+                        </div>
+
+                        <div class="sale__controls">
+                            <div class="checkbox">
+                                <input type="checkbox">
+                                <label>Я даю свое согласие на обработку <br> персональных данных и соглашаюсь <br> с <a
+                                        href="javascript:void(0)">условиями</a> и <a href="javascript:void(0)">политикой
+                                        <br>
+                                        конфиденциальности</a></label>
+                            </div>
+                            <button class="btn btn-fill" data-modal="thanks">ОТПРАВИТЬ</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal message" data-modal="thanks">
+        <div class="modal__content">
+            <div class="modal__close"></div>
+            <div class="modal__body">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-letter"></use>
+                </svg>
+
+                <div class="message__title">Спасибо!</div>
+                <div class="message__text">Ваше сообщение отправлено</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal call" data-modal="call">
+        <div class="modal__content">
+            <div class="modal__close"></div>
+            <div class="modal__body">
+                <div class="call__title">Заказать звонок</div>
+                <div class="call__text">Заполните форму и отправьте заявку, <br>
+                    консультант свяжется с вами в ближайшее время</div>
+                <div class="sale__body">
+                    <form action="" class="sale__form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Имя">
+                            <input type="text" placeholder="Телефон *" class="phone-mask">
+                        </div>
+
+                        <div class="sale__controls">
+                            <div class="checkbox">
+                                <input type="checkbox">
+                                <label>Я даю свое согласие на обработку <br> персональных данных и соглашаюсь <br> с <a
+                                        href="javascript:void(0)">условиями</a> и <a href="javascript:void(0)">политикой
+                                        <br>
+                                        конфиденциальности</a></label>
+                            </div>
+                            <button class="btn btn-fill" data-modal="thanks">ОТПРАВИТЬ</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal call" data-modal="order">
+        <div class="modal__content">
+            <div class="modal__close"></div>
+            <div class="modal__body">
+                <div class="call__title">Быстрый заказ</div>
+                <div class="call__text">Заполните форму и отправьте заявку, <br>
+                    консультант свяжется с вами в ближайшее время</div>
+                <div class="sale__body">
+                    <form action="" class="sale__form">
+                        <input type="text" placeholder="ФИО *">
+
+                        <div class="form-group">
+                            <input type="text" placeholder="Телефон *" class="phone-mask">
+                            <input type="text" placeholder="E-mail *">
+                        </div>
+
+                        <textarea placeholder="Комментарий к заказу"></textarea>
+
+                        <div class="sale__controls">
+                            <div class="checkbox">
+                                <input type="checkbox">
+                                <label>Я даю свое согласие на обработку <br> персональных данных и соглашаюсь <br> с <a
+                                        href="javascript:void(0)">условиями</a> и <a href="javascript:void(0)">политикой
+                                        <br>
+                                        конфиденциальности</a></label>
+                            </div>
+                            <button class="btn btn-fill" data-modal="thanks">ОТПРАВИТЬ</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal city" data-modal="city">
+        <div class="modal__content">
+            <div class="modal__close"></div>
+            <div class="modal__body">
+                <div class="city__title">Выбор города</div>
+                <form action="" class="header__search">
+                    <input type="text" placeholder="Введите город">
+                    <button>
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-search"></use>
+                        </svg>
+                    </button>
+                </form>
+
+                <div class="city__list custom-scroll">
+                    <div class="city__col">
+                        <a href="javascript:void(0)">БЕЛГОРОД</a>
+                        <a href="javascript:void(0)">ВЕЛИКИЕ ЛУКИ</a>
+                        <a href="javascript:void(0)">ВЕЛИКИЙ НОВГОРОД</a>
+                        <a href="javascript:void(0)">ВОЛГОГРАД</a>
+                        <a href="javascript:void(0)">ВОРОНЕЖ</a>
+                        <a href="javascript:void(0)">БЕЛГОРОД</a>
+                        <a href="javascript:void(0)">ВЕЛИКИЕ ЛУКИ</a>
+                        <a href="javascript:void(0)">ВЕЛИКИЙ НОВГОРОД</a>
+                        <a href="javascript:void(0)">ВОЛГОГРАД</a>
+                        <a href="javascript:void(0)">ВОРОНЕЖ</a>
+                    </div>
+                    <div class="city__col">
+                        <a href="javascript:void(0)">ЛИПЕЦК</a>
+                        <a href="javascript:void(0)">НАБЕРЕЖНЫЕ ЧЕЛНЫ</a>
+                        <a href="javascript:void(0)">НИЖНИЙ НОВГОРОД</a>
+                        <a href="javascript:void(0)">НИЖНИЙ ТАГИЛ</a>
+                        <a href="javascript:void(0)">ЛИПЕЦК</a>
+                        <a href="javascript:void(0)">НАБЕРЕЖНЫЕ ЧЕЛНЫ</a>
+                        <a href="javascript:void(0)">НИЖНИЙ НОВГОРОД</a>
+                        <a href="javascript:void(0)">НИЖНИЙ ТАГИЛ</a>
+                    </div>
+                    <div class="city__col">
+                        <a href="javascript:void(0)">САРАТОВ</a>
+                        <a href="javascript:void(0)">СОЧИ</a>
+                        <a href="javascript:void(0)">ТАГАНРОГ</a>
+                        <a href="javascript:void(0)">ТОЛЬЯТТИ</a>
+                        <a href="javascript:void(0)">УЛЬЯНОВСК</a>
+                        <a href="javascript:void(0)">УФА</a>
+                        <a href="javascript:void(0)">САРАТОВ</a>
+                        <a href="javascript:void(0)">СОЧИ</a>
+                        <a href="javascript:void(0)">ТАГАНРОГ</a>
+                        <a href="javascript:void(0)">ТОЛЬЯТТИ</a>
+                        <a href="javascript:void(0)">УЛЬЯНОВСК</a>
+                        <a href="javascript:void(0)">УФА</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="scrolltop"><img src="img/icons/arrow-top.svg" alt=""></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>" type="text/javascript"></script>
+<script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+<script src="https://unpkg.com/imask"></script>
 <script src="js/wNumb.min.js"></script>
 <script src="js/nouislider.min.js"></script>
+<script src="js/sticky.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 

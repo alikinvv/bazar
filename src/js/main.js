@@ -1,19 +1,3 @@
-if ($('.menu .active').length > 0) {
-    $('.menu .bar').animate({ left: $('.menu .active').offset().left - $('.container').offset().left, width: $('.menu .active').outerWidth() });
-}
-
-$('body').on('mouseenter', '.menu a', (e) => {
-    $('.menu .bar').animate({ left: $(e.currentTarget).offset().left - $('.container').offset().left, width: $(e.currentTarget).outerWidth() });
-});
-
-$('body').on('mouseleave', '.menu', (e) => {
-    if ($('.menu .active').length > 0) {
-        $('.menu .bar').animate({ left: $('.menu .active').offset().left - $('.container').offset().left, width: $('.menu .active').outerWidth() });
-    } else {
-        $('.menu .bar').animate({ left: 0, width: 0 });
-    }
-});
-
 if ($('.tabs .active').length > 0) {
     $('.tabs .bar').animate({ left: $('.tabs .active').offset().left - $('.container').offset().left, width: $('.tabs .active').outerWidth() });
 }
@@ -71,39 +55,63 @@ let main = new Swiper('.main .swiper', {
 
 let slider1 = new Swiper('.catalog .slider1 .swiper', {
     loop: true,
-    slidesPerView: 5,
+    slidesPerView: 3.3,
     spaceBetween: 25,
     navigation: {
         nextEl: '.slider1 .swiper-button-next',
         prevEl: '.slider1 .swiper-button-prev',
     },
+    breakpoints: {
+        1024: {
+            slidesPerView: 4.3,
+        },
+        1280: {
+            slidesPerView: 5,
+        },
+    },
 });
 
 let slider2 = new Swiper('.catalog .slider2 .swiper', {
     loop: true,
-    slidesPerView: 5,
+    slidesPerView: 3.3,
     spaceBetween: 25,
     navigation: {
         nextEl: '.slider2 .swiper-button-next',
         prevEl: '.slider2 .swiper-button-prev',
     },
+    breakpoints: {
+        1024: {
+            slidesPerView: 4.3,
+        },
+        1280: {
+            slidesPerView: 5,
+        },
+    },
 });
 
 let slider3 = new Swiper('.catalog .slider3 .swiper', {
     loop: true,
-    slidesPerView: 5,
+    slidesPerView: 3.3,
     spaceBetween: 25,
     navigation: {
         nextEl: '.slider3 .swiper-button-next',
         prevEl: '.slider3 .swiper-button-prev',
     },
+    breakpoints: {
+        1024: {
+            slidesPerView: 4.3,
+        },
+        1280: {
+            slidesPerView: 5,
+        },
+    },
 });
 
 let stock = new Swiper('.stock .swiper', {
     loop: true,
-    slidesPerView: 2,
-    spaceBetween: 80,
-    slidesPerGroup: 2,
+    slidesPerView: 1.3,
+    spaceBetween: 20,
+    slidesPerGroup: 1,
     autoplay: {
         delay: 5000,
         disableOnInteraction: false,
@@ -112,11 +120,20 @@ let stock = new Swiper('.stock .swiper', {
         nextEl: '.stock .swiper-button-next',
         prevEl: '.stock .swiper-button-prev',
     },
+    breakpoints: {
+        1024: {
+            slidesPerGroup: 2,
+            slidesPerView: 2.1,
+        },
+        1280: {
+            spaceBetween: 80,
+        },
+    },
 });
 
 let reviewsThree = new Swiper('.reviews.three .swiper', {
     loop: true,
-    slidesPerView: 3,
+    slidesPerView: 1.8,
     spaceBetween: 24,
     autoplay: {
         delay: 5000,
@@ -126,12 +143,20 @@ let reviewsThree = new Swiper('.reviews.three .swiper', {
         nextEl: '.reviews.three .swiper-button-next',
         prevEl: '.reviews.three .swiper-button-prev',
     },
+    breakpoints: {
+        1024: {
+            slidesPerView: 2.8,
+        },
+        1280: {
+            slidesPerView: 3,
+        },
+    },
 });
 
 let reviewsTwo = new Swiper('.reviews.two .swiper', {
     loop: true,
-    slidesPerView: 2,
-    spaceBetween: 84,
+    slidesPerView: 1.8,
+    spaceBetween: 40,
     autoplay: {
         delay: 5000,
         disableOnInteraction: false,
@@ -140,11 +165,17 @@ let reviewsTwo = new Swiper('.reviews.two .swiper', {
         nextEl: '.reviews.two .swiper-button-next',
         prevEl: '.reviews.two .swiper-button-prev',
     },
+    breakpoints: {
+        1280: {
+            slidesPerView: 2,
+            spaceBetween: 84,
+        },
+    },
 });
 
 let platform = new Swiper('.platform .swiper', {
     loop: true,
-    slidesPerView: 4,
+    slidesPerView: 2.8,
     spaceBetween: 24,
     autoplay: {
         delay: 5000,
@@ -154,11 +185,20 @@ let platform = new Swiper('.platform .swiper', {
         nextEl: '.platform .swiper-button-next',
         prevEl: '.platform .swiper-button-prev',
     },
+    breakpoints: {
+        1024: {
+            slidesPerView: 3.8,
+        },
+
+        1280: {
+            slidesPerView: 4,
+        },
+    },
 });
 
 let brands = new Swiper('.brands .swiper', {
     loop: true,
-    slidesPerView: 5,
+    slidesPerView: 3.5,
     autoplay: {
         delay: 5000,
         disableOnInteraction: false,
@@ -167,11 +207,19 @@ let brands = new Swiper('.brands .swiper', {
         nextEl: '.brands .swiper-button-next',
         prevEl: '.brands .swiper-button-prev',
     },
+    breakpoints: {
+        1024: {
+            slidesPerView: 4.5,
+        },
+        1280: {
+            slidesPerView: 5,
+        },
+    },
 });
 
 let journal = new Swiper('.journal .swiper', {
     loop: true,
-    slidesPerView: 3,
+    slidesPerView: 2.5,
     spaceBetween: 24,
     autoplay: {
         delay: 5000,
@@ -181,11 +229,16 @@ let journal = new Swiper('.journal .swiper', {
         nextEl: '.journal .swiper-button-next',
         prevEl: '.journal .swiper-button-prev',
     },
+    breakpoints: {
+        1280: {
+            slidesPerView: 3,
+        },
+    },
 });
 
 let certThree = new Swiper('.cert.three .swiper', {
     loop: true,
-    slidesPerView: 3,
+    slidesPerView: 1.8,
     spaceBetween: 24,
     autoplay: {
         delay: 5000,
@@ -195,11 +248,19 @@ let certThree = new Swiper('.cert.three .swiper', {
         nextEl: '.cert.three .swiper-button-next',
         prevEl: '.cert.three .swiper-button-prev',
     },
+    breakpoints: {
+        1024: {
+            slidesPerView: 2.8,
+        },
+        1280: {
+            slidesPerView: 3,
+        },
+    },
 });
 
-let certFout = new Swiper('.cert.four .swiper', {
+let certFour = new Swiper('.cert.four .swiper', {
     loop: true,
-    slidesPerView: 4,
+    slidesPerView: 2.3,
     spaceBetween: 24,
     autoplay: {
         delay: 5000,
@@ -209,9 +270,17 @@ let certFout = new Swiper('.cert.four .swiper', {
         nextEl: '.cert.four .swiper-button-next',
         prevEl: '.cert.four .swiper-button-prev',
     },
+    breakpoints: {
+        1024: {
+            slidesPerView: 3.3,
+        },
+        1280: {
+            slidesPerView: 4,
+        },
+    },
 });
 
-let command = new Swiper('.command .swiper', {
+let command = new Swiper('.command .swiper:not(.center)', {
     loop: true,
     slidesPerView: 'auto',
     freeMode: true,
@@ -226,9 +295,23 @@ let command = new Swiper('.command .swiper', {
     },
 });
 
+let commandCenter = new Swiper('.command .swiper.center', {
+    loop: true,
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+    },
+    navigation: {
+        nextEl: '.command .swiper-button-next',
+        prevEl: '.command .swiper-button-prev',
+    },
+});
+
 let popular1 = new Swiper('.popular.block1 .swiper', {
     loop: true,
-    slidesPerView: 4,
+    slidesPerView: 2.2,
     spaceBetween: 24,
     autoplay: {
         delay: 5000,
@@ -238,11 +321,19 @@ let popular1 = new Swiper('.popular.block1 .swiper', {
         nextEl: '.popular.block1 .swiper-button-next',
         prevEl: '.popular.block1 .swiper-button-prev',
     },
+    breakpoints: {
+        1024: {
+            slidesPerView: 3.2,
+        },
+        1280: {
+            slidesPerView: 4,
+        },
+    },
 });
 
 let popular2 = new Swiper('.popular.block2 .swiper', {
     loop: true,
-    slidesPerView: 4,
+    slidesPerView: 2.2,
     spaceBetween: 24,
     autoplay: {
         delay: 5000,
@@ -252,11 +343,19 @@ let popular2 = new Swiper('.popular.block2 .swiper', {
         nextEl: '.popular.block2 .swiper-button-next',
         prevEl: '.popular.block2 .swiper-button-prev',
     },
+    breakpoints: {
+        1024: {
+            slidesPerView: 3.2,
+        },
+        1280: {
+            slidesPerView: 4,
+        },
+    },
 });
 
 let popular3 = new Swiper('.popular.block3 .swiper', {
     loop: true,
-    slidesPerView: 4,
+    slidesPerView: 2.2,
     spaceBetween: 24,
     autoplay: {
         delay: 5000,
@@ -266,11 +365,19 @@ let popular3 = new Swiper('.popular.block3 .swiper', {
         nextEl: '.popular.block3 .swiper-button-next',
         prevEl: '.popular.block3 .swiper-button-prev',
     },
+    breakpoints: {
+        1024: {
+            slidesPerView: 3.2,
+        },
+        1280: {
+            slidesPerView: 4,
+        },
+    },
 });
 
 let youtube = new Swiper('.youtube .swiper', {
     loop: true,
-    slidesPerView: 4,
+    slidesPerView: 3.5,
     spaceBetween: 24,
     autoplay: {
         delay: 5000,
@@ -279,6 +386,11 @@ let youtube = new Swiper('.youtube .swiper', {
     navigation: {
         nextEl: '.youtube .swiper-button-next',
         prevEl: '.youtube .swiper-button-prev',
+    },
+    breakpoints: {
+        1280: {
+            slidesPerView: 4,
+        },
     },
 });
 
@@ -506,14 +618,16 @@ if ($('#yandex').length > 0) {
 
 $('body').on('click', '.question', (e) => {
     $(e.currentTarget).toggleClass('active');
-    $(e.currentTarget).next().slideToggle();
+    $(e.currentTarget).next().slideToggle(300);
 });
 
 $('body').on('click', '.item__controls a', (e) => {
     $(e.currentTarget).toggleClass('active');
 });
 
-$('.scrolltop').css('left', $('.container').offset().left + $('.container').outerWidth() + 63);
+if ($(window).width() >= 1280) {
+    $('.scrolltop').css('left', $('.container').offset().left + $('.container').outerWidth() + 63);
+}
 
 $('body').on('click', '.scrolltop', (e) => {
     $('html, body').stop().animate({ scrollTop: 0 }, 500, 'swing');
@@ -521,7 +635,7 @@ $('body').on('click', '.scrolltop', (e) => {
 
 $('body').on('click', '.sidebar__toggle', (e) => {
     $(e.currentTarget).toggleClass('active');
-    $(e.currentTarget).next().slideToggle();
+    $(e.currentTarget).next().slideToggle(300);
 });
 
 $('body').on('click', '.sidebar__more:not(.active)', (e) => {
@@ -579,4 +693,201 @@ $('body').on('click', '.reviews__more:not(.active)', (e) => {
 $('body').on('click', '.reviews__more.active', (e) => {
     $(e.currentTarget).next().slideToggle(300);
     $(e.currentTarget).toggleClass('active').text('Показать ответ');
+});
+
+$('body').on('click', '.faq__toggle', (e) => {
+    $(e.currentTarget).closest('.faq__item').find('.faq__form').slideToggle(300);
+    $(e.currentTarget).toggleClass('active');
+});
+
+$('body').on('click', '.faq__show:not(.active)', (e) => {
+    $(e.currentTarget).closest('.faq__item').find('.faq__dropdown').slideToggle(300);
+    $(e.currentTarget).toggleClass('active').text('Скрыть ответы (2)');
+});
+
+$('body').on('click', '.faq__show.active', (e) => {
+    $(e.currentTarget).closest('.faq__item').find('.faq__dropdown').slideToggle(300);
+    $(e.currentTarget).toggleClass('active').text('Смотреть ответы (2)');
+});
+
+$('body').on('click', '.delivery__current', (e) => {
+    $(e.currentTarget).parent().find('.delivery__dropdown').toggleClass('active');
+    $(e.currentTarget).toggleClass('active');
+});
+
+$('body').on('click', '.company__item', (e) => {
+    console.log($(e.currentTarget).find('input').is('checked'));
+
+    if ($(e.currentTarget).find('input').is(':checked')) {
+        $('.company__item').removeClass('active');
+        $(e.currentTarget).addClass('active');
+    } else {
+        $(e.currentTarget).removeClass('active');
+    }
+});
+
+if ($('.order__sidebar').length > 0) {
+    let sticky = new Sticky('.order__sidebar', {
+        marginTop: 0,
+    });
+}
+
+let header = new Sticky('.header', {
+    marginTop: 0,
+    stickyClass: 'fixed',
+});
+
+// show modal
+$('body').on('click', '[data-modal]:not(.modal)', (e) => {
+    if (!$('.backdrop').hasClass('active')) $('.backdrop').addClass('active');
+    $('.modal.active').removeClass('active');
+    $(`.modal[data-modal="${$(e.currentTarget).attr('data-modal')}"]`).addClass('active');
+
+    if ($(e.currentTarget).attr('data-modal') === 'thanks') {
+        setTimeout(() => {
+            $('.modal.active').find('svg').addClass('animate');
+        }, 100);
+    }
+});
+
+// close modal events
+let closeModal = () => {
+    $('.backdrop').removeClass('active');
+    $('.modal').removeClass('active');
+    $('.modal').find('svg').removeClass('animate');
+};
+
+$('body').on('click', '.modal__close, .modal .close', closeModal);
+
+$('body').on('click', '.backdrop', (e) => {
+    if ($(e.target)[0].className === 'backdrop active') closeModal();
+});
+
+// close modal on press ESC
+$(document).keyup((e) => {
+    if (e.keyCode === 27 && $('.backdrop').hasClass('active')) closeModal();
+});
+
+$('body').on('submit', 'form', (e) => {
+    e.preventDefault();
+});
+
+// Custom scroll
+document.querySelectorAll('.custom-scroll').forEach((el) => {
+    new SimpleBar(el);
+});
+
+let masks = document.querySelectorAll('.phone-mask');
+
+masks.forEach((el) => {
+    IMask(el, { mask: '+{7} (000) 000 00 00' });
+});
+
+if ($(window).width() >= 1280) {
+    $('body').on('mouseenter', '.top__more', (e) => {
+        $(e.currentTarget).addClass('active');
+        $('.top__dropdown').addClass('active');
+    });
+
+    $('body').on('mouseleave', '.top', (e) => {
+        $('.top__more').removeClass('active');
+        $('.top__dropdown').removeClass('active');
+    });
+}
+
+if ($(window).width() < 1280) {
+    $('body').on('click', '.top__more', (e) => {
+        $(e.currentTarget).toggleClass('active');
+        $('.top__dropdown').toggleClass('active');
+    });
+}
+
+$('body').on('click', '.dropdown__link', (e) => {
+    $(e.currentTarget).toggleClass('active');
+    $(e.currentTarget).next().slideToggle(300);
+});
+
+$('body').on('click', '.dropdown__menu a', (e) => {
+    if ($(window).width() >= 1023) {
+        $('.dropdown__menu a').removeClass('active');
+        $(e.currentTarget).toggleClass('active');
+        $('.dropdown__page').removeClass('active');
+        $(`.dropdown__page[data-page="${$(e.currentTarget).attr('data-page')}"]`).addClass('active');
+    } else {
+        $('.dropdown__page').removeClass('active');
+        $('.dropdown__menu').hide();
+        $('.dropdown__page').removeClass('active');
+        $('.dropdown__back').addClass('active');
+        $(`.dropdown__page[data-page="${$(e.currentTarget).attr('data-page')}"]`).addClass('active');
+    }
+});
+
+$('body').on('click', '.dropdown__back', (e) => {
+    $('.dropdown__page').removeClass('active');
+    $('.dropdown__menu').show();
+    $('.dropdown__page').removeClass('active');
+    $('.dropdown__back').removeClass('active');
+});
+
+$('body').on('click', '.header__catalog:not(.active)', (e) => {
+    $(e.currentTarget).toggleClass('active').html('<svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-close"></use></svg> Каталог');
+    $('.header .dropdown').toggleClass('active');
+});
+
+$('body').on('click', '.header__catalog.active', (e) => {
+    $(e.currentTarget).toggleClass('active').html('<svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-menu"></use></svg> Каталог');
+    $('.header .dropdown').toggleClass('active');
+});
+
+$('body').on('click', '.dropdown__close', (e) => {
+    $('.header__catalog').removeClass('active').html('<svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-menu"></use></svg> Каталог');
+    $('.header .dropdown').removeClass('active');
+});
+
+if ($(window).width() >= 1280) {
+    $('body').on('mouseenter', '.top__menu > *', (e) => {
+        $('.top__menu-dropdown').removeClass('active');
+        $(e.currentTarget).find('.top__menu-dropdown').addClass('active');
+    });
+
+    $('body').on('mouseleave', '.top', (e) => {
+        $('.top__menu-dropdown').removeClass('active');
+    });
+}
+
+if ($(window).width() < 1280) {
+    $('body').on('click', '.top__menu > *', (e) => {
+        $(e.currentTarget).find('.top__menu-dropdown').toggleClass('active');
+    });
+}
+
+$('body').on('mouseenter', '.menu .container > *', (e) => {
+    $('.menu .dropdown').removeClass('active');
+    $(e.currentTarget).find('.dropdown').addClass('active');
+});
+
+$('body').on('mouseleave', '.menu', (e) => {
+    $('.menu .dropdown').removeClass('active');
+});
+
+if ($('.menu .container > .active').length > 0) {
+    $('.menu .bar').animate({
+        left: $('.menu .container > .active').offset().left - $('.container').offset().left,
+        width: $('.menu .container > .active').outerWidth(),
+    });
+}
+
+$('body').on('mouseenter', '.menu .container > *', (e) => {
+    $('.menu .bar').animate({ left: $(e.currentTarget).offset().left - $('.container').offset().left, width: $(e.currentTarget).outerWidth() });
+});
+
+$('body').on('mouseleave', '.menu', (e) => {
+    if ($('.menu .container > .active').length > 0) {
+        $('.menu .bar').animate({
+            left: $('.menu .container > .active').offset().left - $('.container').offset().left,
+            width: $('.menu .container > .active').outerWidth(),
+        });
+    } else {
+        $('.menu .bar').animate({ left: 0, width: 0 });
+    }
 });

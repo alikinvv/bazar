@@ -1,0 +1,393 @@
+//= template/header.html
+<!-- START CONTENT  -->
+
+<section class="breadcrumbs">
+    <div class="container">
+        <a href="javascript:void(0)">Главная</a>
+        <a href="javascript:void(0)">Оформление заказа</a>
+    </div>
+</section>
+
+<section class="order" data-sticky-container>
+    <div class="container">
+        <div class="order__wrap">
+            <form class="order__main">
+                <h3>Оформление заказа</h3>
+
+                <div class="order__auth">
+                    <a href="javascript:void(0)" class="order__registration">Есть регистрация?</a>
+                    <a href="javascript:void(0)" class="order__login">Автризуйтесь</a>
+                </div>
+
+                <div class="login">
+                    <div class="form-group">
+                        <div class="order__group">
+                            <label>Логин <span class="red">*</span></label>
+                            <input type="text" />
+                        </div>
+                        <div class="order__group">
+                            <label>Пароль <span class="red">*</span></label>
+                            <input type="password" value="123456" />
+                        </div>
+                    </div>
+                    <div class="login__bottom">
+                        <div>
+                            <a href="javascript:void(0)">Не можете войти?</a>
+                            <a href="javascript:void(0)">Регистрация</a>
+                        </div>
+                        <div>
+                            <a href="javascript:void(0)" class="btn">Войти</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order__item">
+                    <h4>Контактные данные</h4>
+                    <div class="order__group">
+                        <label>ФИО <span class="red">*</span></label>
+                        <input type="text" value="Иванов Сергей Иванович" />
+                    </div>
+
+                    <div class="form-group">
+                        <div class="order__group">
+                            <label>E-mail <span class="red">*</span></label>
+                            <input type="text" />
+                        </div>
+                        <div class="order__group">
+                            <label>Телефон <span class="red">*</span></label>
+                            <input type="text" class="phone-mask" />
+                        </div>
+                    </div>
+
+                    <div class="checkbox">
+                        <input type="checkbox" />
+                        <label for="">Я представитель юридического лица / ИП</label>
+                    </div>
+
+                    <div class="order__group">
+                        <label>Название организации / ИП <span class="red">*</span></label>
+                        <input type="text" />
+                    </div>
+
+                    <div class="order__group">
+                        <label>Юридический адрес <span class="red">*</span></label>
+                        <input type="text" />
+                    </div>
+
+                    <div class="form-group">
+                        <div class="order__group">
+                            <label>ИНН</label>
+                            <input class="num" type="text" />
+                        </div>
+                        <div class="order__group">
+                            <label>КПП <span class="gray">(если есть)</span></label>
+                            <input class="num" type="text" />
+                        </div>
+                    </div>
+
+                    <h4>Способ доставки</h4>
+
+                    <div class="delivery">
+                        <div class="delivery__top">
+                            <div class="radio red">
+                                <input type="radio" checked name="rad" id="r1" />
+                                <label for="r1">Самовывоз</label>
+                            </div>
+                            <div class="delivery__price">Бесплатно</div>
+                        </div>
+                        <div class="delivery__desc">Вы можете самостоятельно забрать заказ из нашего магазина.</div>
+                        <div class="delivery__title">Выбор магазина <span class="red">*</span></div>
+                        <div class="delivery__list">
+                            <div class="delivery__current">
+                                <div class="delivery__item">
+                                    <div class="delivery__addr">
+                                        <svg class="icon">
+                                            <use xlink:href="img/symbol-defs.svg#icon-marker"></use>
+                                        </svg>
+                                        г. Москва, Рязанский пр-т, 2 корпус 3 ТК Город, <span class="pink">м. Нижегородская</span>
+                                    </div>
+                                    <div class="delivery__time">
+                                        <div>
+                                            <svg class="icon">
+                                                <use xlink:href="img/symbol-defs.svg#icon-time"></use>
+                                            </svg>
+                                            пн-вс 10:00 – 20:00
+                                        </div>
+                                        <a href="tel:+79258280831">
+                                            <svg class="icon">
+                                                <use xlink:href="img/symbol-defs.svg#icon-phone"></use>
+                                            </svg>
+                                            +7 (925) 828-08-31
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="delivery__dropdown">
+                                <div class="delivery__item">
+                                    <div class="delivery__addr">
+                                        <svg class="icon">
+                                            <use xlink:href="img/symbol-defs.svg#icon-marker"></use>
+                                        </svg>
+                                        г. Москва, Рязанский пр-т, 2 корпус 3 ТК Город, <span class="blue">м. Нижегородская</span>
+                                    </div>
+                                    <div class="delivery__time">
+                                        <div>
+                                            <svg class="icon">
+                                                <use xlink:href="img/symbol-defs.svg#icon-time"></use>
+                                            </svg>
+                                            пн-вс 10:00 – 20:00
+                                        </div>
+                                        <a href="tel:+79258280831">
+                                            <svg class="icon">
+                                                <use xlink:href="img/symbol-defs.svg#icon-phone"></use>
+                                            </svg>
+                                            +7 (925) 828-08-31
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="delivery__item">
+                                    <div class="delivery__addr">
+                                        <svg class="icon">
+                                            <use xlink:href="img/symbol-defs.svg#icon-marker"></use>
+                                        </svg>
+                                        г. Москва, Рязанский пр-т, 2 корпус 3 ТК Город, <span class="red">м. Нижегородская</span>
+                                    </div>
+                                    <div class="delivery__time">
+                                        <div>
+                                            <svg class="icon">
+                                                <use xlink:href="img/symbol-defs.svg#icon-time"></use>
+                                            </svg>
+                                            пн-вс 10:00 – 20:00
+                                        </div>
+                                        <a href="tel:+79258280831">
+                                            <svg class="icon">
+                                                <use xlink:href="img/symbol-defs.svg#icon-phone"></use>
+                                            </svg>
+                                            +7 (925) 828-08-31
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="delivery">
+                        <div class="delivery__top">
+                            <div class="radio red">
+                                <input type="radio" name="rad" id="r2" />
+                                <label for="r2">Курьером</label>
+                            </div>
+                            <div class="delivery__price">290 руб.</div>
+                        </div>
+                        <div class="delivery__desc">
+                            Доставка осуществляется в течение дня в удобное для вас время. Товар стоимостью менее 5 000 рублей, но более 1 500 рублей
+                            доставляется за 290 рублей.
+                        </div>
+                        <div class="delivery__title"><span class="red"></span></div>
+
+                        <div class="form-group">
+                            <div class="order__group">
+                                <label>Город / населенный пункт <span class="red">*</span></label>
+                                <input class="num" type="text" />
+                            </div>
+                            <div class="order__group">
+                                <label>Улица <span class="red">*</span></label>
+                                <input class="num" type="text" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <div class="order__group">
+                                    <label>Дом <span class="red">*</span></label>
+                                    <input class="num" type="text" />
+                                </div>
+                                <div class="order__group">
+                                    <label>Корп. / Стр.</label>
+                                    <input class="num" type="text" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="order__group">
+                                    <label>Квартира</label>
+                                    <input class="num" type="text" />
+                                </div>
+                                <div class="order__group">
+                                    <label>Индекс *</label>
+                                    <input class="num" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order__group">
+                            <label>Комментарий к заказу</label>
+                            <textarea></textarea>
+                        </div>
+                    </div>
+
+                    <div class="delivery">
+                        <div class="delivery__top">
+                            <div class="radio red">
+                                <input type="radio" name="rad" id="r3" />
+                                <label for="r3">Доставка до транспортной компании</label>
+                            </div>
+                            <div class="delivery__price">Бесплатно</div>
+                        </div>
+                        <div class="delivery__desc">
+                            Доставка в регионы складывается из двух сумм: доставка до транспортной компании (Бесплатно) + услуги транспортной компании. Вам
+                            нужно выбрать любую удобную вам ТК и уточнить ее тарифы. Товар стоимостью менее 1 500 рублей забирается на условиях самовывоза.
+                        </div>
+                        <div class="delivery__title"><span class="red"></span></div>
+
+                        <div class="form-group">
+                            <div class="order__group">
+                                <label>Город / населенный пункт <span class="red">*</span></label>
+                                <input class="num" type="text" />
+                            </div>
+                            <div class="order__group">
+                                <label>Улица <span class="red">*</span></label>
+                                <input class="num" type="text" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <div class="order__group">
+                                    <label>Дом <span class="red">*</span></label>
+                                    <input class="num" type="text" />
+                                </div>
+                                <div class="order__group">
+                                    <label>Корп. / Стр.</label>
+                                    <input class="num" type="text" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="order__group">
+                                    <label>Квартира</label>
+                                    <input class="num" type="text" />
+                                </div>
+                                <div class="order__group">
+                                    <label>Индекс *</label>
+                                    <input class="num" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order__group">
+                            <label>Комментарий к заказу</label>
+                            <textarea></textarea>
+                        </div>
+
+                        <div class="copmany">
+                            <div class="company__title">Выберите транспортную компанию</div>
+
+                            <div class="company__row">
+                                <div>Способ доставки</div>
+                                <div>Стоимость доставки</div>
+                                <div>Срок доставки</div>
+                            </div>
+                            <div class="company__item">
+                                <div class="radio red">
+                                    <input type="radio" name="com" id="com1" />
+                                    <label for="com1">Почта России</label>
+                                </div>
+                                <div class="company__price">1700 руб.</div>
+                                <div class="company__date">Уточним при подтверждении заказа</div>
+                            </div>
+                            <div class="company__item active">
+                                <div class="radio red">
+                                    <input type="radio" checked name="com" id="com2" />
+                                    <label for="com2"
+                                        >CDEK <br />
+                                        Курьерская доставка</label
+                                    >
+                                </div>
+                                <div class="company__price">1700 руб.</div>
+                                <div class="company__date">10 дней</div>
+                            </div>
+                            <div class="company__item">
+                                <div class="radio red">
+                                    <input type="radio" name="com" id="com3" />
+                                    <label for="com3"
+                                        >Деловые Линии <br />
+                                        Курьерская доставка</label
+                                    >
+                                </div>
+                                <div class="company__price">1700 руб.</div>
+                                <div class="company__date">1 день</div>
+                            </div>
+
+                            <div class="company__info">
+                                <svg class="icon">
+                                    <use xlink:href="img/symbol-defs.svg#icon-info"></use>
+                                </svg>
+                                Стоимость доставки может быть изменена в&nbsp;случае смены расценок транспортных компаний или при заказе дополнительных услуг
+                                (страховка, упаковка и&nbsp;др.) У&nbsp;некоторых транспортных компаний доставка оплачивается частично при получении товара.
+                                Подробнорсти сообщит менеджер.
+                            </div>
+                        </div>
+
+                        <div class="pay">
+                            <h4>Способы оплаты</h4>
+
+                            <div class="radio red">
+                                <input type="radio" name="pay" id="pay1" />
+                                <label for="pay1"
+                                    >Наличные или банковские карты при получении заказа <img src="img/visa.png" alt="" /> <img src="img/master.png" alt="" />
+                                    <img src="img/mir.png" alt=""
+                                /></label>
+                            </div>
+                            <div class="radio red">
+                                <input type="radio" name="pay" id="pay2" />
+                                <label for="pay2">Банковская карта при оформлении заказа на сайте</label>
+                            </div>
+                            <div class="radio red">
+                                <input type="radio" name="pay" id="pay3" />
+                                <label for="pay3">Безналичная оплата для юр. лиц и ИП</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="order__sidebar">
+                <div class="cart__information">
+                    <div class="cart__title">Ваш заказ</div>
+                    <div class="cart__list">
+                        <div><span>Товаров (3 шт.)</span><span>228 000 руб.</span></div>
+                        <div><span>Скидка</span><span>- 3 200 руб.</span></div>
+                        <div><span>Доставка</span><span>8 200 руб.</span></div>
+                        <div class="big"><span>Итого</span><span>233 000 руб.</span></div>
+                    </div>
+                    <form action="" class="cart__form">
+                        <div class="cart__form-label">Промокод:</div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Промокод" value="PROMO75" />
+                            <button>Удалить</button>
+                        </div>
+                        <div class="cart__info">
+                            <div><span>PROMOKOD:</span> <strong>скидка 10%</strong></div>
+                            <div><span>Количество позиций со скидкой:</span> <strong>5</strong></div>
+                        </div>
+                        <div class="order__controls">
+                            <div class="checkbox">
+                                <input type="checkbox" />
+                                <label
+                                    >Я даю свое согласие на обработку <br />
+                                    персональных данных и соглашаюсь <br />
+                                    с <a href="javascript:void(0)">условиями</a> и
+                                    <a href="javascript:void(0)"
+                                        >политикой <br />
+                                        конфиденциальности</a
+                                    ></label
+                                >
+                            </div>
+
+                            <button class="btn btn-fill">ПОДТВЕРДИТЬ ЗАКАЗ</button>
+                            <button class="btn" data-modal="order">БЫСТРЫЙ ЗАКАЗ</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- END CONTENT  -->
+//= template/footer.html
