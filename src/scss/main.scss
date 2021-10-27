@@ -90,11 +90,8 @@ input[type='text'] {
 }
 
 input[type='checkbox'] {
-    @include r(767) {
-        appearance: none;
-        -webkit-appearance: none;
-    }
-
+    appearance: none;
+    -webkit-appearance: none;
     width: 30px;
     height: 30px;
     border-radius: 5px;
