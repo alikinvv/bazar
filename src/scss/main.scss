@@ -92,6 +92,7 @@ input[type='text'] {
 input[type='checkbox'] {
     @include r(767) {
         appearance: none;
+        -webkit-appearance: none;
     }
 
     width: 30px;
