@@ -90,6 +90,10 @@ input[type='text'] {
 }
 
 input[type='checkbox'] {
+    @include r(767) {
+        appearance: none;
+    }
+
     width: 30px;
     height: 30px;
     border-radius: 5px;
@@ -172,7 +176,7 @@ input[type='radio'] {
 
 textarea {
     @include r(767) {
-        height: 100px;    
+        height: 100px;
     }
 
     width: 100%;
