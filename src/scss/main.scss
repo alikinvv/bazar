@@ -22,9 +22,16 @@ $trans: all 0.2s ease-in-out;
     color: #fff;
 }
 
+html,
+body {
+    &.overflow {
+        overflow: hidden;
+    }
+}
+
 body {
     @include r(767) {
-        font-size: 14px;    
+        font-size: 14px;
     }
 
     font-size: 16px;
@@ -92,6 +99,7 @@ input[type='checkbox'] {
     cursor: pointer;
     transition: none;
     padding: 0 !important;
+    flex-shrink: 0;
 
     &:checked {
         background: url(../img/icons/check.svg) no-repeat center #fff;
@@ -184,8 +192,8 @@ h2 {
     }
 
     @include r(767) {
-        font-size: 30px;  
-        text-align: center; 
+        font-size: 30px;
+        text-align: center;
     }
 
     font-weight: 400;
@@ -200,7 +208,7 @@ h3 {
     }
 
     @include r(767) {
-     font-size: 25px;   
+        font-size: 25px;
     }
 
     font-weight: 500;
@@ -213,7 +221,7 @@ h4 {
     }
 
     @include r(767) {
-     font-size: 22px;   
+        font-size: 22px;
     }
 
     font-size: 30px;
@@ -226,7 +234,7 @@ h5 {
     }
 
     @include r(767) {
-     font-size: 18px;   
+        font-size: 18px;
     }
 
     font-weight: 500;
@@ -256,7 +264,7 @@ h5 {
 
 .btn {
     @include r(767) {
-        font-size: 16px;    
+        font-size: 16px;
         padding: 10px 30px;
     }
 
@@ -389,7 +397,7 @@ h5 {
         }
 
         @include r(767) {
-            @include fcs;   
+            @include fcs;
         }
 
         @include fcsb;
@@ -397,8 +405,62 @@ h5 {
         padding: 11px 0;
     }
 
+    .header__logo {
+        @include r(767) {
+            display: block;
+        }
+
+        display: none;
+    }
+
+    &__divider {
+        @include r(1023) {
+            display: none !important;
+        }
+    }
+
     &__menu {
         @include fcn;
+
+        &.active {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            z-index: 20;
+            @include fcc;
+            flex-direction: column;
+
+            & > div,
+            & > a {
+                display: block;
+                font-size: 25px;
+                margin: 10px 0;
+            }
+
+            .parent {
+                @include fcc;
+            }
+
+            .top__menu-dropdown {
+                display: none;
+                box-shadow: none;
+                position: static;
+                transform: none;
+                text-align: center;
+                border: 0;
+
+                a {
+                    border: 0;
+                }
+
+                &.active {
+                    display: block;
+                }
+            }
+        }
 
         & > div,
         & > a {
@@ -408,6 +470,7 @@ h5 {
 
             @include r(1023) {
                 display: none;
+                transition: none !important;
             }
 
             font-size: 15px;
@@ -499,9 +562,9 @@ h5 {
 
     &__phone {
         @include r(767) {
-            margin-left: auto;    
+            margin-left: auto;
         }
-        
+
         @include fcn;
 
         a {
@@ -513,7 +576,7 @@ h5 {
                 background-size: contain;
 
                 &:hover {
-                    color: transparent; 
+                    color: transparent;
                 }
             }
 
@@ -528,7 +591,7 @@ h5 {
 
             &:first-child {
                 @include r(767) {
-                    display: none;   
+                    display: none;
                 }
 
                 margin-left: 0;
@@ -640,6 +703,85 @@ h5 {
     }
 }
 
+.hamburger {
+    @include r(1023) {
+        flex-shrink: 0;
+        width: 53px;
+        height: 53px;
+        display: block;
+        @include fcc;
+    }
+
+    width: 38px;
+    height: 28px;
+    position: relative;
+    cursor: pointer;
+    display: none;
+    z-index: 21;
+    margin-right: -11px;
+    margin-left: 10px;
+
+    &.active,
+    &.active:hover {
+        span {
+            background: transparent;
+
+            &::before {
+                top: 0;
+                transform: rotate(45deg);
+                transition: top 0.2s ease-in-out, transform 0.2s ease-in-out 0.2s;
+            }
+
+            &::after {
+                bottom: 0;
+                transform: rotate(-45deg);
+                transition: bottom 0.2s ease-in-out, transform 0.2s ease-in-out 0.2s;
+            }
+        }
+    }
+
+    &:hover span {
+        &::before {
+            top: -10px;
+        }
+
+        &::after {
+            bottom: -10px;
+        }
+    }
+
+    span {
+        width: 30px;
+        height: 3px;
+        background: $text;
+        position: absolute;
+        top: 24px;
+        transition: background 0.2s ease-in-out 0.1s;
+        pointer-events: none;
+        user-select: none;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 3px;
+            background: $text;
+            left: 0;
+        }
+
+        &::before {
+            top: -10px;
+            transition: top 0.2s ease-in-out 0.2s, transform 0.2s ease-in-out;
+        }
+
+        &::after {
+            bottom: -10px;
+            transition: bottom 0.2s ease-in-out 0.2s, transform 0.2s ease-in-out;
+        }
+    }
+}
+
 .header {
     background: #fff;
     z-index: 20;
@@ -657,6 +799,10 @@ h5 {
             padding: 11px 15px;
         }
 
+        @include r(767) {
+            padding: 7px 15px;
+        }
+
         @include fcsb;
         border-bottom: 1px solid #ededed;
         padding: 16px 0;
@@ -665,7 +811,8 @@ h5 {
 
     &__logo {
         @include r(767) {
-            width: 125px;   
+            width: 125px;
+            display: none;
         }
 
         width: 252px;
@@ -687,9 +834,9 @@ h5 {
         }
 
         @include r(767) {
-             width: auto;
-             padding: 13px 13px;
-             font-size: 12px;
+            width: auto;
+            padding: 13px 13px;
+            font-size: 12px;
         }
 
         border-radius: 5px;
@@ -700,6 +847,10 @@ h5 {
         letter-spacing: 0.08em;
 
         .icon {
+            @include r(374) {
+                display: none;
+            }
+
             font-size: 16px;
             flex-shrink: 0;
         }
@@ -745,6 +896,10 @@ h5 {
         a {
             @include r(1023) {
                 margin: 0 10px;
+            }
+
+            @include r(374) {
+                margin: 0 5px;
             }
 
             font-size: 13px;
@@ -821,10 +976,6 @@ h5 {
 
         padding: 19px 52px;
     }
-}
-
-.hamburger {
-    display: none;
 }
 
 .dropdown {
@@ -949,7 +1100,7 @@ h5 {
     &__menu {
         @include r(1023) {
             width: 100%;
-            max-height: 100%;
+            max-height: 80%;
             height: 100%;
             border: 0;
         }
@@ -1045,6 +1196,10 @@ h5 {
         @include r(1023) {
             width: 48%;
             margin: 0;
+        }
+
+        @include r(767) {
+            width: 100%;
         }
 
         @include flexitem(50%, 30px);
@@ -1392,7 +1547,7 @@ h5 {
 
     .container {
         @include r(767) {
-            flex-direction: column;    
+            flex-direction: column;
         }
 
         @include fcsb;
@@ -1416,8 +1571,8 @@ h5 {
         img {
             @include r(767) {
                 max-width: 100%;
-                transform: none;  
-                margin-bottom: 20px;  
+                transform: none;
+                margin-bottom: 20px;
             }
 
             transform: translateX(20%);
@@ -1434,7 +1589,7 @@ h5 {
         }
 
         @include r(767) {
-         order: 2;   
+            order: 2;
         }
 
         transform: translateX(-20%);
@@ -1462,6 +1617,12 @@ h5 {
         @include r(1023) {
             font-size: 16px;
             margin-bottom: 20px;
+        }
+
+        @include r(767) {
+            br {
+                display: none;
+            }
         }
 
         font-size: 18px;
@@ -1499,7 +1660,7 @@ h5 {
 
             img {
                 width: 33.3%;
-            }    
+            }
         }
 
         @include fcn;
@@ -1614,7 +1775,7 @@ h5 {
 
     &__more {
         @include r(767) {
-            margin-top: 30px;    
+            margin-top: 30px;
         }
 
         margin-top: 61px;
@@ -1645,7 +1806,7 @@ h5 {
 
     h2 {
         @include r(767) {
-         text-align: left;   
+            text-align: left;
         }
     }
 
@@ -1673,7 +1834,7 @@ h5 {
         }
 
         @include r(767) {
-            font-size: 16px;   
+            font-size: 16px;
         }
 
         font-size: 19px;
@@ -1699,7 +1860,7 @@ h5 {
         }
 
         @include r(767) {
-            width: 50px;   
+            width: 50px;
         }
 
         width: 82px;
@@ -1715,7 +1876,7 @@ h5 {
 .slider {
     &__header {
         @include r(767) {
-            @include fcc;    
+            @include fcc;
         }
 
         @include fcsb;
@@ -1729,6 +1890,11 @@ h5 {
     }
 
     &__desc {
+        @include r(767) {
+            font-size: 18px;
+            margin-bottom: 29px;
+        }
+
         font-size: 23px;
         font-weight: 500;
         margin-bottom: 49px;
@@ -1759,8 +1925,8 @@ h5 {
 
     &__item {
         @include r(767) {
-            padding: 25px 20px;  
-            height: 230px;  
+            padding: 25px 20px;
+            height: 230px;
         }
 
         height: 292px;
@@ -1774,7 +1940,7 @@ h5 {
 
         img {
             @include r(767) {
-                display: none;    
+                display: none;
             }
 
             position: absolute;
@@ -1797,7 +1963,7 @@ h5 {
     &__title {
         @include r(767) {
             font-size: 18px;
-            
+
             br {
                 display: none;
             }
@@ -1873,6 +2039,10 @@ h5 {
     border: 1px solid #f0f0f0;
 
     &__img {
+        @include r(1279) {
+            background-size: 40%;
+        }
+
         height: 167px;
         background-size: 60%;
         background-repeat: no-repeat;
@@ -1890,9 +2060,9 @@ h5 {
 
         span {
             @include r(767) {
-                font-size: 12px; 
+                font-size: 12px;
             }
-            
+
             font-size: 14px;
             display: inline-block;
             margin-bottom: 7px;
@@ -1952,7 +2122,7 @@ h5 {
     &__title {
         @include r(767) {
             font-size: 15px;
-            
+
             br {
                 display: none;
             }
@@ -1966,7 +2136,7 @@ h5 {
 
     &__price {
         @include r(767) {
-            font-size: 20px;    
+            font-size: 20px;
         }
 
         &-label {
@@ -1976,11 +2146,19 @@ h5 {
         }
 
         &-wrap {
+            @include r(374) {
+                display: block;
+            }
+
             @include fcn;
             margin-bottom: 21px;
         }
 
         &-old {
+            @include r(374) {
+                margin-bottom: 5px;
+            }
+
             margin-right: 24px;
             color: #939393;
             font-size: 17px;
@@ -2014,7 +2192,7 @@ h5 {
 
     &__more {
         @include r(767) {
-            font-size: 14px;    
+            font-size: 14px;
         }
 
         font-size: 18px;
@@ -2204,8 +2382,8 @@ h5 {
 
     &__item {
         @include r(767) {
-            font-size: 16px; 
-            
+            font-size: 16px;
+
             br {
                 display: none;
             }
@@ -2223,14 +2401,14 @@ h5 {
     &__icon {
         @include r(767) {
             width: 40px;
-            height: 40px;  
+            height: 40px;
             margin-right: 10px;
-            
+
             img {
-                transform: scale(.8);
+                transform: scale(0.8);
             }
         }
-        
+
         width: 50px;
         height: 50px;
         border-radius: 50%;
@@ -2270,7 +2448,11 @@ h5 {
         }
 
         @include r(767) {
-            height: 300px;   
+            height: 250px;
+        }
+
+        @include r(374) {
+            height: 200px;
         }
 
         width: 100%;
@@ -2378,6 +2560,10 @@ h5 {
         overflow: hidden;
     }
 
+    @include r(767) {
+        padding: 40px 0;
+    }
+
     padding: 78px 0;
 
     &.bg-gray {
@@ -2399,6 +2585,10 @@ h5 {
 
     &__list {
         .reviews__item {
+            @include r(767) {
+                display: block;
+            }
+
             background: transparent;
             @include fsn;
             padding: 37px 0;
@@ -2410,6 +2600,14 @@ h5 {
         }
 
         .reviews__user {
+            @include r(1023) {
+                margin-right: 15px;
+            }
+
+            @include r(767) {
+                margin-right: 0;
+            }
+
             margin-right: 45px;
         }
     }
@@ -2427,6 +2625,10 @@ h5 {
     }
 
     &__answer {
+        @include r(767) {
+            padding: 15px 20px;
+        }
+
         background: #f8f8f8;
         border-radius: 3px;
         padding: 20px 40px;
@@ -2443,17 +2645,30 @@ h5 {
         }
 
         &-name {
+            @include r(767) {
+                font-size: 16px;
+            }
+
             font-weight: 400;
             font-size: 17px;
         }
 
         &-date {
+            @include r(767) {
+                margin-left: 10px;
+                font-size: 16px;
+            }
+
             font-weight: 300;
             color: #939393;
             font-size: 17px;
         }
 
         &-text {
+            @include r(767) {
+                font-size: 14px;
+            }
+
             font-weight: 300;
             font-size: 17px;
             line-height: 1.41;
@@ -2478,8 +2693,8 @@ h5 {
     &__photo {
         @include r(767) {
             width: 50px;
-            height: 50px;   
-            margin-right: 13px; 
+            height: 50px;
+            margin-right: 13px;
         }
 
         width: 75px;
@@ -2498,7 +2713,7 @@ h5 {
         @include r(767) {
             br {
                 display: none;
-            }    
+            }
         }
 
         font-size: 17px;
@@ -2692,7 +2907,7 @@ h5 {
         }
 
         @include r(767) {
-            font-size: 16px;   
+            font-size: 16px;
         }
 
         font-weight: 300;
@@ -2702,11 +2917,11 @@ h5 {
 
     &__item {
         @include r(1023) {
-            margin-left: 0;   
+            margin-left: 0;
         }
 
         @include r(767) {
-            width: 100%;   
+            width: 100%;
         }
 
         width: 461px;
@@ -2718,7 +2933,7 @@ h5 {
 
         &::before {
             @include r(767) {
-                display: none;    
+                display: none;
             }
 
             content: '';
@@ -2772,7 +2987,11 @@ h5 {
         margin: 0 -12px;
 
         & + .service__item {
-            margin-left: 0;   
+            @include r(767) {
+                height: 90px;
+            }
+
+            margin-left: 0;
             width: 100%;
             height: 149px;
             @include fcn;
@@ -2790,7 +3009,7 @@ h5 {
         }
 
         @include r(767) {
-            display: block;            
+            display: block;
         }
 
         display: flex;
@@ -2801,9 +3020,10 @@ h5 {
     &__item {
         @include r(767) {
             display: block;
-            @include flexitem(100%, 12px, 23px);  
-            padding: 15px 20px; 
+            @include flexitem(100%, 12px, 23px);
+            padding: 15px 20px;
             height: 150px;
+            overflow: hidden;
         }
 
         @include flexitem(50%, 12px, 23px);
@@ -2885,7 +3105,11 @@ h5 {
 
     .swiper-slide {
         @include r(1023) {
-         width: 203px;   
+            width: 203px;
+        }
+
+        @include r(767) {
+            width: 139px;
         }
 
         width: 269px;
@@ -2894,7 +3118,12 @@ h5 {
     &__item {
         @include r(1023) {
             width: 201px;
-            height: 130px;    
+            height: 130px;
+        }
+
+        @include r(767) {
+            width: 137px;
+            height: 101px;
         }
 
         width: 267px;
@@ -2942,7 +3171,7 @@ h5 {
 
     &__wrap {
         @include r(1023) {
-         display: none;   
+            display: none;
         }
 
         position: absolute;
@@ -2993,8 +3222,8 @@ h5 {
 
     &__link {
         @include r(1023) {
-         display: block;  
-         text-align: center; 
+            display: block;
+            text-align: center;
         }
 
         display: none;
@@ -3007,6 +3236,10 @@ h5 {
 }
 
 .questions {
+    @include r(767) {
+        padding: 40px 0;
+    }
+
     padding: 84px 0;
 
     &__item {
@@ -3028,6 +3261,14 @@ h5 {
         br {
             display: none;
         }
+    }
+
+    @include r(767) {
+        font-size: 16px;
+    }
+
+    @include r(374) {
+        font-size: 14px;
     }
 
     @include fcsb;
@@ -3077,6 +3318,10 @@ h5 {
         overflow: hidden;
     }
 
+    @include r(767) {
+        padding: 40px 0;
+    }
+
     padding: 84px 0;
 
     .swiper {
@@ -3093,6 +3338,10 @@ h5 {
         margin-bottom: 17px;
 
         img {
+            @include r(767) {
+                max-width: 132px;
+            }
+
             max-width: 163px;
         }
     }
@@ -3108,6 +3357,10 @@ h5 {
 .journal {
     @include r(1279) {
         overflow: hidden;
+    }
+
+    @include r(767) {
+        padding: 40px 0;
     }
 
     padding: 83px 0;
@@ -3147,6 +3400,12 @@ h5 {
     }
 
     &__title {
+        @include r(374) {
+            br {
+                display: none;
+            }
+        }
+
         font-weight: 700;
         font-size: 18px;
         line-height: 1.39;
@@ -3169,6 +3428,10 @@ h5 {
 .youtube {
     @include r(1279) {
         overflow: hidden;
+    }
+
+    @include r(767) {
+        padding: 40px 0;
     }
 
     padding: 84px 0;
@@ -3229,15 +3492,33 @@ h5 {
         background: #cbcbcb;
     }
 
+    @include r(767) {
+        padding: 40px 0;
+    }
+
     background: url(../img/cons.png) no-repeat 82% bottom #cbcbcb;
     background-size: 679px;
     padding: 84px 0;
 
     h2 {
+        @include r(767) {
+            br {
+                display: none;
+            }
+        }
+
         margin-bottom: 25px;
     }
 
     &__text {
+        @include r(767) {
+            font-size: 18px;
+
+            br {
+                display: none;
+            }
+        }
+
         font-size: 23px;
         font-weight: 300;
         line-height: 1.24;
@@ -3246,7 +3527,12 @@ h5 {
 
     .form-group {
         @include r(1023) {
-         @include fcsb;   
+            @include fcsb;
+        }
+
+        @include r(374) {
+            display: block;
+            margin-bottom: 0;
         }
 
         @include fcn;
@@ -3254,8 +3540,13 @@ h5 {
 
         input {
             @include r(1023) {
-             width: 49%; 
-             margin: 0;  
+                width: 49%;
+                margin: 0;
+            }
+
+            @include r(374) {
+                width: 100%;
+                margin-bottom: 15px;
             }
 
             width: 267px;
@@ -3265,6 +3556,10 @@ h5 {
 
     textarea,
     input {
+        @include r(767) {
+            font-size: 16px;
+        }
+
         border: 0;
         padding: 20px;
         border-radius: 5px;
@@ -3279,7 +3574,11 @@ h5 {
 
     textarea {
         @include r(1023) {
-         width: 100%;   
+            width: 100%;
+        }
+
+        @include r(767) {
+            margin-bottom: 15px;
         }
 
         width: 558px;
@@ -3287,13 +3586,27 @@ h5 {
     }
 
     .checkbox {
+        @include r(767) {
+            margin-bottom: 15px;
+        }
+
         @include fsn;
 
         input {
+            @include r(767) {
+                flex-shrink: 0;
+            }
+
             margin-right: 9px;
         }
 
         label {
+            @include r(767) {
+                br {
+                    display: none;
+                }
+            }
+
             font-size: 14px;
             font-weight: 300;
             color: #6c6c6c;
@@ -3311,16 +3624,27 @@ h5 {
 
     .callback__controls {
         @include r(1023) {
-         width: 100%;   
+            width: 100%;
         }
 
         width: 558px;
     }
 
     &__controls {
+        @include r(767) {
+            display: block;
+        }
+
         @include fssb;
 
         button {
+            @include r(767) {
+                margin-left: 0;
+                padding-left: 0;
+                padding-right: 0;
+                width: 100%;
+            }
+
             margin-left: 15px;
             text-transform: uppercase;
             font-size: 18px;
@@ -3332,11 +3656,23 @@ h5 {
 }
 
 .subscribe {
+    @include r(767) {
+        overflow: hidden;
+    }
+
     background: #272727;
     padding: 0 0 46px;
     color: #fff;
 
     h2 {
+        @include r(767) {
+            font-size: 30px;
+        }
+
+        @include r(374) {
+            font-size: 25px;
+        }
+
         font-size: 37px;
         font-weight: 500;
         margin-bottom: 9px;
@@ -3350,7 +3686,7 @@ h5 {
         }
 
         @include r(1023) {
-            background: transparent;   
+            background: transparent;
         }
 
         background: url(../img/icons/letter.svg) no-repeat 89% 25%;
@@ -3358,17 +3694,34 @@ h5 {
     }
 
     &__text {
+        @include r(767) {
+            text-align: center;
+        }
+
+        @include r(374) {
+            font-size: 16px;
+        }
+
         margin-bottom: 30px;
         font-size: 18px;
         font-weight: 300;
     }
 
     .form-group {
+        @include r(767) {
+            display: block;
+        }
+
         @include fcsb;
 
         input {
             @include r(1023) {
-                width: 33.33%;    
+                width: 33.33%;
+            }
+
+            @include r(767) {
+                width: 100%;
+                margin-bottom: 15px;
             }
 
             width: 364px;
@@ -3434,11 +3787,19 @@ h5 {
     padding: 30px 0;
 
     &__menu {
+        @include r(767) {
+            display: block;
+        }
+
         @include fssb;
         border-bottom: 1px solid rgba(237, 237, 237, 0.34);
         padding-bottom: 6px;
 
         a {
+            @include r(767) {
+                margin-bottom: 10px;
+            }
+
             display: block;
             font-size: 16px;
             font-weight: 300;
@@ -3453,9 +3814,19 @@ h5 {
                 color: $red;
             }
         }
+
+        & > div {
+            @include r(767) {
+                margin-bottom: 30px;
+            }
+        }
     }
 
     &__title {
+        @include r(767) {
+            margin-bottom: 15px;
+        }
+
         font-weight: 800;
         font-size: 16px;
         margin-bottom: 20px;
@@ -3470,11 +3841,19 @@ h5 {
             }
         }
 
+        @include r(767) {
+            display: block;
+        }
+
         @include fcsb;
         padding: 24px 0 0;
     }
 
     &__phone {
+        @include r(767) {
+            margin-bottom: 30px;
+        }
+
         a {
             @include fcn;
             font-size: 16px;
@@ -3505,7 +3884,11 @@ h5 {
 
     &__links {
         @include r(1023) {
-            width: 50%;   
+            width: 50%;
+        }
+
+        @include r(767) {
+            width: 100%;
         }
 
         div,
@@ -3543,9 +3926,13 @@ h5 {
             margin-top: 20px;
         }
 
+        @include r(767) {
+            width: 100%;
+        }
+
         span {
             @include r(1023) {
-                text-align: left;    
+                text-align: left;
             }
 
             display: block;
@@ -3557,7 +3944,7 @@ h5 {
 
         div {
             @include r(1023) {
-                justify-content: flex-start    
+                justify-content: flex-start;
             }
 
             @include fcc;
@@ -3580,6 +3967,10 @@ h5 {
     }
 
     &__left {
+        @include r(767) {
+            display: block;
+        }
+
         @include fcn;
     }
 
@@ -3599,11 +3990,20 @@ h5 {
     }
 
     &__map {
+        @include r(767) {
+            margin-left: 0;
+            display: block;
+        }
+
         display: inline-block;
         margin-left: 20px;
     }
 
     &__search {
+        @include r(767) {
+            display: none;
+        }
+
         @include fcn;
         background: rgba(255, 255, 255, 0.14);
         border: 1px solid rgba(223, 223, 223, 0.11);
@@ -3660,6 +4060,10 @@ h5 {
     padding: 100px 0;
 
     a {
+        @include r(767) {
+            font-size: 16px;
+        }
+
         font-size: 20px;
         margin-bottom: 5px;
         display: inline-block;
@@ -3679,6 +4083,10 @@ h5 {
     padding: 10px 0;
 
     a {
+        @include r(767) {
+            font-size: 12px;
+        }
+
         font-weight: 300;
         font-size: 14px;
         position: relative;
@@ -3711,12 +4119,35 @@ h5 {
 
     .container {
         @include fssb;
+        position: relative;
+    }
+
+    .filter {
+        @include r(1023) {
+            display: block;
+            margin-bottom: 20px;
+            text-align: center;
+            padding-left: 0;
+            padding-right: 0;
+            font-size: 16px;
+            padding: 10px 0;
+        }
+
+        display: none;
     }
 
     &__main {
+        @include r(1023) {
+            transition: $trans;
+        }
+
         width: 100%;
 
         h2 {
+            @include r(767) {
+                font-size: 30px;
+            }
+
             font-size: 35px;
             font-weight: 500;
             margin-top: -8px;
@@ -3724,10 +4155,26 @@ h5 {
         }
 
         .catalog {
+            @include r(767) {
+                padding-top: 20px;
+            }
+
+            @include r(767) {
+                @include flexlist(1px);
+            }
+
             @include flexlist(12px);
             padding: 44px 0 0;
 
             .item {
+                @include r(1279) {
+                    @include flexitem(50%, 12px, 37px);
+                }
+
+                @include r(767) {
+                    @include flexitem(100%, 1px, 37px);
+                }
+
                 @include flexitem(33.33%, 12px, 37px);
             }
         }
@@ -3735,9 +4182,76 @@ h5 {
 }
 
 .sidebar {
+    @include r(1023) {
+        margin-left: -291px;
+        transition: $trans;
+    }
+
+    @include r(767) {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: #fff;
+        z-index: 40;
+        width: 100%;
+        overflow: scroll;
+        padding: 30px 10px;
+        margin-left: 0;
+        pointer-events: none;
+        user-select: none;
+        opacity: 0;
+    }
+
     width: 267px;
     margin-right: 24px;
     flex-shrink: 0;
+    position: relative;
+
+    &.show {
+        @include r(767) {
+            opacity: 1;
+            pointer-events: all;
+            user-select: initial;
+        }
+
+        margin-left: 0;
+
+        .sidebar__close {
+            opacity: 1;
+            pointer-events: all;
+            user-select: initial;
+        }
+
+        & + .wrap__main {
+            @include r(767) {
+                margin-right: 0;
+            }
+
+            margin-right: -291px;
+        }
+    }
+
+    &__close {
+        @include r(1023) {
+            @include fcc;
+            opacity: 0;
+        }
+
+        display: none;
+        transition: $trans;
+        pointer-events: none;
+        user-select: none;
+        margin-bottom: -3px;
+        position: relative;
+        padding: 10px 0;
+        font-size: 16px;
+
+        .icon {
+            fill: #fff;
+        }
+    }
 
     &__item {
         background: #ffffff;
@@ -3930,6 +4444,15 @@ h5 {
     @include flexlist(10px);
 
     &__item {
+        @include r(1279) {
+            padding: 13px 0;
+            font-size: 14px;
+        }
+
+        @include r(767) {
+            @include flexitem(50%, 10px);
+        }
+
         color: $red;
         padding: 17px 0;
         border: 1px solid $red;
@@ -3974,6 +4497,10 @@ h5 {
         }
 
         svg {
+            @include r(1279) {
+                margin-left: 5px;
+            }
+
             margin-left: 10px;
             font-size: 13px;
             fill: rgba(0, 0, 0, 0.28);
@@ -4003,6 +4530,10 @@ h5 {
 }
 
 .select {
+    @include r(1279) {
+        padding-bottom: 5px;
+    }
+
     @include fcn;
     flex-wrap: wrap;
     padding-bottom: 28px;
@@ -4010,6 +4541,17 @@ h5 {
     margin-bottom: 15px;
 
     &__item {
+        @include r(1279) {
+            padding: 4px 13px 5px;
+            font-size: 14px;
+            margin-right: 13px;
+            margin-bottom: 13px;
+        }
+
+        @include r(767) {
+            font-size: 12px;
+        }
+
         padding: 7px 18px 8px;
         border-radius: 50px;
         border: 1px solid #d9d9d9;
@@ -4051,6 +4593,14 @@ h5 {
     @include fcsb;
 
     &__item {
+        @include r(767) {
+            margin-top: 30px;
+
+            &:last-child {
+                display: none;
+            }
+        }
+
         @include fcn;
         cursor: pointer;
         font-size: 14px;
@@ -4067,6 +4617,10 @@ h5 {
         }
 
         svg {
+            @include r(1279) {
+                top: 1px;
+            }
+
             transition: $trans;
             fill: $red;
             font-size: 7px;
@@ -4142,6 +4696,10 @@ h5 {
     @include fcc;
 
     &__controls {
+        @include r(374) {
+            margin: 0 10px;
+        }
+
         @include fcc;
         width: 40px;
         height: 40px;
@@ -4150,6 +4708,7 @@ h5 {
         margin: 0 18px;
         transition: $trans;
         cursor: pointer;
+        flex-shrink: 0;
 
         &.left .icon {
             position: relative;
@@ -4214,6 +4773,11 @@ h5 {
         margin-bottom: -20px;
 
         a {
+            @include r(1023) {
+                margin-right: 20px;
+                margin-bottom: 13px;
+            }
+
             color: $blue;
             margin-right: 52px;
             margin-bottom: 16px;
@@ -4227,13 +4791,39 @@ h5 {
 }
 
 .banner {
+    @include r(1023) {
+        margin-bottom: 0;
+    }
+
     margin: 56px 0;
 
     h2 {
+        @include r(1023) {
+            font-size: 30px;
+
+            br {
+                display: none;
+            }
+        }
+
+        @include r(767) {
+            font-size: 18px;
+            text-align: left;
+        }
+
         margin-bottom: 15px;
     }
 
     .container {
+        @include r(1023) {
+            padding: 20px 30px;
+            @include fcsb;
+        }
+
+        @include r(767) {
+            display: block;
+        }
+
         @include fcn;
         padding: 58px 75px;
         background-size: cover;
@@ -4242,21 +4832,42 @@ h5 {
     }
 
     &__text {
+        @include r(767) {
+            font-size: 18px;
+        }
+
         font-weight: 500;
         font-size: 20px;
         color: rgba(49, 49, 49, 0.61);
     }
 
     .btn {
+        @include r(1023) {
+            margin-left: 20px;
+        }
+
+        @include r(767) {
+            margin-left: 0;
+            margin-top: 20px;
+        }
+
         margin-left: 161px;
     }
 }
 
 .text {
+    @include r(767) {
+        padding: 40px 0;
+    }
+
     padding: 93px 0;
 
     li,
     p {
+        @include r(767) {
+            font-size: 16px;
+        }
+
         font-weight: 300;
         font-size: 18px;
         line-height: 1.28;
@@ -4283,6 +4894,12 @@ h5 {
         border-radius: 5px;
 
         &.float {
+            @include r(1023) {
+                float: none;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
             float: left;
             margin-right: 30px;
         }
@@ -4293,6 +4910,10 @@ h5 {
         list-style-type: none;
 
         li {
+            @include r(767) {
+                padding-left: 15px;
+            }
+
             position: relative;
             padding-left: 35px;
             margin-bottom: 17px;
@@ -4320,12 +4941,17 @@ h5 {
         li {
             display: block;
             margin-bottom: 17px;
+            @include fsn;
 
             &:last-child {
                 margin-bottom: 0;
             }
 
             &::before {
+                @include r(767) {
+                    margin-right: 10px;
+                }
+
                 content: counter(item) '. ';
                 counter-increment: item;
                 color: $red;
@@ -4343,6 +4969,18 @@ h5 {
 }
 
 .notice {
+    @include r(1279) {
+        br {
+            display: none;
+        }
+    }
+
+    @include r(767) {
+        display: block;
+        font-size: 16px;
+        padding: 17px 27px;
+    }
+
     background: #f4f4f4;
     border-radius: 3px;
     padding: 17px 47px;
@@ -4364,6 +5002,12 @@ h5 {
     }
 
     img {
+        @include r(767) {
+            margin-right: 0;
+            display: block;
+            margin-bottom: 20px;
+        }
+
         margin-right: 61px;
     }
 }
@@ -4376,10 +5020,23 @@ h5 {
     }
 
     &__more {
+        @include r(374) {
+            display: block;
+        }
+
         @include fcn;
         margin-bottom: 26px;
 
         &-item {
+            @include r(374) {
+                margin-right: 0;
+                margin-bottom: 10px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
             @include fcn;
             margin-right: 42px;
 
@@ -4404,19 +5061,46 @@ h5 {
     }
 
     &__wrap {
+        @include r(1023) {
+            display: block;
+        }
+
         @include fssb;
     }
 
     &__slider {
+        @include r(1023) {
+            @include fsc;
+            margin-right: 0;
+            margin-bottom: 40px;
+        }
+
+        @include r(767) {
+            display: block;
+        }
+
         @include fsn;
         margin-right: 24px;
     }
 
     &__nav {
+        @include r(1279) {
+            margin-right: 15px;
+        }
+
+        @include r(767) {
+            width: 100%;
+            margin-right: 0;
+        }
+
         width: 93px;
         margin-right: 32px;
 
         .swiper {
+            @include r(767) {
+                height: 70px;
+            }
+
             height: 326px;
         }
 
@@ -4464,6 +5148,14 @@ h5 {
 
         .swiper-button-prev,
         .swiper-button-next {
+            @include r(1279) {
+                @include fcc;
+            }
+
+            @include r(767) {
+                display: none;
+            }
+
             position: static;
             transform: none;
             margin-top: 0;
@@ -4471,10 +5163,28 @@ h5 {
     }
 
     &__main {
+        @include r(1023) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        @include r(767) {
+            width: 100%;
+            height: 218px;
+        }
+
+        @include r(374) {
+            height: 183px;
+        }
+
         height: 386px;
         width: 433px;
 
         .swiper-slide {
+            @include r(767) {
+                background-size: 50%;
+            }
+
             height: 100%;
             background-size: 70%;
             background-repeat: no-repeat;
@@ -4627,15 +5337,50 @@ h5 {
     }
 
     .btn {
+        @include r(1279) {
+            padding: 8px 12px;
+            font-size: 16px;
+        }
+
+        @include r(767) {
+            margin-top: 20px;
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+
         padding: 15px 66px;
 
         &.btn-green {
+            @include r(1279) {
+                padding: 8px 12px;
+                font-size: 16px;
+            }
+
+            @include r(767) {
+                margin-right: 30px;
+                padding: 12px 43px;
+                margin-top: 0;
+                width: auto;
+            }
+
+            @include r(374) {
+                padding: 12px 28px;
+            }
+
             padding: 14px 23px;
             margin-right: 0;
         }
     }
 
     .item__add {
+        @include r(767) {
+            flex-wrap: wrap;
+            @include fcs;
+        }
+
         margin-bottom: 20px;
     }
 
@@ -4664,6 +5409,10 @@ h5 {
     }
 
     &__row {
+        @include r(1023) {
+            display: block;
+        }
+
         @include fcn;
         padding: 12px 0;
         border-top: 1px solid rgba(237, 237, 237, 0.63);
@@ -4671,6 +5420,12 @@ h5 {
         margin-bottom: -1px;
 
         .col {
+            @include r(1023) {
+                width: 100% !important;
+                text-align: left !important;
+                margin-bottom: 10px;
+            }
+
             &:nth-child(1) {
                 width: 11%;
             }
@@ -4729,6 +5484,10 @@ h5 {
     }
 
     &__phone {
+        @include r(1023) {
+            @include fcs;
+        }
+
         @include fce;
         font-size: 15px;
         transition: $trans;
@@ -4752,6 +5511,23 @@ h5 {
 }
 
 .tabs {
+    @include r(1023) {
+        white-space: nowrap;
+        overflow-x: scroll;
+        @include fcs;
+        border: 0;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #dfdfdf;
+        }
+    }
+
     position: relative;
     display: flex;
     align-items: center;
@@ -4759,6 +5535,10 @@ h5 {
     border-bottom: 2px solid #dfdfdf;
 
     .bar {
+        @include r(1023) {
+            display: none;
+        }
+
         position: absolute;
         height: 2px;
         background: $red;
@@ -4768,6 +5548,26 @@ h5 {
     }
 
     a {
+        @include r(1023) {
+            white-space: nowrap;
+            margin: 0 10px;
+            font-size: 14px;
+
+            &.active {
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    height: 2px;
+                    background: $red;
+                }
+            }
+        }
+
         font-weight: 700;
         font-size: 18px;
         padding: 10px 0;
@@ -4781,6 +5581,10 @@ h5 {
 }
 
 .tab {
+    @include r(374) {
+        padding: 30px 0;
+    }
+
     display: none;
     padding: 42px 0;
 
@@ -4805,6 +5609,10 @@ h5 {
     }
 
     .features__icon {
+        @include r(767) {
+            margin-top: 0;
+        }
+
         margin-top: -10px;
     }
 
@@ -4823,10 +5631,18 @@ h5 {
 }
 
 .description {
+    @include r(1023) {
+        display: block;
+    }
+
     @include fssb;
 
     &__main {
         p {
+            @include r(767) {
+                font-size: 16px;
+            }
+
             font-weight: 300;
             font-size: 18px;
             line-height: 1.28;
@@ -4844,6 +5660,10 @@ h5 {
             padding-left: 0;
 
             li {
+                @include r(767) {
+                    display: block;
+                }
+
                 @include fcsb;
                 position: relative;
                 margin-bottom: 20px;
@@ -4853,6 +5673,10 @@ h5 {
                 }
 
                 &::before {
+                    @include r(767) {
+                        display: none;
+                    }
+
                     content: '';
                     position: absolute;
                     bottom: 4px;
@@ -4864,6 +5688,11 @@ h5 {
                 }
 
                 & > div {
+                    @include r(767) {
+                        display: inline;
+                        width: auto;
+                    }
+
                     width: 49%;
                     position: relative;
                     @include fcn;
@@ -4886,6 +5715,10 @@ h5 {
                 }
 
                 .tip {
+                    @include r(767) {
+                        display: none;
+                    }
+
                     margin-left: -5px;
                     margin-top: -3px;
                     z-index: 3;
@@ -4900,12 +5733,22 @@ h5 {
     }
 
     &__sidebar {
+        @include r(1023) {
+            width: 100%;
+            margin-left: 0;
+            margin-top: 30px;
+        }
+
         width: 461px;
         flex-shrink: 0;
         margin-left: 24px;
     }
 
     &__item {
+        @include r(374) {
+            padding: 20px 20px;
+        }
+
         background: rgba(245, 245, 245, 0.79);
         border-radius: 3px;
         margin-bottom: 16px;
@@ -4944,6 +5787,10 @@ h5 {
             padding: 0;
 
             ul {
+                @include r(374) {
+                    margin-left: 0;
+                }
+
                 padding-left: 0;
                 margin-left: -15px;
                 margin-bottom: 0;
@@ -5017,15 +5864,30 @@ h5 {
 }
 
 .links {
+    @include r(767) {
+        display: block;
+    }
+
     @include fcsb;
     margin-top: 41px;
 
     &__col {
+        @include r(767) {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
         width: 50%;
         display: flex;
         flex-direction: column;
 
         a {
+            @include r(767) {
+                font-size: 16px;
+                @include fsn;
+                margin-bottom: 20px;
+            }
+
             @include fcn;
             margin-bottom: 40px;
             font-size: 19px;
@@ -5042,12 +5904,20 @@ h5 {
     }
 
     &__icon {
+        @include r(767) {
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+            margin-top: -3px;
+        }
+
         width: 40px;
         height: 40px;
         border-radius: 50%;
         border: 1px solid $red;
         @include fcc;
         margin-right: 15px;
+        flex-shrink: 0;
 
         svg {
             width: 13px;
@@ -5072,23 +5942,35 @@ h5 {
     }
 
     &__list {
+        @include r(767) {
+            display: block;
+        }
+
         @include fssb;
     }
 
     &__col {
+        @include r(767) {
+            width: 100%;
+        }
+
         width: 49%;
     }
 
     .input,
     input,
     textarea {
+        @include r(767) {
+            font-size: 14px;
+            padding: 19px 13px;
+        }
+
         background: #ffffff;
         border: 1px solid #dfdfdf;
         border-radius: 5px;
         font-weight: 500;
         font-size: 18px;
-        padding: 5px 15px;
-        padding: 18px 18px;
+        padding: 18px;
 
         &::placeholder {
             color: $text;
@@ -5100,6 +5982,10 @@ h5 {
     }
 
     textarea {
+        @include r(767) {
+            margin-top: 22px;
+        }
+
         height: 142px;
     }
 
@@ -5118,18 +6004,36 @@ h5 {
     }
 
     .stars {
+        @include r(767) {
+            margin-left: 0;
+            margin-top: 5px;
+        }
+
         margin-left: 10px;
     }
 
     .input {
+        @include r(767) {
+            display: block;
+            padding: 7px 13px;
+        }
+
         @include fcn;
     }
 
     &__controls {
+        @include r(767) {
+            display: block;
+        }
+
         @include fcsb;
-        margin-top: 26px;
+        margin-top: 22px;
 
         .checkbox {
+            @include r(767) {
+                margin-bottom: 15px;
+            }
+
             @include fcn;
 
             input {
@@ -5154,11 +6058,19 @@ h5 {
         }
 
         button {
+            @include r(767) {
+                width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+                font-size: 16px;
+            }
+
             text-transform: uppercase;
             font-weight: 500;
             font-size: 18px;
             padding: 18px 45px;
             border-radius: 5px;
+            flex-shrink: 0;
         }
     }
 }
@@ -5180,17 +6092,30 @@ h5 {
     }
 
     &__name {
+        @include r(767) {
+            font-size: 16px;
+        }
+
         font-weight: 400;
         font-size: 17px;
     }
 
     &__date {
+        @include r(767) {
+            font-size: 16px;
+            margin-left: 10px;
+        }
+
         color: #939393;
         font-weight: 300;
         font-size: 17px;
     }
 
     &__text {
+        @include r(767) {
+            font-size: 16px;
+        }
+
         font-weight: 300;
         font-size: 17px;
         line-height: 1.41;
@@ -5201,6 +6126,11 @@ h5 {
         @include fcn;
 
         a {
+            @include r(767) {
+                font-size: 14px;
+                margin-right: 30px;
+            }
+
             margin-right: 56px;
             font-weight: 400;
             font-size: 17px;
@@ -5221,6 +6151,10 @@ h5 {
     }
 
     &__dropdown {
+        @include r(767) {
+            padding-left: 0;
+        }
+
         padding-left: 96px;
         margin-top: 21px;
         margin-bottom: 37px;
@@ -5232,6 +6166,10 @@ h5 {
     }
 
     &__answer {
+        @include r(767) {
+            padding: 15px 20px;
+        }
+
         background: #f8f8f8;
         border-radius: 3px;
         padding: 17px 35px;
@@ -5242,6 +6180,10 @@ h5 {
         }
 
         a {
+            @include r(767) {
+                font-size: 14px;
+            }
+
             font-weight: 400;
             font-size: 17px;
             color: $red;
@@ -5265,6 +6207,11 @@ h5 {
         }
 
         p {
+            @include r(767) {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+
             font-weight: 500;
             font-size: 18px;
             margin-bottom: 30px;
@@ -5272,16 +6219,33 @@ h5 {
         }
     }
 
+    button {
+        flex-shrink: 0;
+    }
+
     &__list {
+        @include r(767) {
+            display: block;
+        }
+
         @include fssb;
     }
 
     &__col {
+        @include r(767) {
+            width: 100% !important;
+            margin-bottom: 20px;
+        }
+
         &:first-child {
             width: 32%;
         }
 
         &:last-child {
+            @include r(767) {
+                margin-bottom: 0;
+            }
+
             width: 66%;
         }
     }
@@ -5289,13 +6253,17 @@ h5 {
     .input,
     input,
     textarea {
+        @include r(767) {
+            padding: 13px;
+            font-size: 14px;
+        }
+
         background: #ffffff;
         border: 1px solid #dfdfdf;
         border-radius: 5px;
         font-weight: 500;
         font-size: 18px;
-        padding: 5px 15px;
-        padding: 18px 18px;
+        padding: 18px;
         width: 100%;
         margin-bottom: 18px;
 
@@ -5361,6 +6329,10 @@ h5 {
     }
 
     &__top {
+        @include r(1023) {
+            display: none;
+        }
+
         @include fcn;
         padding-bottom: 10px;
         border-bottom: 1px solid #f0f0f0;
@@ -5392,6 +6364,16 @@ h5 {
     }
 
     &__item {
+        @include r(1023) {
+            flex-wrap: wrap;
+            padding-right: 15px;
+            position: relative;
+        }
+
+        @include r(767) {
+            display: block;
+        }
+
         @include fcn;
         padding: 20px 0;
         border-bottom: 1px solid #f0f0f0;
@@ -5407,24 +6389,66 @@ h5 {
             }
 
             &:nth-child(3) {
+                @include r(1023) {
+                    width: auto;
+                }
+
+                @include r(767) {
+                    display: inline-block;
+                }
+
                 width: 17%;
             }
 
             &:nth-child(4) {
+                @include r(1023) {
+                    width: auto;
+                }
+
+                @include r(767) {
+                    display: inline-flex;
+                }
+
                 width: 16%;
             }
 
             &:nth-child(5) {
+                @include r(1023) {
+                    width: auto;
+                }
+
+                @include r(767) {
+                    display: inline-block;
+                }
+
                 width: 19%;
             }
 
             &:nth-child(6) {
+                @include r(1023) {
+                    width: auto;
+                }
+
                 width: 1%;
             }
         }
     }
 
     &__img {
+        @include r(1023) {
+            height: 115px;
+            min-width: 133px;
+            margin-right: 20px;
+            margin-bottom: 30px;
+        }
+
+        @include r(767) {
+            height: 0;
+            padding-bottom: 77%;
+            margin: 0 0 20px;
+            width: calc(100% - 80px) !important;
+        }
+
         width: 170px;
         height: 150px;
         background-size: 60%;
@@ -5433,6 +6457,37 @@ h5 {
         margin-right: 43px;
         border: 1px solid #f0f0f0;
         border-radius: 3px;
+        flex-shrink: 0;
+    }
+
+    &__info {
+        @include r(1023) {
+            width: calc(100% - 210px) !important;
+            margin-bottom: 30px;
+        }
+
+        @include r(767) {
+            width: 100% !important;
+        }
+
+        font-size: 17px;
+        color: rgba(49, 49, 49, 0.65);
+
+        span {
+            font-weight: 300;
+        }
+
+        strong {
+            font-weight: 500;
+        }
+
+        div {
+            margin-bottom: 5px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
     }
 
     .item__controls {
@@ -5453,6 +6508,14 @@ h5 {
     }
 
     .item__price-wrap {
+        @include r(1023) {
+            margin-right: 40px;
+        }
+
+        @include r(767) {
+            margin-right: 20px;
+        }
+
         display: block;
         margin-bottom: 0;
     }
@@ -5472,15 +6535,44 @@ h5 {
     }
 
     &__total {
+        @include r(1023) {
+            margin-right: 40px;
+            margin-left: 40px;
+        }
+
+        @include r(767) {
+            margin-right: 0;
+            margin-left: 15px;
+        }
+
+        @include r(374) {
+            margin-left: 0;
+            width: 100%;
+            margin-top: 20px;
+        }
+
         font-size: 17px;
 
         span {
+            @include r(374) {
+                font-size: 25px;
+            }
+
             font-size: 18px;
             font-weight: 800;
         }
     }
 
     &__close {
+        @include r(1023) {
+            @include centerYa;
+            right: 15px;
+        }
+
+        @include r(767) {
+            display: none;
+        }
+
         cursor: pointer;
 
         &:hover .icon {
@@ -5495,11 +6587,21 @@ h5 {
     }
 
     &__bottom {
+        @include r(1023) {
+            display: block;
+        }
+
         @include fssb;
         padding: 26px 0;
     }
 
     &__reset {
+        @include r(1023) {
+            margin-bottom: 40px;
+            text-align: center;
+            display: block;
+        }
+
         color: $red;
         font-weight: 400;
         font-size: 17px;
@@ -5510,6 +6612,14 @@ h5 {
     }
 
     &__information {
+        @include r(1023) {
+            width: 100%;
+        }
+
+        @include r(767) {
+            padding: 15px 20px;
+        }
+
         width: 752px;
         padding: 30px 96px;
         background: rgba(245, 245, 245, 0.79);
@@ -5527,12 +6637,26 @@ h5 {
         margin-bottom: 26px;
 
         div {
+            @include r(374) {
+                display: block;
+                border: 0;
+                margin-bottom: 10px;
+            }
+
             @include fesb;
             border-bottom: 1px dotted #ddd;
             margin-bottom: 29px;
 
             &.big {
                 span:last-child {
+                    @include r(767) {
+                        font-size: 20px;
+                    }
+
+                    @include r(374) {
+                        font-size: 16px;
+                    }
+
                     font-size: 23px;
                 }
             }
@@ -5548,6 +6672,14 @@ h5 {
                 margin-bottom: -4px;
 
                 &:first-child {
+                    @include r(767) {
+                        font-size: 14px;
+                    }
+
+                    @include r(374) {
+                        padding-right: 0;
+                    }
+
                     padding-right: 10px;
                     color: rgba(49, 49, 49, 0.65);
                     font-weight: 500;
@@ -5555,6 +6687,10 @@ h5 {
                 }
 
                 &:last-child {
+                    @include r(374) {
+                        font-size: 14px;
+                    }
+
                     padding-left: 10px;
                     font-weight: 800;
                     font-size: 17px;
@@ -5564,10 +6700,19 @@ h5 {
     }
 
     .form-group {
+        @include r(767) {
+            margin-bottom: 24px;
+        }
+
         @include fcsb;
         margin-bottom: 34px;
 
         &:last-child {
+            @include r(767) {
+                display: block;
+                margin-bottom: 0;
+            }
+
             margin-bottom: 0;
         }
 
@@ -5589,6 +6734,10 @@ h5 {
     }
 
     input {
+        @include r(374) {
+            font-size: 14px;
+        }
+
         background: #fff;
         border-radius: 5px;
         border: 1px solid #dfdfdf;
@@ -5598,29 +6747,16 @@ h5 {
     }
 
     .btn {
+        @include r(767) {
+            padding-left: 0;
+            padding-right: 0;
+            width: 100% !important;
+            margin-bottom: 10px;
+            padding: 15px 0;
+        }
+
         padding: 18px 39px;
         border-radius: 5px;
-    }
-
-    &__info {
-        font-size: 17px;
-        color: rgba(49, 49, 49, 0.65);
-
-        span {
-            font-weight: 300;
-        }
-
-        strong {
-            font-weight: 500;
-        }
-
-        div {
-            margin-bottom: 5px;
-
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
     }
 
     &__form {
@@ -5637,14 +6773,34 @@ h5 {
     padding: 34px 0;
 
     &__wrap {
+        @include r(1023) {
+            display: block;
+        }
+
         @include fssb;
     }
 
     &__main {
+        @include r(1279) {
+            width: 610px;
+        }
+
+        @include r(1023) {
+            width: 100%;
+        }
+
         width: 752px;
     }
 
     &__sidebar {
+        @include r(1023) {
+            width: 100%;
+        }
+
+        @include r(374) {
+            padding: 15px 20px;
+        }
+
         width: 364px;
         flex-shrink: 0;
         background: rgba(245, 245, 245, 0.79);
@@ -5653,6 +6809,20 @@ h5 {
 
         .form-group {
             margin-bottom: 16px !important;
+        }
+
+        .checkbox {
+            @include r(1023) {
+                br {
+                    display: none;
+                }
+            }
+        }
+
+        .btn {
+            @include r(1023) {
+                margin-bottom: 10px !important;
+            }
         }
 
         .cart__form {
@@ -5668,6 +6838,10 @@ h5 {
             }
 
             input {
+                @include r(767) {
+                    border-radius: 0 !important;
+                }
+
                 border-radius: 5px 0 0 5px !important;
                 color: $text !important;
                 z-index: 2;
@@ -5675,6 +6849,19 @@ h5 {
             }
 
             button:not(.btn) {
+                @include r(1023) {
+                    height: 48px;
+                }
+
+                @include r(767) {
+                    border-radius: 0;
+                    padding-left: 0;
+                    padding-right: 0;
+                    width: 100%;
+                    margin-top: -1px;
+                    margin-left: 0;
+                }
+
                 height: 58px;
                 background: #fff;
                 color: $red;
@@ -5732,19 +6919,39 @@ h5 {
     }
 
     .form-group {
+        @include r(1023) {
+            margin-bottom: 20px;
+        }
+
+        @include r(767) {
+            display: block;
+        }
+
         @include fcsb;
         margin-bottom: 29px;
 
         & > * {
+            @include r(767) {
+                width: 100%;
+            }
+
             width: 48%;
         }
 
         .order__group {
+            @include r(767) {
+                margin-bottom: 20px;
+            }
+
             margin-bottom: 0;
         }
     }
 
     &__group {
+        @include r(1023) {
+            margin-bottom: 20px;
+        }
+
         margin-bottom: 29px;
 
         &:last-child {
@@ -5759,6 +6966,16 @@ h5 {
     textarea,
     input[type='password'],
     input[type='text'] {
+        @include r(1023) {
+            font-size: 16px;
+            padding: 0 16px;
+            height: 48px;
+        }
+
+        @include r(767) {
+            font-size: 16px;
+        }
+
         background: #fff;
         border: 1px solid #dfdfdf;
         border-radius: 5px;
@@ -5766,11 +6983,15 @@ h5 {
         width: 100%;
         font-weight: 500;
         font-size: 17px;
-        color: #909090;
         height: 58px;
         line-height: 1;
 
         &[type='password'] {
+            @include r(1023) {
+                font-size: 18px;
+                letter-spacing: 13px;
+            }
+
             color: #e3e3e3;
             font-size: 19px;
             letter-spacing: 16px;
@@ -5788,11 +7009,23 @@ h5 {
     }
 
     .checkbox {
+        @include r(767) {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
         @include fcn;
         margin-bottom: 49px;
         margin-top: 58px;
 
         input {
+            @include r(767) {
+                width: 30px;
+                height: 30px;
+                background-size: 16px;
+                margin-right: 10px;
+            }
+
             margin-right: 17px;
             width: 44px;
             height: 44px;
@@ -5805,6 +7038,14 @@ h5 {
     }
 
     label {
+        @include r(1279) {
+            font-size: 16px;
+        }
+
+        @include r(767) {
+            font-size: 14px;
+        }
+
         font-weight: 500;
         font-size: 17px;
         margin-bottom: 7px;
@@ -5816,6 +7057,11 @@ h5 {
     }
 
     .btn {
+        @include r(1023) {
+            font-size: 16px;
+            height: 48px;
+        }
+
         padding-top: 0;
         padding-bottom: 0;
         height: 58px;
@@ -5886,6 +7132,10 @@ h5 {
     }
 
     a:not(.btn) {
+        @include r(767) {
+            font-size: 14px;
+        }
+
         color: $red;
         font-weight: 400;
         font-size: 17px;
@@ -5916,6 +7166,10 @@ h5 {
     .radio {
         input[type='radio'] {
             & + label {
+                @include r(767) {
+                    padding-left: 40px;
+                }
+
                 padding-left: 55px;
 
                 &::after {
@@ -5933,6 +7187,11 @@ h5 {
     }
 
     &__price {
+        @include r(767) {
+            font-size: 18px;
+            margin-left: 10px;
+        }
+
         background: #f1f1f1;
         padding: 5px 10px;
         font-weight: 500;
@@ -5940,6 +7199,11 @@ h5 {
     }
 
     &__desc {
+        @include r(767) {
+            padding-left: 0;
+            font-size: 16px;
+        }
+
         font-weight: 300;
         font-size: 17px;
         padding-left: 55px;
@@ -6008,6 +7272,15 @@ h5 {
         }
 
         .delivery__item {
+            @include r(767) {
+                border-bottom: 1px solid #f5f5f5;
+                border-radius: 0;
+
+                &:last-child {
+                    border: 0;
+                }
+            }
+
             &:hover {
                 background: #f5f5f5;
             }
@@ -6015,12 +7288,21 @@ h5 {
     }
 
     &__item {
+        @include r(767) {
+            padding: 15px 20px;
+        }
+
         padding: 16px 28px;
         transition: $trans;
         cursor: pointer;
 
-        div,
+        & > div,
         a {
+            @include r(767) {
+                font-size: 14px;
+                @include fsn;
+            }
+
             font-weight: 400;
             font-size: 15px;
             @include fcn;
@@ -6028,10 +7310,15 @@ h5 {
         }
 
         .icon {
+            @include r(767) {
+                margin-top: 2px;
+            }
+
             font-size: 19px;
             fill: #bebebe;
             margin-right: 7px;
             transition: $trans;
+            flex-shrink: 0;
         }
 
         a {
@@ -6048,7 +7335,23 @@ h5 {
         }
     }
 
+    &__time {
+        @include r(767) {
+            flex-wrap: wrap;
+
+            a {
+                margin-left: 0;
+                margin-top: 10px;
+                width: 100%;
+            }
+        }
+    }
+
     &__addr {
+        @include r(767) {
+            font-size: 14px !important;
+        }
+
         font-weight: 500 !important;
         font-size: 17px !important;
         margin-bottom: 10px;
@@ -6068,6 +7371,10 @@ h5 {
     }
 
     &__row {
+        @include r(767) {
+            display: none;
+        }
+
         @include fcn;
         padding-bottom: 6px;
         border-bottom: 1px solid #f1f1f1;
@@ -6092,6 +7399,15 @@ h5 {
     }
 
     &__item {
+        @include r(1279) {
+            font-size: 16px;
+        }
+
+        @include r(767) {
+            flex-wrap: wrap;
+            margin-left: 0;
+        }
+
         margin-left: 47px;
         @include fcn;
         padding-bottom: 6px;
@@ -6105,18 +7421,39 @@ h5 {
 
         & > div {
             &:nth-child(1) {
+                @include r(767) {
+                    width: 100%;
+                }
+
                 width: 39%;
             }
+
             &:nth-child(2) {
+                @include r(767) {
+                    width: 100%;
+                    margin-bottom: 10px;
+                    padding-left: 47px;
+                }
+
                 width: 28%;
             }
 
             &:nth-child(3) {
+                @include r(767) {
+                    width: 100%;
+                    padding-left: 47px;
+                }
+
                 width: 40%;
             }
         }
 
         .radio {
+            @include r(767) {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
             margin-left: -48px;
 
             input[type='radio'] {
@@ -6141,6 +7478,10 @@ h5 {
     }
 
     &__info {
+        @include r(767) {
+            margin-left: 0;
+        }
+
         @include fsn;
         font-weight: 300;
         font-size: 14px;
@@ -6160,6 +7501,12 @@ h5 {
 }
 
 .pay {
+    @include r(767) {
+        img {
+            display: none;
+        }
+    }
+
     .radio {
         margin-bottom: 30px;
 
@@ -6191,14 +7538,29 @@ h5 {
 }
 
 .thanks {
+    @include r(767) {
+        padding-bottom: 100px;
+    }
+
     padding: 60px 0 158px;
     text-align: center;
 
     h3 {
+        @include r(767) {
+            display: block;
+            margin-bottom: 42px;
+        }
+
         @include fcc;
         margin-bottom: 62px;
 
         img {
+            @include r(767) {
+                width: 51px;
+                display: block;
+                margin: 0 auto 10px;
+            }
+
             margin-right: 21px;
             pointer-events: none;
             user-select: none;
@@ -6206,10 +7568,21 @@ h5 {
     }
 
     .cart__list {
+        @include r(1023) {
+            width: 100%;
+        }
+
         width: 776px;
         margin: 0 auto;
 
         div {
+            @include r(767) {
+                text-align: left;
+                border: 0;
+                display: block;
+                margin-bottom: 20px;
+            }
+
             margin-bottom: 32px;
         }
 
@@ -6219,10 +7592,21 @@ h5 {
             font-size: 17px;
 
             &:first-child {
+                @include r(767) {
+                    display: block;
+                    margin-bottom: 5px;
+                }
+
                 color: rgba(49, 49, 49, 0.65);
             }
 
             &:last-child {
+                @include r(767) {
+                    width: auto;
+                    font-size: 14px;
+                    padding-left: 0;
+                }
+
                 color: $text;
                 font-weight: 500;
                 text-align: left;
@@ -6232,10 +7616,23 @@ h5 {
     }
 
     &__controls {
+        @include r(767) {
+            display: block;
+            margin-top: 50px;
+        }
+
         @include fcc;
         margin-top: 79px;
 
         a {
+            @include r(767) {
+                padding-right: 0;
+                padding-left: 0;
+                width: 100%;
+                margin: 0 0 10px;
+                font-size: 16px;
+            }
+
             margin: 0 12px;
             text-transform: uppercase;
             font-weight: 500;
@@ -6251,6 +7648,10 @@ h5 {
     padding: 33px 0;
 
     &__item {
+        @include r(1023) {
+            flex-wrap: wrap;
+        }
+
         @include fcn;
         padding: 28px 0;
         border-bottom: 1px solid #ebebeb;
@@ -6263,15 +7664,56 @@ h5 {
             @include fsn;
 
             &:nth-child(1) {
+                @include r(1279) {
+                    width: 40%;
+                    padding-right: 10px;
+                }
+
+                @include r(1023) {
+                    width: 100%;
+                }
+
+                @include r(767) {
+                    margin-bottom: 10px;
+                }
+
                 width: 43%;
             }
+
             &:nth-child(2) {
+                @include r(1023) {
+                    width: 33.33%;
+                }
+
+                @include r(767) {
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+
                 width: 22%;
             }
             &:nth-child(3) {
+                @include r(1023) {
+                    width: 33.33%;
+                }
+
+                @include r(767) {
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+
                 width: 20%;
             }
             &:nth-child(4) {
+                @include r(1023) {
+                    width: 33.33%;
+                }
+
+                @include r(767) {
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+
                 width: 15%;
             }
         }
@@ -6288,6 +7730,18 @@ h5 {
     }
 
     &__addr {
+        @include r(767) {
+            font-size: 16px;
+
+            br {
+                display: none;
+            }
+        }
+
+        @include r(374) {
+            font-size: 14px;
+        }
+
         font-weight: 700;
         font-size: 18px;
 
@@ -6320,6 +7774,18 @@ h5 {
                 height: 400px;
             }
 
+            @include r(1023) {
+                height: 300px;
+            }
+
+            @include r(767) {
+                height: 250px;
+            }
+
+            @include r(374) {
+                height: 200px;
+            }
+
             height: 518px;
             width: 100%;
         }
@@ -6338,6 +7804,12 @@ h5 {
             padding-left: 4%;
         }
 
+        @include r(1023) {
+            position: static;
+            width: 100%;
+            padding: 30px 15px;
+        }
+
         position: absolute;
         top: 0;
         left: 0;
@@ -6352,6 +7824,10 @@ h5 {
         padding-left: 20%;
 
         & > div {
+            @include r(767) {
+                font-size: 16px;
+            }
+
             @include fsn;
             margin-bottom: 25px;
             font-size: 18px;
@@ -6376,6 +7852,13 @@ h5 {
         }
 
         .btn {
+            @include r(767) {
+                padding-left: 0;
+                padding-right: 0;
+                width: 100%;
+                text-align: center;
+            }
+
             display: inline-block;
             margin-top: 13px;
             border-radius: 5px;
@@ -6413,6 +7896,14 @@ h5 {
     }
 
     &__label {
+        @include r(767) {
+            font-size: 20px;
+        }
+
+        @include r(374) {
+            font-size: 16px;
+        }
+
         padding: 5px 22px;
         background: #f5f5f5;
         font-weight: 500;
@@ -6422,6 +7913,10 @@ h5 {
     }
 
     &__text {
+        @include r(767) {
+            font-size: 16px;
+        }
+
         font-weight: 300;
         font-size: 18px;
 
@@ -6443,9 +7938,18 @@ h5 {
     }
 
     .cart__list {
+        @include r(1023) {
+            width: 100%;
+        }
+
         width: 873px;
 
         div {
+            @include r(767) {
+                border: 0;
+                display: block;
+            }
+
             margin-bottom: 15px;
         }
 
@@ -6459,6 +7963,17 @@ h5 {
             }
 
             &:last-child {
+                @include r(1023) {
+                    width: auto;
+                }
+
+                @include r(767) {
+                    font-size: 14px;
+                    width: 100%;
+                    display: block;
+                    padding-left: 0;
+                }
+
                 color: $text;
                 font-weight: 500;
                 text-align: left;
@@ -6504,10 +8019,20 @@ h5 {
     }
 
     textarea {
+        @include r(767) {
+            margin-top: -20px;
+            font-size: 16px;
+            padding: 13px;
+        }
+
         height: 142px;
     }
 
     .form-group {
+        @include r(767) {
+            display: block;
+        }
+
         @include fcsb;
         margin-bottom: 22px;
 
@@ -6517,6 +8042,13 @@ h5 {
 
         .input,
         input {
+            @include r(767) {
+                margin-bottom: 20px;
+                width: 100%;
+                font-size: 16px;
+                padding: 13px;
+            }
+
             width: 32%;
         }
     }
@@ -6526,10 +8058,20 @@ h5 {
     }
 
     &__controls {
+        @include r(767) {
+            display: block;
+        }
+
         @include fcsb;
         margin-top: 26px;
 
         .checkbox {
+            @include r(1023) {
+                br {
+                    display: none;
+                }
+            }
+
             @include fcn;
 
             input {
@@ -6554,12 +8096,22 @@ h5 {
         }
 
         button {
+            @include r(767) {
+                font-size: 16px;
+                width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+                margin-top: 20px;    
+                margin-left: 0;
+            }
+            
             text-transform: uppercase;
             font-weight: 500;
             font-size: 18px;
             padding: 18px 0;
             border-radius: 5px;
             width: 354px;
+            margin-left: 10px;
         }
     }
 }
@@ -6600,6 +8152,7 @@ h5 {
     border-radius: 5px;
     max-height: 90vh;
     overflow: scroll;
+    max-width: 95%;
 
     &.active {
         display: block;
@@ -6621,10 +8174,12 @@ h5 {
         font-size: 24px;
     }
 
-    &__body {
-    }
-
     &__close {
+        @include r(767) {
+            width: 23px;
+            height: 23px;
+        }
+
         position: absolute;
         right: 15px;
         top: 13px;
@@ -6664,6 +8219,14 @@ h5 {
 
 .sale {
     &__header {
+        @include r(767) {
+            padding: 15px 20px;
+
+            img {
+                display: none;
+            }
+        }
+
         background: linear-gradient(92.97deg, #fff2ef 19.21%, #ffe4df 77.99%);
         @include fcn;
         border-radius: 5px 5px 0 0;
@@ -6671,6 +8234,14 @@ h5 {
     }
 
     &__title {
+        @include r(767) {
+            font-size: 23px;
+
+            br {
+                display: none;
+            }
+        }
+
         font-weight: 500;
         font-size: 26px;
         line-height: 1.21;
@@ -6678,6 +8249,10 @@ h5 {
     }
 
     &__desc {
+        @include r(767) {
+            font-size: 14px;
+        }
+
         font-weight: 300;
         font-size: 16px;
         line-height: 1.44;
@@ -6691,6 +8266,14 @@ h5 {
     }
 
     &__body {
+        @include r(767) {
+            padding: 15px 20px;
+
+            .simplebar-track {
+                right: -10px !important;
+            }
+        }
+
         padding: 25px 38px;
     }
 
@@ -6705,6 +8288,11 @@ h5 {
     }
 
     &__item {
+        @include r(767) {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
         @include fcn;
         font-weight: 300;
         font-size: 18px;
@@ -6715,6 +8303,10 @@ h5 {
         }
 
         span {
+            @include r(767) {
+                margin-right: 10px;
+            }
+
             color: $red;
             margin-right: 20px;
         }
@@ -6725,11 +8317,19 @@ h5 {
         padding-bottom: 20px;
 
         & > input {
+            @include r(767) {
+                width: 100%;
+            }
+
             width: 559px;
             margin-bottom: 24px;
         }
 
         & > textarea {
+            @include r(767) {
+                width: 100%;
+            }
+
             background: #ffffff;
             border: 1px solid #dfdfdf;
             border-radius: 5px;
@@ -6764,6 +8364,10 @@ h5 {
     }
 
     .form-group {
+        @include r(767) {
+            display: block;
+        }
+
         @include fcc;
         margin-bottom: 22px;
 
@@ -6772,12 +8376,24 @@ h5 {
         }
 
         input {
+            @include r(767) {
+                width: 100%;
+                margin-bottom: 15px;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
             width: 267px;
             margin: 0 12px;
         }
     }
 
     &__controls {
+        @include r(767) {
+            width: 100%;
+            display: block;
+        }
+
         @include fcsb;
         margin-top: 26px;
         width: 559px;
@@ -6785,6 +8401,15 @@ h5 {
         margin-right: auto;
 
         .checkbox {
+            @include r(767) {
+                margin-bottom: 20px;
+                margin-top: -20px;
+
+                br {
+                    display: none;
+                }
+            }
+
             @include fsn;
             text-align: left;
 
@@ -6810,6 +8435,13 @@ h5 {
         }
 
         button {
+            @include r(767) {
+                width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+                text-align: center;
+            }
+
             text-transform: uppercase;
             font-weight: 500;
             font-size: 18px;
@@ -6821,12 +8453,20 @@ h5 {
 }
 
 .simplebar-track.simplebar-vertical {
+    @include r(767) {
+        width: 3px;
+    }
+
     width: 6px;
     background: #ebebeb;
     border-radius: 10px;
     right: -6px;
 
     .simplebar-scrollbar {
+        @include r(767) {
+            width: 3px;
+        }
+
         width: 6px;
         background: $red;
         border-radius: 10px;
@@ -6839,6 +8479,10 @@ h5 {
 
 .message {
     .icon {
+        @include r(767) {
+            font-size: 62px;
+        }
+
         font-size: 92px;
         fill: $red;
         margin-bottom: 25;
@@ -6846,12 +8490,20 @@ h5 {
     }
 
     &__title {
+        @include r(767) {
+            font-size: 33px;
+        }
+
         font-weight: 500;
         font-size: 43px;
         margin-bottom: 8px;
     }
 
     &__text {
+        @include r(767) {
+            font-size: 18px;
+        }
+
         font-weight: 400;
         font-size: 21px;
         margin-bottom: 46px;
@@ -6860,6 +8512,10 @@ h5 {
 
 .call {
     &__title {
+        @include r(767) {
+            font-size: 30px;
+        }
+
         font-weight: 500;
         font-size: 43px;
         margin-bottom: 15px;
@@ -6868,6 +8524,10 @@ h5 {
     }
 
     &__text {
+        @include r(767) {
+            font-size: 16px;
+        }
+
         text-align: center;
         font-weight: 300;
         font-size: 18px;
@@ -6881,16 +8541,27 @@ h5 {
     }
 
     input {
+        @include r(767) {
+            padding: 13px;
+            font-size: 16px;
+        }
+
         background: #ffffff;
         border: 1px solid #dfdfdf;
         border-radius: 5px;
         font-weight: 500;
         font-size: 18px;
-        padding: 5px 15px;
         padding: 18px 18px;
 
         &::placeholder {
             color: $text;
+        }
+    }
+
+    textarea {
+        @include r(767) {
+            padding: 13px;
+            font-size: 16px;
         }
     }
 
@@ -6899,6 +8570,10 @@ h5 {
     }
 
     .form-group {
+        @include r(767) {
+            @include fcsb;
+        }
+
         @include fcc;
         margin-bottom: 22px;
 
@@ -6907,6 +8582,11 @@ h5 {
         }
 
         input {
+            @include r(767) {
+                width: 48%;
+                margin: 0;
+            }
+
             width: 267px;
             margin: 0 12px;
         }
@@ -6957,10 +8637,26 @@ h5 {
 
 .city {
     .modal__body {
+        @include r(1023) {
+            padding: 37px 50px;
+        }
+
+        @include r(767) {
+            padding: 30px 20px;
+
+            .simplebar-track {
+                right: -10px;
+            }
+        }
+
         padding: 37px 70px;
     }
 
     &__title {
+        @include r(767) {
+            font-size: 25px;
+        }
+
         font-weight: 500;
         font-size: 35px;
         margin-bottom: 20px;
@@ -6975,16 +8671,29 @@ h5 {
         max-height: 284px;
 
         .simplebar-content {
+            @include r(767) {
+                @include flexlist(20px);
+            }
+
             @include flexlist(40px);
         }
     }
 
     &__col {
+        @include r(767) {
+            @include flexitem(33.33%, 20px);
+        }
+
         @include flexitem(33.33%, 40px);
         display: flex;
         flex-direction: column;
 
         a {
+            @include r(767) {
+                margin-bottom: 10px;
+                font-size: 12px;
+            }
+
             font-weight: 400;
             font-size: 15px;
             margin-bottom: 15px;
