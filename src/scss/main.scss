@@ -1171,7 +1171,7 @@ h5 {
             }
 
             @include r(1023) {
-                right: -15px;
+                display: none;
             }
 
             right: -15px;
