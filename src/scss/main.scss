@@ -23,6 +23,10 @@ $trans: all 0.2s ease-in-out;
 }
 
 body {
+    @include r(767) {
+        font-size: 14px;    
+    }
+
     font-size: 16px;
     color: $text;
     font-family: 'Lato', sans-serif;
@@ -179,6 +183,11 @@ h2 {
         margin-bottom: 25px;
     }
 
+    @include r(767) {
+        font-size: 30px;  
+        text-align: center; 
+    }
+
     font-weight: 400;
     font-size: 48px;
     line-height: 1.09;
@@ -190,6 +199,10 @@ h3 {
         font-size: 30px;
     }
 
+    @include r(767) {
+     font-size: 25px;   
+    }
+
     font-weight: 500;
     font-size: 35px;
 }
@@ -199,6 +212,10 @@ h4 {
         font-size: 25px;
     }
 
+    @include r(767) {
+     font-size: 22px;   
+    }
+
     font-size: 30px;
     font-weight: 500;
 }
@@ -206,6 +223,10 @@ h4 {
 h5 {
     @include r(1279) {
         font-size: 20px;
+    }
+
+    @include r(767) {
+     font-size: 18px;   
     }
 
     font-weight: 500;
@@ -234,6 +255,11 @@ h5 {
 }
 
 .btn {
+    @include r(767) {
+        font-size: 16px;    
+        padding: 10px 30px;
+    }
+
     @include fcc;
     transition: $trans;
     text-decoration: none;
@@ -362,6 +388,10 @@ h5 {
             padding: 11px 15px;
         }
 
+        @include r(767) {
+            @include fcs;   
+        }
+
         @include fcsb;
         border-bottom: 1px solid #ededed;
         padding: 11px 0;
@@ -468,9 +498,25 @@ h5 {
     }
 
     &__phone {
+        @include r(767) {
+            margin-left: auto;    
+        }
+        
         @include fcn;
 
         a {
+            @include r(767) {
+                width: 25px;
+                height: 25px;
+                color: transparent !important;
+                background: url('../img/icons/phone.svg') no-repeat center;
+                background-size: contain;
+
+                &:hover {
+                    color: transparent; 
+                }
+            }
+
             font-size: 15px;
             font-weight: 500;
             transition: $trans;
@@ -481,6 +527,10 @@ h5 {
             }
 
             &:first-child {
+                @include r(767) {
+                    display: none;   
+                }
+
                 margin-left: 0;
             }
         }
@@ -614,6 +664,10 @@ h5 {
     }
 
     &__logo {
+        @include r(767) {
+            width: 125px;   
+        }
+
         width: 252px;
         margin-right: 15px;
     }
@@ -632,6 +686,12 @@ h5 {
             }
         }
 
+        @include r(767) {
+             width: auto;
+             padding: 13px 13px;
+             font-size: 12px;
+        }
+
         border-radius: 5px;
         margin-right: 13px;
         text-transform: uppercase;
@@ -641,6 +701,7 @@ h5 {
 
         .icon {
             font-size: 16px;
+            flex-shrink: 0;
         }
     }
 
@@ -719,6 +780,10 @@ h5 {
         }
 
         .icon {
+            @include r(767) {
+                font-size: 20px;
+            }
+
             display: block;
             fill: #bebebe;
             margin-bottom: 5px;
@@ -756,6 +821,10 @@ h5 {
 
         padding: 19px 52px;
     }
+}
+
+.hamburger {
+    display: none;
 }
 
 .dropdown {
@@ -1275,6 +1344,12 @@ h5 {
             height: 350px;
         }
 
+        @include r(767) {
+            height: auto;
+            align-items: flex-start;
+            padding-top: 40px;
+        }
+
         height: 459px;
         @include fcn;
 
@@ -1316,6 +1391,10 @@ h5 {
     }
 
     .container {
+        @include r(767) {
+            flex-direction: column;    
+        }
+
         @include fcsb;
 
         &.full {
@@ -1335,6 +1414,12 @@ h5 {
         }
 
         img {
+            @include r(767) {
+                max-width: 100%;
+                transform: none;  
+                margin-bottom: 20px;  
+            }
+
             transform: translateX(20%);
             opacity: 0;
             transition: all 0.4s ease-in-out 300ms;
@@ -1346,6 +1431,10 @@ h5 {
         @include r(1023) {
             flex-shrink: 0;
             margin-right: 30px;
+        }
+
+        @include r(767) {
+         order: 2;   
         }
 
         transform: translateX(-20%);
@@ -1405,6 +1494,14 @@ h5 {
     }
 
     &__images {
+        @include r(767) {
+            margin-bottom: 20px;
+
+            img {
+                width: 33.3%;
+            }    
+        }
+
         @include fcn;
 
         img:nth-child(1) {
@@ -1440,6 +1537,8 @@ h5 {
 
         @include fcsb;
         margin-bottom: 29px;
+        position: relative;
+        z-index: 2;
 
         a {
             color: $red;
@@ -1447,6 +1546,8 @@ h5 {
             font-weight: 500;
             border-bottom: 1px solid transparent;
             transition: $trans;
+            margin-left: 10px;
+            flex-shrink: 0;
 
             &:hover {
                 border-bottom: 1px solid rgba(235, 0, 0, 0.24);
@@ -1512,6 +1613,10 @@ h5 {
     }
 
     &__more {
+        @include r(767) {
+            margin-top: 30px;    
+        }
+
         margin-top: 61px;
         @include centerX;
         font-size: 18px;
@@ -1520,6 +1625,8 @@ h5 {
         border-bottom: 1px solid rgba(235, 0, 0, 0.24);
         display: inline-block;
         transition: $trans;
+        position: relative;
+        z-index: 2;
 
         &:hover {
             border-color: transparent;
@@ -1535,6 +1642,12 @@ h5 {
     background: linear-gradient(97.87deg, #474747 13.61%, #212121 79.19%);
     color: #fff;
     padding: 46px 0;
+
+    h2 {
+        @include r(767) {
+         text-align: left;   
+        }
+    }
 
     &__list {
         @include r(1023) {
@@ -1559,6 +1672,10 @@ h5 {
             }
         }
 
+        @include r(767) {
+            font-size: 16px;   
+        }
+
         font-size: 19px;
         line-height: 1.42;
         text-align: center;
@@ -1581,6 +1698,10 @@ h5 {
             }
         }
 
+        @include r(767) {
+            width: 50px;   
+        }
+
         width: 82px;
         height: 82px;
         border: 1px solid rgba(255, 255, 255, 0.15);
@@ -1593,8 +1714,14 @@ h5 {
 
 .slider {
     &__header {
+        @include r(767) {
+            @include fcc;    
+        }
+
         @include fcsb;
         margin-bottom: 44px;
+        position: relative;
+        z-index: 2;
 
         h2 {
             margin-bottom: 0;
@@ -1631,6 +1758,11 @@ h5 {
     padding: 72px 0;
 
     &__item {
+        @include r(767) {
+            padding: 25px 20px;  
+            height: 230px;  
+        }
+
         height: 292px;
         padding: 38px 41px;
         position: relative;
@@ -1641,6 +1773,10 @@ h5 {
         border-radius: 3px;
 
         img {
+            @include r(767) {
+                display: none;    
+            }
+
             position: absolute;
             right: 0;
             bottom: 0;
@@ -1659,6 +1795,14 @@ h5 {
     }
 
     &__title {
+        @include r(767) {
+            font-size: 18px;
+            
+            br {
+                display: none;
+            }
+        }
+
         font-weight: 500;
         font-size: 26px;
         line-height: 1.37;
@@ -1701,6 +1845,7 @@ h5 {
 .popular {
     @include r(1279) {
         overflow: hidden;
+        padding: 60px 0;
     }
 
     padding: 105px 0;
@@ -1744,6 +1889,10 @@ h5 {
         align-items: flex-end;
 
         span {
+            @include r(767) {
+                font-size: 12px; 
+            }
+            
             font-size: 14px;
             display: inline-block;
             margin-bottom: 7px;
@@ -1801,6 +1950,14 @@ h5 {
     }
 
     &__title {
+        @include r(767) {
+            font-size: 15px;
+            
+            br {
+                display: none;
+            }
+        }
+
         font-size: 17px;
         line-height: 1.35;
         margin-bottom: 14px;
@@ -1808,6 +1965,10 @@ h5 {
     }
 
     &__price {
+        @include r(767) {
+            font-size: 20px;    
+        }
+
         &-label {
             font-weight: 300;
             font-size: 15px;
@@ -1852,6 +2013,10 @@ h5 {
     }
 
     &__more {
+        @include r(767) {
+            font-size: 14px;    
+        }
+
         font-size: 18px;
         font-weight: 500;
         border-bottom: 1px solid rgba(235, 0, 0, 0.24);
@@ -2038,6 +2203,14 @@ h5 {
     }
 
     &__item {
+        @include r(767) {
+            font-size: 16px; 
+            
+            br {
+                display: none;
+            }
+        }
+
         @include fcn;
         font-size: 19px;
         margin-bottom: 14px;
@@ -2048,6 +2221,16 @@ h5 {
     }
 
     &__icon {
+        @include r(767) {
+            width: 40px;
+            height: 40px;  
+            margin-right: 10px;
+            
+            img {
+                transform: scale(.8);
+            }
+        }
+        
         width: 50px;
         height: 50px;
         border-radius: 50%;
@@ -2086,6 +2269,10 @@ h5 {
             height: 400px;
         }
 
+        @include r(767) {
+            height: 300px;   
+        }
+
         width: 100%;
         height: 640px;
     }
@@ -2094,6 +2281,10 @@ h5 {
         @include r(1023) {
             @include centerXa;
             white-space: nowrap;
+        }
+
+        @include r(767) {
+            font-size: 20px;
         }
 
         position: absolute;
@@ -2285,6 +2476,12 @@ h5 {
     }
 
     &__photo {
+        @include r(767) {
+            width: 50px;
+            height: 50px;   
+            margin-right: 13px; 
+        }
+
         width: 75px;
         height: 75px;
         border-radius: 50%;
@@ -2298,6 +2495,12 @@ h5 {
     }
 
     &__name {
+        @include r(767) {
+            br {
+                display: none;
+            }    
+        }
+
         font-size: 17px;
         line-height: 1.17;
         margin-bottom: 10px;
@@ -2424,6 +2627,7 @@ h5 {
 
         .wrap {
             position: relative;
+            padding: 0;
 
             &::before {
                 content: '';
@@ -2487,12 +2691,24 @@ h5 {
             margin-bottom: 40px;
         }
 
+        @include r(767) {
+            font-size: 16px;   
+        }
+
         font-weight: 300;
         font-size: 18px;
         line-height: 1.28;
     }
 
     &__item {
+        @include r(1023) {
+            margin-left: 0;   
+        }
+
+        @include r(767) {
+            width: 100%;   
+        }
+
         width: 461px;
         flex-shrink: 0;
         margin-left: 28px;
@@ -2501,6 +2717,10 @@ h5 {
         cursor: pointer;
 
         &::before {
+            @include r(767) {
+                display: none;    
+            }
+
             content: '';
             @include centerXa;
             top: -20px;
@@ -2569,12 +2789,23 @@ h5 {
             width: 100%;
         }
 
+        @include r(767) {
+            display: block;            
+        }
+
         display: flex;
         flex-wrap: wrap;
         width: 50%;
     }
 
     &__item {
+        @include r(767) {
+            display: block;
+            @include flexitem(100%, 12px, 23px);  
+            padding: 15px 20px; 
+            height: 150px;
+        }
+
         @include flexitem(50%, 12px, 23px);
         height: 193px;
         background-repeat: no-repeat;
@@ -2618,6 +2849,10 @@ h5 {
     }
 
     &__title {
+        @include r(767) {
+            font-size: 20px;
+        }
+
         font-size: 23px;
         font-weight: 500;
         line-height: 1.35;
@@ -2649,10 +2884,19 @@ h5 {
     }
 
     .swiper-slide {
+        @include r(1023) {
+         width: 203px;   
+        }
+
         width: 269px;
     }
 
     &__item {
+        @include r(1023) {
+            width: 201px;
+            height: 130px;    
+        }
+
         width: 267px;
         height: 196px;
         margin: 1px 1px 2px;
@@ -2697,6 +2941,10 @@ h5 {
     }
 
     &__wrap {
+        @include r(1023) {
+         display: none;   
+        }
+
         position: absolute;
         top: 0;
         left: 0;
@@ -2742,6 +2990,20 @@ h5 {
         transform: none;
         margin-top: 120px;
     }
+
+    &__link {
+        @include r(1023) {
+         display: block;  
+         text-align: center; 
+        }
+
+        display: none;
+
+        .catalog__more {
+            margin-top: 40px;
+            margin-bottom: 80px;
+        }
+    }
 }
 
 .questions {
@@ -2760,6 +3022,14 @@ h5 {
 }
 
 .question {
+    @include r(1023) {
+        padding: 10px 19px;
+
+        br {
+            display: none;
+        }
+    }
+
     @include fcsb;
     padding: 10px 39px;
     font-size: 18px;
@@ -2781,6 +3051,7 @@ h5 {
         @include fcc;
         transform: rotate(90deg);
         transition: $trans;
+        flex-shrink: 0;
 
         svg {
             fill: $red;
@@ -2789,6 +3060,10 @@ h5 {
 }
 
 .answer {
+    @include r(1023) {
+        padding: 10px 19px;
+    }
+
     padding: 10px 39px;
     font-weight: 300;
     font-size: 16px;
@@ -2950,6 +3225,10 @@ h5 {
         background-size: 55%;
     }
 
+    @include r(1023) {
+        background: #cbcbcb;
+    }
+
     background: url(../img/cons.png) no-repeat 82% bottom #cbcbcb;
     background-size: 679px;
     padding: 84px 0;
@@ -2966,10 +3245,19 @@ h5 {
     }
 
     .form-group {
+        @include r(1023) {
+         @include fcsb;   
+        }
+
         @include fcn;
         margin-bottom: 18px;
 
         input {
+            @include r(1023) {
+             width: 49%; 
+             margin: 0;  
+            }
+
             width: 267px;
             margin-right: 24px;
         }
@@ -2990,6 +3278,10 @@ h5 {
     }
 
     textarea {
+        @include r(1023) {
+         width: 100%;   
+        }
+
         width: 558px;
         margin-bottom: 29px;
     }
@@ -3018,6 +3310,10 @@ h5 {
     }
 
     .callback__controls {
+        @include r(1023) {
+         width: 100%;   
+        }
+
         width: 558px;
     }
 
@@ -3053,6 +3349,10 @@ h5 {
             background-size: 155px;
         }
 
+        @include r(1023) {
+            background: transparent;   
+        }
+
         background: url(../img/icons/letter.svg) no-repeat 89% 25%;
         background-size: 155px;
     }
@@ -3067,6 +3367,10 @@ h5 {
         @include fcsb;
 
         input {
+            @include r(1023) {
+                width: 33.33%;    
+            }
+
             width: 364px;
             margin-right: 24px;
             flex-shrink: 0;
@@ -3158,6 +3462,14 @@ h5 {
     }
 
     &__row {
+        @include r(1023) {
+            flex-wrap: wrap;
+
+            & > img {
+                display: none;
+            }
+        }
+
         @include fcsb;
         padding: 24px 0 0;
     }
@@ -3192,6 +3504,10 @@ h5 {
     }
 
     &__links {
+        @include r(1023) {
+            width: 50%;   
+        }
+
         div,
         a {
             @include fcn;
@@ -3222,7 +3538,16 @@ h5 {
     }
 
     &__social {
+        @include r(1023) {
+            width: 50%;
+            margin-top: 20px;
+        }
+
         span {
+            @include r(1023) {
+                text-align: left;    
+            }
+
             display: block;
             text-align: center;
             font-weight: 300;
@@ -3231,6 +3556,10 @@ h5 {
         }
 
         div {
+            @include r(1023) {
+                justify-content: flex-start    
+            }
+
             @include fcc;
 
             a {
@@ -3304,6 +3633,10 @@ h5 {
     @include r(1279) {
         right: 15px;
         bottom: 15px;
+    }
+
+    @include r(1023) {
+        display: none;
     }
 
     width: 50px;

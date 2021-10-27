@@ -55,13 +55,16 @@ let main = new Swiper('.main .swiper', {
 
 let slider1 = new Swiper('.catalog .slider1 .swiper', {
     loop: true,
-    slidesPerView: 3.3,
+    slidesPerView: 1.5,
     spaceBetween: 25,
     navigation: {
         nextEl: '.slider1 .swiper-button-next',
         prevEl: '.slider1 .swiper-button-prev',
     },
     breakpoints: {
+        768: {
+            slidesPerView: 3.3,
+        },
         1024: {
             slidesPerView: 4.3,
         },
@@ -73,13 +76,16 @@ let slider1 = new Swiper('.catalog .slider1 .swiper', {
 
 let slider2 = new Swiper('.catalog .slider2 .swiper', {
     loop: true,
-    slidesPerView: 3.3,
+    slidesPerView: 1.5,
     spaceBetween: 25,
     navigation: {
         nextEl: '.slider2 .swiper-button-next',
         prevEl: '.slider2 .swiper-button-prev',
     },
     breakpoints: {
+        768: {
+            slidesPerView: 3.3,
+        },
         1024: {
             slidesPerView: 4.3,
         },
@@ -91,13 +97,16 @@ let slider2 = new Swiper('.catalog .slider2 .swiper', {
 
 let slider3 = new Swiper('.catalog .slider3 .swiper', {
     loop: true,
-    slidesPerView: 3.3,
+    slidesPerView: 1.5,
     spaceBetween: 25,
     navigation: {
         nextEl: '.slider3 .swiper-button-next',
         prevEl: '.slider3 .swiper-button-prev',
     },
     breakpoints: {
+        768: {
+            slidesPerView: 3.3,
+        },
         1024: {
             slidesPerView: 4.3,
         },
@@ -109,7 +118,7 @@ let slider3 = new Swiper('.catalog .slider3 .swiper', {
 
 let stock = new Swiper('.stock .swiper', {
     loop: true,
-    slidesPerView: 1.3,
+    slidesPerView: 1.1,
     spaceBetween: 20,
     slidesPerGroup: 1,
     autoplay: {
@@ -121,11 +130,15 @@ let stock = new Swiper('.stock .swiper', {
         prevEl: '.stock .swiper-button-prev',
     },
     breakpoints: {
+        768: {
+            slidesPerView: 1.3,
+        },
         1024: {
             slidesPerGroup: 2,
             slidesPerView: 2.1,
         },
         1280: {
+            slidesPerView: 2,
             spaceBetween: 80,
         },
     },
@@ -133,7 +146,7 @@ let stock = new Swiper('.stock .swiper', {
 
 let reviewsThree = new Swiper('.reviews.three .swiper', {
     loop: true,
-    slidesPerView: 1.8,
+    slidesPerView: 1.1,
     spaceBetween: 24,
     autoplay: {
         delay: 5000,
@@ -144,6 +157,9 @@ let reviewsThree = new Swiper('.reviews.three .swiper', {
         prevEl: '.reviews.three .swiper-button-prev',
     },
     breakpoints: {
+        768: {
+            slidesPerView: 1.8,
+        },
         1024: {
             slidesPerView: 2.8,
         },
@@ -155,8 +171,8 @@ let reviewsThree = new Swiper('.reviews.three .swiper', {
 
 let reviewsTwo = new Swiper('.reviews.two .swiper', {
     loop: true,
-    slidesPerView: 1.8,
-    spaceBetween: 40,
+    slidesPerView: 1.1,
+    spaceBetween: 24,
     autoplay: {
         delay: 5000,
         disableOnInteraction: false,
@@ -166,6 +182,10 @@ let reviewsTwo = new Swiper('.reviews.two .swiper', {
         prevEl: '.reviews.two .swiper-button-prev',
     },
     breakpoints: {
+        768: {
+            slidesPerView: 1.8,
+            spaceBetween: 40,
+        },
         1280: {
             slidesPerView: 2,
             spaceBetween: 84,
@@ -175,7 +195,7 @@ let reviewsTwo = new Swiper('.reviews.two .swiper', {
 
 let platform = new Swiper('.platform .swiper', {
     loop: true,
-    slidesPerView: 2.8,
+    slidesPerView: 1.3,
     spaceBetween: 24,
     autoplay: {
         delay: 5000,
@@ -186,6 +206,9 @@ let platform = new Swiper('.platform .swiper', {
         prevEl: '.platform .swiper-button-prev',
     },
     breakpoints: {
+        768: {
+            slidesPerView: 2.8,
+        },
         1024: {
             slidesPerView: 3.8,
         },
@@ -198,7 +221,7 @@ let platform = new Swiper('.platform .swiper', {
 
 let brands = new Swiper('.brands .swiper', {
     loop: true,
-    slidesPerView: 3.5,
+    slidesPerView: 2.1,
     autoplay: {
         delay: 5000,
         disableOnInteraction: false,
@@ -208,6 +231,9 @@ let brands = new Swiper('.brands .swiper', {
         prevEl: '.brands .swiper-button-prev',
     },
     breakpoints: {
+        768: {
+            slidesPerView: 3.5,
+        },
         1024: {
             slidesPerView: 4.5,
         },
@@ -238,7 +264,7 @@ let journal = new Swiper('.journal .swiper', {
 
 let certThree = new Swiper('.cert.three .swiper', {
     loop: true,
-    slidesPerView: 1.8,
+    slidesPerView: 1.1,
     spaceBetween: 24,
     autoplay: {
         delay: 5000,
@@ -249,6 +275,9 @@ let certThree = new Swiper('.cert.three .swiper', {
         prevEl: '.cert.three .swiper-button-prev',
     },
     breakpoints: {
+        768: {
+            slidesPerView: 1.8,
+        },
         1024: {
             slidesPerView: 2.8,
         },
@@ -260,7 +289,7 @@ let certThree = new Swiper('.cert.three .swiper', {
 
 let certFour = new Swiper('.cert.four .swiper', {
     loop: true,
-    slidesPerView: 2.3,
+    slidesPerView: 1.1,
     spaceBetween: 24,
     autoplay: {
         delay: 5000,
@@ -271,6 +300,9 @@ let certFour = new Swiper('.cert.four .swiper', {
         prevEl: '.cert.four .swiper-button-prev',
     },
     breakpoints: {
+        768: {
+            slidesPerView: 2.3,
+        },
         1024: {
             slidesPerView: 3.3,
         },
@@ -311,7 +343,7 @@ let commandCenter = new Swiper('.command .swiper.center', {
 
 let popular1 = new Swiper('.popular.block1 .swiper', {
     loop: true,
-    slidesPerView: 2.2,
+    slidesPerView: 1.1,
     spaceBetween: 24,
     autoplay: {
         delay: 5000,
@@ -322,6 +354,9 @@ let popular1 = new Swiper('.popular.block1 .swiper', {
         prevEl: '.popular.block1 .swiper-button-prev',
     },
     breakpoints: {
+        768: {
+            slidesPerView: 2.2,
+        },
         1024: {
             slidesPerView: 3.2,
         },
@@ -333,7 +368,7 @@ let popular1 = new Swiper('.popular.block1 .swiper', {
 
 let popular2 = new Swiper('.popular.block2 .swiper', {
     loop: true,
-    slidesPerView: 2.2,
+    slidesPerView: 1.1,
     spaceBetween: 24,
     autoplay: {
         delay: 5000,
@@ -344,6 +379,9 @@ let popular2 = new Swiper('.popular.block2 .swiper', {
         prevEl: '.popular.block2 .swiper-button-prev',
     },
     breakpoints: {
+        768: {
+            slidesPerView: 2.2,
+        },
         1024: {
             slidesPerView: 3.2,
         },
@@ -355,7 +393,7 @@ let popular2 = new Swiper('.popular.block2 .swiper', {
 
 let popular3 = new Swiper('.popular.block3 .swiper', {
     loop: true,
-    slidesPerView: 2.2,
+    slidesPerView: 1.1,
     spaceBetween: 24,
     autoplay: {
         delay: 5000,
@@ -366,6 +404,9 @@ let popular3 = new Swiper('.popular.block3 .swiper', {
         prevEl: '.popular.block3 .swiper-button-prev',
     },
     breakpoints: {
+        768: {
+            slidesPerView: 2.2,
+        },
         1024: {
             slidesPerView: 3.2,
         },
@@ -891,3 +932,11 @@ $('body').on('mouseleave', '.menu', (e) => {
         $('.menu .bar').animate({ left: 0, width: 0 });
     }
 });
+
+if ($(window).width() >= 1170) {
+    $('.container.full').css('padding-left', $('.header .container').offset().left);
+}
+
+if ($(window).width() < 767) {
+    $('.top .container').prepend($('.header__logo'));
+}

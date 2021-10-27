@@ -67,13 +67,16 @@ var main = new Swiper('.main .swiper', {
 });
 var slider1 = new Swiper('.catalog .slider1 .swiper', {
   loop: true,
-  slidesPerView: 3.3,
+  slidesPerView: 1.5,
   spaceBetween: 25,
   navigation: {
     nextEl: '.slider1 .swiper-button-next',
     prevEl: '.slider1 .swiper-button-prev'
   },
   breakpoints: {
+    768: {
+      slidesPerView: 3.3
+    },
     1024: {
       slidesPerView: 4.3
     },
@@ -84,13 +87,16 @@ var slider1 = new Swiper('.catalog .slider1 .swiper', {
 });
 var slider2 = new Swiper('.catalog .slider2 .swiper', {
   loop: true,
-  slidesPerView: 3.3,
+  slidesPerView: 1.5,
   spaceBetween: 25,
   navigation: {
     nextEl: '.slider2 .swiper-button-next',
     prevEl: '.slider2 .swiper-button-prev'
   },
   breakpoints: {
+    768: {
+      slidesPerView: 3.3
+    },
     1024: {
       slidesPerView: 4.3
     },
@@ -101,13 +107,16 @@ var slider2 = new Swiper('.catalog .slider2 .swiper', {
 });
 var slider3 = new Swiper('.catalog .slider3 .swiper', {
   loop: true,
-  slidesPerView: 3.3,
+  slidesPerView: 1.5,
   spaceBetween: 25,
   navigation: {
     nextEl: '.slider3 .swiper-button-next',
     prevEl: '.slider3 .swiper-button-prev'
   },
   breakpoints: {
+    768: {
+      slidesPerView: 3.3
+    },
     1024: {
       slidesPerView: 4.3
     },
@@ -118,7 +127,7 @@ var slider3 = new Swiper('.catalog .slider3 .swiper', {
 });
 var stock = new Swiper('.stock .swiper', {
   loop: true,
-  slidesPerView: 1.3,
+  slidesPerView: 1.1,
   spaceBetween: 20,
   slidesPerGroup: 1,
   autoplay: {
@@ -130,18 +139,22 @@ var stock = new Swiper('.stock .swiper', {
     prevEl: '.stock .swiper-button-prev'
   },
   breakpoints: {
+    768: {
+      slidesPerView: 1.3
+    },
     1024: {
       slidesPerGroup: 2,
       slidesPerView: 2.1
     },
     1280: {
+      slidesPerView: 2,
       spaceBetween: 80
     }
   }
 });
 var reviewsThree = new Swiper('.reviews.three .swiper', {
   loop: true,
-  slidesPerView: 1.8,
+  slidesPerView: 1.1,
   spaceBetween: 24,
   autoplay: {
     delay: 5000,
@@ -152,6 +165,9 @@ var reviewsThree = new Swiper('.reviews.three .swiper', {
     prevEl: '.reviews.three .swiper-button-prev'
   },
   breakpoints: {
+    768: {
+      slidesPerView: 1.8
+    },
     1024: {
       slidesPerView: 2.8
     },
@@ -162,8 +178,8 @@ var reviewsThree = new Swiper('.reviews.three .swiper', {
 });
 var reviewsTwo = new Swiper('.reviews.two .swiper', {
   loop: true,
-  slidesPerView: 1.8,
-  spaceBetween: 40,
+  slidesPerView: 1.1,
+  spaceBetween: 24,
   autoplay: {
     delay: 5000,
     disableOnInteraction: false
@@ -173,6 +189,10 @@ var reviewsTwo = new Swiper('.reviews.two .swiper', {
     prevEl: '.reviews.two .swiper-button-prev'
   },
   breakpoints: {
+    768: {
+      slidesPerView: 1.8,
+      spaceBetween: 40
+    },
     1280: {
       slidesPerView: 2,
       spaceBetween: 84
@@ -181,7 +201,7 @@ var reviewsTwo = new Swiper('.reviews.two .swiper', {
 });
 var platform = new Swiper('.platform .swiper', {
   loop: true,
-  slidesPerView: 2.8,
+  slidesPerView: 1.3,
   spaceBetween: 24,
   autoplay: {
     delay: 5000,
@@ -192,6 +212,9 @@ var platform = new Swiper('.platform .swiper', {
     prevEl: '.platform .swiper-button-prev'
   },
   breakpoints: {
+    768: {
+      slidesPerView: 2.8
+    },
     1024: {
       slidesPerView: 3.8
     },
@@ -202,7 +225,7 @@ var platform = new Swiper('.platform .swiper', {
 });
 var brands = new Swiper('.brands .swiper', {
   loop: true,
-  slidesPerView: 3.5,
+  slidesPerView: 2.1,
   autoplay: {
     delay: 5000,
     disableOnInteraction: false
@@ -212,6 +235,9 @@ var brands = new Swiper('.brands .swiper', {
     prevEl: '.brands .swiper-button-prev'
   },
   breakpoints: {
+    768: {
+      slidesPerView: 3.5
+    },
     1024: {
       slidesPerView: 4.5
     },
@@ -240,7 +266,7 @@ var journal = new Swiper('.journal .swiper', {
 });
 var certThree = new Swiper('.cert.three .swiper', {
   loop: true,
-  slidesPerView: 1.8,
+  slidesPerView: 1.1,
   spaceBetween: 24,
   autoplay: {
     delay: 5000,
@@ -251,6 +277,9 @@ var certThree = new Swiper('.cert.three .swiper', {
     prevEl: '.cert.three .swiper-button-prev'
   },
   breakpoints: {
+    768: {
+      slidesPerView: 1.8
+    },
     1024: {
       slidesPerView: 2.8
     },
@@ -261,7 +290,7 @@ var certThree = new Swiper('.cert.three .swiper', {
 });
 var certFour = new Swiper('.cert.four .swiper', {
   loop: true,
-  slidesPerView: 2.3,
+  slidesPerView: 1.1,
   spaceBetween: 24,
   autoplay: {
     delay: 5000,
@@ -272,6 +301,9 @@ var certFour = new Swiper('.cert.four .swiper', {
     prevEl: '.cert.four .swiper-button-prev'
   },
   breakpoints: {
+    768: {
+      slidesPerView: 2.3
+    },
     1024: {
       slidesPerView: 3.3
     },
@@ -309,7 +341,7 @@ var commandCenter = new Swiper('.command .swiper.center', {
 });
 var popular1 = new Swiper('.popular.block1 .swiper', {
   loop: true,
-  slidesPerView: 2.2,
+  slidesPerView: 1.1,
   spaceBetween: 24,
   autoplay: {
     delay: 5000,
@@ -320,6 +352,9 @@ var popular1 = new Swiper('.popular.block1 .swiper', {
     prevEl: '.popular.block1 .swiper-button-prev'
   },
   breakpoints: {
+    768: {
+      slidesPerView: 2.2
+    },
     1024: {
       slidesPerView: 3.2
     },
@@ -330,7 +365,7 @@ var popular1 = new Swiper('.popular.block1 .swiper', {
 });
 var popular2 = new Swiper('.popular.block2 .swiper', {
   loop: true,
-  slidesPerView: 2.2,
+  slidesPerView: 1.1,
   spaceBetween: 24,
   autoplay: {
     delay: 5000,
@@ -341,6 +376,9 @@ var popular2 = new Swiper('.popular.block2 .swiper', {
     prevEl: '.popular.block2 .swiper-button-prev'
   },
   breakpoints: {
+    768: {
+      slidesPerView: 2.2
+    },
     1024: {
       slidesPerView: 3.2
     },
@@ -351,7 +389,7 @@ var popular2 = new Swiper('.popular.block2 .swiper', {
 });
 var popular3 = new Swiper('.popular.block3 .swiper', {
   loop: true,
-  slidesPerView: 2.2,
+  slidesPerView: 1.1,
   spaceBetween: 24,
   autoplay: {
     delay: 5000,
@@ -362,6 +400,9 @@ var popular3 = new Swiper('.popular.block3 .swiper', {
     prevEl: '.popular.block3 .swiper-button-prev'
   },
   breakpoints: {
+    768: {
+      slidesPerView: 2.2
+    },
     1024: {
       slidesPerView: 3.2
     },
@@ -765,3 +806,11 @@ $('body').on('mouseleave', '.menu', function (e) {
     });
   }
 });
+
+if ($(window).width() >= 1170) {
+  $('.container.full').css('padding-left', $('.header .container').offset().left);
+}
+
+if ($(window).width() < 767) {
+  $('.top .container').prepend($('.header__logo'));
+}
