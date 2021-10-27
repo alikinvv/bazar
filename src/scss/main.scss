@@ -8101,10 +8101,10 @@ h5 {
                 width: 100%;
                 padding-left: 0;
                 padding-right: 0;
-                margin-top: 20px;    
+                margin-top: 20px;
                 margin-left: 0;
             }
-            
+
             text-transform: uppercase;
             font-weight: 500;
             font-size: 18px;
@@ -8141,6 +8141,7 @@ h5 {
     @include r(767) {
         width: 100%;
         margin: 0 15px;
+        overflow: scroll;
     }
 
     display: none;
@@ -8151,7 +8152,6 @@ h5 {
     width: 800px;
     border-radius: 5px;
     max-height: 90vh;
-    overflow: scroll;
     max-width: 95%;
 
     &.active {
@@ -8562,6 +8562,7 @@ h5 {
         @include r(767) {
             padding: 13px;
             font-size: 16px;
+            margin-top: -20px;
         }
     }
 
@@ -8571,7 +8572,7 @@ h5 {
 
     .form-group {
         @include r(767) {
-            @include fcsb;
+            display: block;
         }
 
         @include fcc;
@@ -8583,8 +8584,8 @@ h5 {
 
         input {
             @include r(767) {
-                width: 48%;
-                margin: 0;
+                width: 100%;
+                margin: 0 0 20px;
             }
 
             width: 267px;
