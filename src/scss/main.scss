@@ -8527,6 +8527,7 @@ h5 {
     &__text {
         @include r(767) {
             font-size: 16px;
+            padding: 0 10px;
         }
 
         text-align: center;
