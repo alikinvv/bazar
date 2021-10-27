@@ -8465,7 +8465,7 @@ h5 {
 
     .simplebar-scrollbar {
         @include r(767) {
-            width: 3px;
+            display: none;
         }
 
         width: 6px;
