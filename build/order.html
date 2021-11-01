@@ -159,7 +159,7 @@
             <div class="dropdown">
                 <div class="dropdown__close"></div>
 
-                <h3 class="dropdown__title">Каталог</h3>
+                <div class="dropdown__title h3">Каталог</div>
 
                 <form action="url" class="header__search">
                     <input type="text" placeholder="Поиск по каталогу">
@@ -1510,7 +1510,46 @@
                 </div>
             </div>
             <a href="javascript:void(0)">Климатическое оборудование</a>
-            <a href="javascript:void(0)">Ручные инструменты</a>
+            <div class="right">
+                <div class="parent active">
+                    Ручные инструменты
+                    <svg class="icon">
+                        <use xlink:href="img/symbol-defs.svg#icon-arrow-down"></use>
+                    </svg>
+                </div>
+
+                <div class="dropdown">
+                    <div class="dropdown__menu  custom-scroll">
+                        <a href="javascript:void(0)" class="active" data-page="1">Садовая техника</a>
+                        <a href="javascript:void(0)" data-page="2">Электроинструменты</a>
+                        <a href="javascript:void(0)" data-page="1">Силовая и строительная техника</a>
+                        <a href="javascript:void(0)" data-page="2">Климатическое оборудование</a>
+                        <a href="javascript:void(0)" data-page="1">Расходные материалы и оснастка</a>
+                        <a href="javascript:void(0)" data-page="2">Ручные инструменты и приспособления</a>
+                        <a href="javascript:void(0)" data-page="1">FISKARS</a>
+                        <a href="javascript:void(0)" data-page="2">Измерительные инструменты</a>
+                        <a href="javascript:void(0)" data-page="1">Пневматическое оборудование</a>
+                        <a href="javascript:void(0)" data-page="2">Снегоуборочная техника</a>
+                        <a href="javascript:void(0)" data-page="1">Компрессоры</a>
+                        <a href="javascript:void(0)" data-page="2">Моечное и уборочное оборудование</a>
+                    </div>
+                    <div class="dropdown__body">
+                        <div class="dropdown__page active" data-page="1">
+                            <div class="dropdown__list">
+                                <a href="javascript:void(0)">Садовая техника</a>
+                                <a href="javascript:void(0)">Электроинструменты</a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown__page" data-page="2">
+                            <div class="dropdown__list">
+                                <a href="javascript:void(0)" data-page="1">Пневматическое оборудование</a>
+                                <a href="javascript:void(0)" data-page="2">Снегоуборочная техника</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 <!-- START CONTENT  -->
@@ -1556,7 +1595,7 @@
                 </div>
 
                 <div class="order__item">
-                    <h4>Контактные данные</h4>
+                    <div class="h4">Контактные данные</div>
                     <div class="order__group">
                         <label>ФИО <span class="red">*</span></label>
                         <input type="text" value="Иванов Сергей Иванович" />
@@ -1575,7 +1614,7 @@
 
                     <div class="checkbox">
                         <input type="checkbox" />
-                        <label for="">Я представитель юридического лица / ИП</label>
+                        <label for="ss">Я представитель юридического лица / ИП</label>
                     </div>
 
                     <div class="order__group">
@@ -1599,7 +1638,7 @@
                         </div>
                     </div>
 
-                    <h4>Способ доставки</h4>
+                    <div class="h4">Способ доставки</div>
 
                     <div class="delivery">
                         <div class="delivery__top">
@@ -1842,7 +1881,7 @@
                         </div>
 
                         <div class="pay">
-                            <h4>Способы оплаты</h4>
+                            <div class="h4">Способы оплаты</div>
 
                             <div class="radio red">
                                 <input type="radio" name="pay" id="pay1" />
@@ -1879,8 +1918,8 @@
                             <button>Удалить</button>
                         </div>
                         <div class="cart__info">
-                            <div><span>PROMOKOD:</span> <strong>скидка 10%</strong></div>
-                            <div><span>Количество позиций со скидкой:</span> <strong>5</strong></div>
+                            <div><span>PROMOKOD:</span> <span class="strong">скидка 10%</span></div>
+                            <div><span>Количество позиций со скидкой:</span> <span class="strong">5</span></div>
                         </div>
                         <div class="order__controls">
                             <div class="checkbox">
@@ -1910,8 +1949,14 @@
 
         <form action="url">
             <div class="form-group">
-                <input type="text" placeholder="Имя *">
-                <input type="text" placeholder="E-mail *">
+                <div class="control">
+                    <input type="text">
+                    <div class="placeholder">Имя <span class="red">*</span></div>
+                </div>
+                <div class="control">
+                    <input type="text">
+                    <div class="placeholder">E-mail <span class="red">*</span></div>
+                </div>
                 <button class="btn btn-fill">Подписаться</button>
             </div>
             <div class="checkbox">
@@ -2125,7 +2170,10 @@
 
                         <div class="form-group">
                             <input type="text" placeholder="Имя">
-                            <input type="text" placeholder="Телефон *" class="phone-mask">
+                            <div class="control">
+                                <input type="text" class="phone-mask">
+                                <div class="placeholder">Телефон <span class="red">*</span></div>
+                            </div>
                         </div>
 
                         <div class="sale__controls">
@@ -2169,7 +2217,10 @@
                     <form action="url" class="sale__form">
                         <div class="form-group">
                             <input type="text" placeholder="Имя">
-                            <input type="text" placeholder="Телефон *" class="phone-mask">
+                            <div class="control">
+                                <input type="text" class="phone-mask">
+                                <div class="placeholder">Телефон <span class="red">*</span></div>
+                            </div>
                         </div>
 
                         <div class="sale__controls">
@@ -2197,11 +2248,20 @@
                     консультант свяжется с вами в ближайшее время</div>
                 <div class="sale__body">
                     <form action="url" class="sale__form">
-                        <input type="text" placeholder="ФИО *">
+                        <div class="control">
+                            <input type="text">
+                            <div class="placeholder">ФИО <span class="red">*</span></div>
+                        </div>
 
                         <div class="form-group">
-                            <input type="text" placeholder="Телефон *" class="phone-mask">
-                            <input type="text" placeholder="E-mail *">
+                            <div class="control">
+                                <input type="text" class="phone-mask">
+                                <div class="placeholder">Телефон <span class="red">*</span></div>
+                            </div>
+                            <div class="control">
+                                <input type="text">
+                                <div class="placeholder">E-mail <span class="red">*</span></div>
+                            </div>
                         </div>
 
                         <textarea placeholder="Комментарий к заказу"></textarea>

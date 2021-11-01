@@ -159,7 +159,7 @@
             <div class="dropdown">
                 <div class="dropdown__close"></div>
 
-                <h3 class="dropdown__title">Каталог</h3>
+                <div class="dropdown__title h3">Каталог</div>
 
                 <form action="url" class="header__search">
                     <input type="text" placeholder="Поиск по каталогу">
@@ -1510,7 +1510,46 @@
                 </div>
             </div>
             <a href="javascript:void(0)">Климатическое оборудование</a>
-            <a href="javascript:void(0)">Ручные инструменты</a>
+            <div class="right">
+                <div class="parent active">
+                    Ручные инструменты
+                    <svg class="icon">
+                        <use xlink:href="img/symbol-defs.svg#icon-arrow-down"></use>
+                    </svg>
+                </div>
+
+                <div class="dropdown">
+                    <div class="dropdown__menu  custom-scroll">
+                        <a href="javascript:void(0)" class="active" data-page="1">Садовая техника</a>
+                        <a href="javascript:void(0)" data-page="2">Электроинструменты</a>
+                        <a href="javascript:void(0)" data-page="1">Силовая и строительная техника</a>
+                        <a href="javascript:void(0)" data-page="2">Климатическое оборудование</a>
+                        <a href="javascript:void(0)" data-page="1">Расходные материалы и оснастка</a>
+                        <a href="javascript:void(0)" data-page="2">Ручные инструменты и приспособления</a>
+                        <a href="javascript:void(0)" data-page="1">FISKARS</a>
+                        <a href="javascript:void(0)" data-page="2">Измерительные инструменты</a>
+                        <a href="javascript:void(0)" data-page="1">Пневматическое оборудование</a>
+                        <a href="javascript:void(0)" data-page="2">Снегоуборочная техника</a>
+                        <a href="javascript:void(0)" data-page="1">Компрессоры</a>
+                        <a href="javascript:void(0)" data-page="2">Моечное и уборочное оборудование</a>
+                    </div>
+                    <div class="dropdown__body">
+                        <div class="dropdown__page active" data-page="1">
+                            <div class="dropdown__list">
+                                <a href="javascript:void(0)">Садовая техника</a>
+                                <a href="javascript:void(0)">Электроинструменты</a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown__page" data-page="2">
+                            <div class="dropdown__list">
+                                <a href="javascript:void(0)" data-page="1">Пневматическое оборудование</a>
+                                <a href="javascript:void(0)" data-page="2">Снегоуборочная техника</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 <!-- START CONTENT  -->
@@ -1521,10 +1560,10 @@
             <div class="swiper-slide" style="background: linear-gradient(93.72deg, #ff4f4f 31.1%, #eb0000 76.09%)">
                 <div class="container">
                     <div class="main__info">
-                        <div class="main__title">
+                        <h1 class="main__title">
                             Получите скидку <br />
                             на следующий заказ
-                        </div>
+                        </h1>
                         <div class="main__text">
                             При покупке на сумму от 4 000 руб. <br />
                             получите скидку на следующий заказ
@@ -1621,6 +1660,7 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
     </div>
+    <div class="swiper-pagination"></div>
 </div>
 
 <section class="catalog">
@@ -1628,7 +1668,7 @@
         <h2>Каталог</h2>
 
         <div class="catalog__header">
-            <h4>Электроинструмент</h4>
+            <div class="h4">Электроинструмент</div>
             <a href="javascript:void(0)">Смотреть все</a>
         </div>
 
@@ -1681,7 +1721,7 @@
 <section class="catalog">
     <div class="container">
         <div class="catalog__header">
-            <h4>Садовая техника</h4>
+            <div class="h4">Садовая техника</div>
             <a href="javascript:void(0)">Смотреть все</a>
         </div>
 
@@ -1726,7 +1766,7 @@
 <section class="catalog">
     <div class="container">
         <div class="catalog__header">
-            <h4>Силовая и строительная техника</h4>
+            <div class="h4">Силовая и строительная техника</div>
             <a href="javascript:void(0)">Смотреть все</a>
         </div>
 
@@ -1897,7 +1937,7 @@
                         <span style="background: #ffeba4">Акция</span>
                         <span style="background: #e2e5ff">%</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
+                    <a href="javascript:void(0)" class="item__img" style="background-image: url('img/item5.png')"></a>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -1912,7 +1952,7 @@
                     </div>
                     <div class="item__top">
                         <div class="item__code">арт. 0000003</div>
-                        <div class="item__availability">в наличии</div>
+                        <div class="item__availability green yellow">под заказ</div>
                     </div>
 
                     <div class="stars" data-count="4">
@@ -1950,12 +1990,13 @@
                         </svg>
                     </div>
 
-                    <div class="item__title">Ультра-легкие открытые очки с&nbsp;янтарными линзами из&nbsp;поликарбоната
-                        HONEYWELL</div>
+                    <a href="javascript:void(0)" class="item__title">Ультра-легкие открытые очки с&nbsp;янтарными
+                        линзами из&nbsp;поликарбоната
+                        HONEYWELL</a>
                     <div class="item__price-label">цена</div>
                     <div class="item__price-wrap">
                         <div class="item__price-old">35 000 руб.</div>
-                        <div class="item__price"><strong>33 000</strong> руб.</div>
+                        <div class="item__price"><span class="strong">33 000</span> руб.</div>
                     </div>
 
                     <a href="javascript:void(0)" class="btn add-cart">
@@ -1982,7 +2023,7 @@
                         </div>
                     </div>
 
-                    <a href="javascript:void(0)" class="item__more">Купить в 1 клик</a>
+                    <a href="javascript:void(0)" class="item__more sm">Сообщить о поступлении</a>
                 </div>
                 <div class="swiper-slide item">
                     <div class="item__tags">
@@ -1990,7 +2031,7 @@
                         <span style="background: #e2ffa4">Распродажа</span>
                         <span style="background: #cef6ff">Новинка</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
+                    <a href="javascript:void(0)" class="item__img" style="background-image: url('img/item5.png')"></a>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -2005,7 +2046,7 @@
                     </div>
                     <div class="item__top">
                         <div class="item__code">арт. 0000003</div>
-                        <div class="item__availability">в наличии</div>
+                        <div class="item__availability red">нет в наличии</div>
                     </div>
 
                     <div class="stars" data-count="4">
@@ -2043,10 +2084,96 @@
                         </svg>
                     </div>
 
-                    <div class="item__title">Шуруповерт HILTI</div>
+                    <a href="javascript:void(0)" class="item__title">Шуруповерт HILTI</a>
                     <div class="item__price-label">цена</div>
                     <div class="item__price-wrap">
-                        <div class="item__price"><strong>33 000</strong> руб.</div>
+                        <div class="item__price"><span class="strong">33 000</span> руб.</div>
+                    </div>
+
+                    <a href="javascript:void(0)" class="btn add-cart">
+                        Подобрать аналог
+                    </a>
+
+                    <div class="item__add">
+                        <a href="javascript:void(0)" class="btn btn-green btn-fill">В корзине</a>
+                        <div class="counter">
+                            <div class="counter__minus">
+                                <svg class="icon">
+                                    <use xlink:href="img/symbol-defs.svg#icon-minus"></use>
+                                </svg>
+                            </div>
+                            <div class="counter__num">20</div>
+                            <div class="counter__plus">
+                                <svg class="icon">
+                                    <use xlink:href="img/symbol-defs.svg#icon-plus"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="javascript:void(0)" class="item__more sm">Заказать</a>
+                </div>
+                <div class="swiper-slide item">
+                    <div class="item__tags">
+                        <span style="background: #ffcdcd">Хит продаж</span>
+                    </div>
+                    <a href="javascript:void(0)" class="item__img" style="background-image: url('img/item5.png')"></a>
+                    <div class="item__controls">
+                        <a href="javascript:void(0)">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-chart"></use>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-heart"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="item__top">
+                        <div class="item__code">арт. 0000003</div>
+                        <div class="item__availability green">в наличии</div>
+                    </div>
+
+                    <div class="stars" data-count="4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.2 14">
+                            <g class="active" data-star="1">
+                                <path class="st0"
+                                    d="M14.9 5.3l-5-.7L7.6 0 5.4 4.6l-5 .7L4 8.9 3.1 14l4.5-2.4 4.5 2.4-.9-5.1 3.7-3.6zm-7.3 5.4l-3.5 1.8.7-3.9L2 5.8l3.9-.5 1.7-3.6 1.7 3.6 3.9.6-2.8 2.8.7 3.9-3.5-1.9z" />
+                                <path class="st0"
+                                    d="M9.6 5L7.6.9 5.6 5l-4.4.6 3.2 3.2-.7 4.5 3.9-2.1 4 2.1-.8-4.5 3.3-3.2z" />
+                            </g>
+                            <g class="active" data-star="2">
+                                <path class="st0"
+                                    d="M33 5.3l-5-.7L25.7 0l-2.2 4.6-5 .7 3.6 3.6-.9 5.1 4.5-2.4 4.5 2.4-.9-5.1L33 5.3zm-7.3 5.4l-3.5 1.8.7-3.9-2.8-2.8 3.9-.5 1.7-3.6 1.7 3.6 3.9.6-2.8 2.8.7 3.9-3.5-1.9z" />
+                                <path class="st0"
+                                    d="M27.7 5l-2-4.1-2 4.1-4.4.6 3.2 3.2-.8 4.5 4-2.1 4 2.1-.8-4.5 3.2-3.2z" />
+                            </g>
+                            <g class="active" data-star="3">
+                                <path class="st0"
+                                    d="M51.1 5.3l-5-.7L43.8 0l-2.2 4.6-5 .7 3.6 3.6-.9 5.1 4.5-2.4 4.5 2.4-.9-5.1 3.7-3.6zm-7.3 5.4l-3.5 1.8.7-3.9-2.8-2.8 3.9-.5 1.7-3.6 1.7 3.6 3.9.6-2.8 2.8.7 3.9-3.5-1.9z" />
+                                <path class="st0"
+                                    d="M45.8 5l-2-4.1-2 4.1-4.4.6 3.2 3.2-.8 4.5 4-2.1 4 2.1-.8-4.5 3.2-3.2z" />
+                            </g>
+                            <g class="active" data-star="4">
+                                <path class="st0"
+                                    d="M69.2 5.3l-5-.7L61.9 0l-2.2 4.6-5 .7 3.6 3.6-.9 5.1 4.5-2.4 4.5 2.4-.9-5.1 3.7-3.6zm-7.3 5.4l-3.5 1.8.7-3.9-2.8-2.8 3.9-.5 1.7-3.6 1.7 3.6 3.9.6-2.8 2.8.7 3.9-3.5-1.9z" />
+                                <path class="st0"
+                                    d="M63.8 5L61.9.9l-2 4.1-4.5.6 3.2 3.2-.7 4.5 4-2.1 3.9 2.1-.7-4.5 3.2-3.2z" />
+                            </g>
+                            <g data-star="5">
+                                <path class="st0"
+                                    d="M87.2 5.3l-5-.7L79.9 0l-2.2 4.6-5 .7 3.6 3.6-.9 5.1 4.5-2.4 4.5 2.4-.9-5.1 3.7-3.6zm-7.3 5.4l-3.5 1.8.7-3.9-2.8-2.8 3.9-.5 1.7-3.6 1.7 3.6 3.9.6-2.8 2.8.7 3.9-3.5-1.9z" />
+                                <path class="st0"
+                                    d="M81.8 5L79.9.9l-2 4.1-4.5.6 3.2 3.2-.7 4.5 4-2.1 3.9 2.1-.7-4.5 3.2-3.2z" />
+                            </g>
+                        </svg>
+                    </div>
+
+                    <a href="javascript:void(0)" class="item__title">Электрический аккумуляторный шуруповерт HILTI</a>
+                    <div class="item__price-label">цена</div>
+                    <div class="item__price-wrap">
+                        <div class="item__price"><span class="strong">33 000</span> руб.</div>
                     </div>
 
                     <a href="javascript:void(0)" class="btn add-cart">
@@ -2079,7 +2206,7 @@
                     <div class="item__tags">
                         <span style="background: #ffcdcd">Хит продаж</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
+                    <a href="javascript:void(0)" class="item__img" style="background-image: url('img/item5.png')"></a>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -2094,7 +2221,7 @@
                     </div>
                     <div class="item__top">
                         <div class="item__code">арт. 0000003</div>
-                        <div class="item__availability">в наличии</div>
+                        <div class="item__availability green">в наличии</div>
                     </div>
 
                     <div class="stars" data-count="4">
@@ -2132,99 +2259,10 @@
                         </svg>
                     </div>
 
-                    <div class="item__title">Электрический аккумуляторный шуруповерт HILTI</div>
+                    <a href="javascript:void(0)" class="item__title">Электрический аккумуляторный шуруповерт HILTI</a>
                     <div class="item__price-label">цена</div>
                     <div class="item__price-wrap">
-                        <div class="item__price"><strong>33 000</strong> руб.</div>
-                    </div>
-
-                    <a href="javascript:void(0)" class="btn add-cart">
-                        <svg class="icon">
-                            <use xlink:href="img/symbol-defs.svg#icon-cart"></use>
-                        </svg>
-                        В корзину
-                    </a>
-
-                    <div class="item__add">
-                        <a href="javascript:void(0)" class="btn btn-green btn-fill">В корзине</a>
-                        <div class="counter">
-                            <div class="counter__minus">
-                                <svg class="icon">
-                                    <use xlink:href="img/symbol-defs.svg#icon-minus"></use>
-                                </svg>
-                            </div>
-                            <div class="counter__num">20</div>
-                            <div class="counter__plus">
-                                <svg class="icon">
-                                    <use xlink:href="img/symbol-defs.svg#icon-plus"></use>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a href="javascript:void(0)" class="item__more">Купить в 1 клик</a>
-                </div>
-                <div class="swiper-slide item">
-                    <div class="item__tags">
-                        <span style="background: #ffcdcd">Хит продаж</span>
-                    </div>
-                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
-                    <div class="item__controls">
-                        <a href="javascript:void(0)">
-                            <svg class="icon">
-                                <use xlink:href="img/symbol-defs.svg#icon-chart"></use>
-                            </svg>
-                        </a>
-                        <a href="javascript:void(0)">
-                            <svg class="icon">
-                                <use xlink:href="img/symbol-defs.svg#icon-heart"></use>
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="item__top">
-                        <div class="item__code">арт. 0000003</div>
-                        <div class="item__availability">в наличии</div>
-                    </div>
-
-                    <div class="stars" data-count="4">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.2 14">
-                            <g class="active" data-star="1">
-                                <path class="st0"
-                                    d="M14.9 5.3l-5-.7L7.6 0 5.4 4.6l-5 .7L4 8.9 3.1 14l4.5-2.4 4.5 2.4-.9-5.1 3.7-3.6zm-7.3 5.4l-3.5 1.8.7-3.9L2 5.8l3.9-.5 1.7-3.6 1.7 3.6 3.9.6-2.8 2.8.7 3.9-3.5-1.9z" />
-                                <path class="st0"
-                                    d="M9.6 5L7.6.9 5.6 5l-4.4.6 3.2 3.2-.7 4.5 3.9-2.1 4 2.1-.8-4.5 3.3-3.2z" />
-                            </g>
-                            <g class="active" data-star="2">
-                                <path class="st0"
-                                    d="M33 5.3l-5-.7L25.7 0l-2.2 4.6-5 .7 3.6 3.6-.9 5.1 4.5-2.4 4.5 2.4-.9-5.1L33 5.3zm-7.3 5.4l-3.5 1.8.7-3.9-2.8-2.8 3.9-.5 1.7-3.6 1.7 3.6 3.9.6-2.8 2.8.7 3.9-3.5-1.9z" />
-                                <path class="st0"
-                                    d="M27.7 5l-2-4.1-2 4.1-4.4.6 3.2 3.2-.8 4.5 4-2.1 4 2.1-.8-4.5 3.2-3.2z" />
-                            </g>
-                            <g class="active" data-star="3">
-                                <path class="st0"
-                                    d="M51.1 5.3l-5-.7L43.8 0l-2.2 4.6-5 .7 3.6 3.6-.9 5.1 4.5-2.4 4.5 2.4-.9-5.1 3.7-3.6zm-7.3 5.4l-3.5 1.8.7-3.9-2.8-2.8 3.9-.5 1.7-3.6 1.7 3.6 3.9.6-2.8 2.8.7 3.9-3.5-1.9z" />
-                                <path class="st0"
-                                    d="M45.8 5l-2-4.1-2 4.1-4.4.6 3.2 3.2-.8 4.5 4-2.1 4 2.1-.8-4.5 3.2-3.2z" />
-                            </g>
-                            <g class="active" data-star="4">
-                                <path class="st0"
-                                    d="M69.2 5.3l-5-.7L61.9 0l-2.2 4.6-5 .7 3.6 3.6-.9 5.1 4.5-2.4 4.5 2.4-.9-5.1 3.7-3.6zm-7.3 5.4l-3.5 1.8.7-3.9-2.8-2.8 3.9-.5 1.7-3.6 1.7 3.6 3.9.6-2.8 2.8.7 3.9-3.5-1.9z" />
-                                <path class="st0"
-                                    d="M63.8 5L61.9.9l-2 4.1-4.5.6 3.2 3.2-.7 4.5 4-2.1 3.9 2.1-.7-4.5 3.2-3.2z" />
-                            </g>
-                            <g data-star="5">
-                                <path class="st0"
-                                    d="M87.2 5.3l-5-.7L79.9 0l-2.2 4.6-5 .7 3.6 3.6-.9 5.1 4.5-2.4 4.5 2.4-.9-5.1 3.7-3.6zm-7.3 5.4l-3.5 1.8.7-3.9-2.8-2.8 3.9-.5 1.7-3.6 1.7 3.6 3.9.6-2.8 2.8.7 3.9-3.5-1.9z" />
-                                <path class="st0"
-                                    d="M81.8 5L79.9.9l-2 4.1-4.5.6 3.2 3.2-.7 4.5 4-2.1 3.9 2.1-.7-4.5 3.2-3.2z" />
-                            </g>
-                        </svg>
-                    </div>
-
-                    <div class="item__title">Электрический аккумуляторный шуруповерт HILTI</div>
-                    <div class="item__price-label">цена</div>
-                    <div class="item__price-wrap">
-                        <div class="item__price"><strong>33 000</strong> руб.</div>
+                        <div class="item__price"><span class="strong">33 000</span> руб.</div>
                     </div>
 
                     <a href="javascript:void(0)" class="btn add-cart">
@@ -2289,7 +2327,7 @@
                         <span style="background: #ffeba4">Акция</span>
                         <span style="background: #e2e5ff">%</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
+                    <a href="javascript:void(0)" class="item__img" style="background-image: url('img/item5.png')"></a>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -2304,7 +2342,7 @@
                     </div>
                     <div class="item__top">
                         <div class="item__code">арт. 0000003</div>
-                        <div class="item__availability">в наличии</div>
+                        <div class="item__availability green">в наличии</div>
                     </div>
 
                     <div class="stars" data-count="4">
@@ -2342,12 +2380,13 @@
                         </svg>
                     </div>
 
-                    <div class="item__title">Ультра-легкие открытые очки с&nbsp;янтарными линзами из&nbsp;поликарбоната
-                        HONEYWELL</div>
+                    <a href="javascript:void(0)" class="item__title">Ультра-легкие открытые очки с&nbsp;янтарными
+                        линзами из&nbsp;поликарбоната
+                        HONEYWELL</a>
                     <div class="item__price-label">цена</div>
                     <div class="item__price-wrap">
                         <div class="item__price-old">35 000 руб.</div>
-                        <div class="item__price"><strong>33 000</strong> руб.</div>
+                        <div class="item__price"><span class="strong">33 000</span> руб.</div>
                     </div>
 
                     <a href="javascript:void(0)" class="btn add-cart">
@@ -2382,7 +2421,7 @@
                         <span style="background: #e2ffa4">Распродажа</span>
                         <span style="background: #cef6ff">Новинка</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
+                    <a href="javascript:void(0)" class="item__img" style="background-image: url('img/item5.png')"></a>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -2397,7 +2436,7 @@
                     </div>
                     <div class="item__top">
                         <div class="item__code">арт. 0000003</div>
-                        <div class="item__availability">в наличии</div>
+                        <div class="item__availability green">в наличии</div>
                     </div>
 
                     <div class="stars" data-count="4">
@@ -2435,10 +2474,10 @@
                         </svg>
                     </div>
 
-                    <div class="item__title">Шуруповерт HILTI</div>
+                    <a href="javascript:void(0)" class="item__title">Шуруповерт HILTI</a>
                     <div class="item__price-label">цена</div>
                     <div class="item__price-wrap">
-                        <div class="item__price"><strong>33 000</strong> руб.</div>
+                        <div class="item__price"><span class="strong">33 000</span> руб.</div>
                     </div>
 
                     <a href="javascript:void(0)" class="btn add-cart">
@@ -2471,7 +2510,7 @@
                     <div class="item__tags">
                         <span style="background: #ffcdcd">Хит продаж</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
+                    <a href="javascript:void(0)" class="item__img" style="background-image: url('img/item5.png')"></a>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -2486,7 +2525,7 @@
                     </div>
                     <div class="item__top">
                         <div class="item__code">арт. 0000003</div>
-                        <div class="item__availability">в наличии</div>
+                        <div class="item__availability green">в наличии</div>
                     </div>
 
                     <div class="stars" data-count="4">
@@ -2524,10 +2563,10 @@
                         </svg>
                     </div>
 
-                    <div class="item__title">Электрический аккумуляторный шуруповерт HILTI</div>
+                    <a href="javascript:void(0)" class="item__title">Электрический аккумуляторный шуруповерт HILTI</a>
                     <div class="item__price-label">цена</div>
                     <div class="item__price-wrap">
-                        <div class="item__price"><strong>33 000</strong> руб.</div>
+                        <div class="item__price"><span class="strong">33 000</span> руб.</div>
                     </div>
 
                     <a href="javascript:void(0)" class="btn add-cart">
@@ -2560,7 +2599,7 @@
                     <div class="item__tags">
                         <span style="background: #ffcdcd">Хит продаж</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
+                    <a href="javascript:void(0)" class="item__img" style="background-image: url('img/item5.png')"></a>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -2575,7 +2614,7 @@
                     </div>
                     <div class="item__top">
                         <div class="item__code">арт. 0000003</div>
-                        <div class="item__availability">в наличии</div>
+                        <div class="item__availability green">в наличии</div>
                     </div>
 
                     <div class="stars" data-count="4">
@@ -2613,10 +2652,10 @@
                         </svg>
                     </div>
 
-                    <div class="item__title">Электрический аккумуляторный шуруповерт HILTI</div>
+                    <a href="javascript:void(0)" class="item__title">Электрический аккумуляторный шуруповерт HILTI</a>
                     <div class="item__price-label">цена</div>
                     <div class="item__price-wrap">
-                        <div class="item__price"><strong>33 000</strong> руб.</div>
+                        <div class="item__price"><span class="strong">33 000</span> руб.</div>
                     </div>
 
                     <a href="javascript:void(0)" class="btn add-cart">
@@ -2681,7 +2720,7 @@
                         <span style="background: #ffeba4">Акция</span>
                         <span style="background: #e2e5ff">%</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
+                    <a href="javascript:void(0)" class="item__img" style="background-image: url('img/item5.png')"></a>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -2696,7 +2735,7 @@
                     </div>
                     <div class="item__top">
                         <div class="item__code">арт. 0000003</div>
-                        <div class="item__availability">в наличии</div>
+                        <div class="item__availability green">в наличии</div>
                     </div>
 
                     <div class="stars" data-count="4">
@@ -2734,12 +2773,13 @@
                         </svg>
                     </div>
 
-                    <div class="item__title">Ультра-легкие открытые очки с&nbsp;янтарными линзами из&nbsp;поликарбоната
-                        HONEYWELL</div>
+                    <a href="javascript:void(0)" class="item__title">Ультра-легкие открытые очки с&nbsp;янтарными
+                        линзами из&nbsp;поликарбоната
+                        HONEYWELL</a>
                     <div class="item__price-label">цена</div>
                     <div class="item__price-wrap">
                         <div class="item__price-old">35 000 руб.</div>
-                        <div class="item__price"><strong>33 000</strong> руб.</div>
+                        <div class="item__price"><span class="strong">33 000</span> руб.</div>
                     </div>
 
                     <a href="javascript:void(0)" class="btn add-cart">
@@ -2774,7 +2814,7 @@
                         <span style="background: #e2ffa4">Распродажа</span>
                         <span style="background: #cef6ff">Новинка</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
+                    <a href="javascript:void(0)" class="item__img" style="background-image: url('img/item5.png')"></a>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -2789,7 +2829,7 @@
                     </div>
                     <div class="item__top">
                         <div class="item__code">арт. 0000003</div>
-                        <div class="item__availability">в наличии</div>
+                        <div class="item__availability green">в наличии</div>
                     </div>
 
                     <div class="stars" data-count="4">
@@ -2827,10 +2867,10 @@
                         </svg>
                     </div>
 
-                    <div class="item__title">Шуруповерт HILTI</div>
+                    <a href="javascript:void(0)" class="item__title">Шуруповерт HILTI</a>
                     <div class="item__price-label">цена</div>
                     <div class="item__price-wrap">
-                        <div class="item__price"><strong>33 000</strong> руб.</div>
+                        <div class="item__price"><span class="strong">33 000</span> руб.</div>
                     </div>
 
                     <a href="javascript:void(0)" class="btn add-cart">
@@ -2863,7 +2903,7 @@
                     <div class="item__tags">
                         <span style="background: #ffcdcd">Хит продаж</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
+                    <a href="javascript:void(0)" class="item__img" style="background-image: url('img/item5.png')"></a>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -2878,7 +2918,7 @@
                     </div>
                     <div class="item__top">
                         <div class="item__code">арт. 0000003</div>
-                        <div class="item__availability">в наличии</div>
+                        <div class="item__availability green">в наличии</div>
                     </div>
 
                     <div class="stars" data-count="4">
@@ -2916,10 +2956,10 @@
                         </svg>
                     </div>
 
-                    <div class="item__title">Электрический аккумуляторный шуруповерт HILTI</div>
+                    <a href="javascript:void(0)" class="item__title">Электрический аккумуляторный шуруповерт HILTI</a>
                     <div class="item__price-label">цена</div>
                     <div class="item__price-wrap">
-                        <div class="item__price"><strong>33 000</strong> руб.</div>
+                        <div class="item__price"><span class="strong">33 000</span> руб.</div>
                     </div>
 
                     <a href="javascript:void(0)" class="btn add-cart">
@@ -2952,7 +2992,7 @@
                     <div class="item__tags">
                         <span style="background: #ffcdcd">Хит продаж</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
+                    <a href="javascript:void(0)" class="item__img" style="background-image: url('img/item5.png')"></a>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -2967,7 +3007,7 @@
                     </div>
                     <div class="item__top">
                         <div class="item__code">арт. 0000003</div>
-                        <div class="item__availability">в наличии</div>
+                        <div class="item__availability green">в наличии</div>
                     </div>
 
                     <div class="stars" data-count="4">
@@ -3005,10 +3045,10 @@
                         </svg>
                     </div>
 
-                    <div class="item__title">Электрический аккумуляторный шуруповерт HILTI</div>
+                    <a href="javascript:void(0)" class="item__title">Электрический аккумуляторный шуруповерт HILTI</a>
                     <div class="item__price-label">цена</div>
                     <div class="item__price-wrap">
-                        <div class="item__price"><strong>33 000</strong> руб.</div>
+                        <div class="item__price"><span class="strong">33 000</span> руб.</div>
                     </div>
 
                     <a href="javascript:void(0)" class="btn add-cart">
@@ -3139,7 +3179,7 @@
                                 Константиновский <br />
                                 Игорь
                             </div>
-                            <div class="stars" data-count="4">
+                            <div class="stars rating" data-count="4">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.2 14">
                                     <g class="active" data-star="1">
                                         <path class="st0"
@@ -3193,7 +3233,7 @@
                                 Иванов <br />
                                 Игорь
                             </div>
-                            <div class="stars" data-count="4">
+                            <div class="stars rating" data-count="4">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.2 14">
                                     <g class="active" data-star="1">
                                         <path class="st0"
@@ -3245,7 +3285,7 @@
                                 Константиновский <br />
                                 Игорь
                             </div>
-                            <div class="stars" data-count="4">
+                            <div class="stars rating" data-count="4">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.2 14">
                                     <g class="active" data-star="1">
                                         <path class="st0"
@@ -3327,7 +3367,7 @@
                                 Константиновский <br />
                                 Игорь
                             </div>
-                            <div class="stars" data-count="4">
+                            <div class="stars rating" data-count="4">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.2 14">
                                     <g class="active" data-star="1">
                                         <path class="st0"
@@ -3378,7 +3418,7 @@
                                 Константиновский <br />
                                 Игорь
                             </div>
-                            <div class="stars" data-count="4">
+                            <div class="stars rating" data-count="4">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.2 14">
                                     <g class="active" data-star="1">
                                         <path class="st0"
@@ -3831,30 +3871,26 @@
         </div>
     </div>
 
-    <div class="command__wrap">
-        <div class="container">
-            <div class="command__info">
-                <h2>
-                    Работа и жизнь <br />
-                    команды СтройБазар
-                </h2>
+    <div class="command__info">
+        <h2>
+            Работа и жизнь <br />
+            команды СтройБазар
+        </h2>
 
-                <div class="slider__controls">
-                    <div class="swiper-button-prev outline">
-                        <svg class="icon">
-                            <use xlink:href="img/symbol-defs.svg#icon-arrow-left"></use>
-                        </svg>
-                    </div>
-                    <div class="swiper-button-next outline">
-                        <svg class="icon">
-                            <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
-                        </svg>
-                    </div>
-                </div>
-
-                <a href="javascript:void(0)" class="catalog__more">Перейти в галерею</a>
+        <div class="slider__controls">
+            <div class="swiper-button-prev outline">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-arrow-left"></use>
+                </svg>
+            </div>
+            <div class="swiper-button-next outline">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
+                </svg>
             </div>
         </div>
+
+        <a href="javascript:void(0)" class="catalog__more">Перейти в галерею</a>
     </div>
 
     <div class="container command__link">
@@ -3997,36 +4033,36 @@
 
         <div class="swiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide brands__item">
+                <a href="javascript:void(0)" class="swiper-slide brands__item">
                     <div class="brands__img">
                         <img src="img/dewaly.png" alt="" />
                     </div>
                     <div class="brands__title">Dewalt</div>
-                </div>
-                <div class="swiper-slide brands__item">
+                </a>
+                <a href="javascript:void(0)" class="swiper-slide brands__item">
                     <div class="brands__img">
                         <img src="img/hus.png" alt="" />
                     </div>
                     <div class="brands__title">Husqvarna</div>
-                </div>
-                <div class="swiper-slide brands__item">
+                </a>
+                <a href="javascript:void(0)" class="swiper-slide brands__item">
                     <div class="brands__img">
                         <img src="img/hilti.png" alt="" />
                     </div>
                     <div class="brands__title">Hilti</div>
-                </div>
-                <div class="swiper-slide brands__item">
+                </a>
+                <a href="javascript:void(0)" class="swiper-slide brands__item">
                     <div class="brands__img">
                         <img src="img/bosch.png" alt="" />
                     </div>
                     <div class="brands__title">Bosch</div>
-                </div>
-                <div class="swiper-slide brands__item">
+                </a>
+                <a href="javascript:void(0)" class="swiper-slide brands__item">
                     <div class="brands__img">
                         <img src="img/markita.png" alt="" />
                     </div>
                     <div class="brands__title">Makita</div>
-                </div>
+                </a>
             </div>
         </div>
 
@@ -4057,7 +4093,7 @@
 
         <div class="swiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide journal__item">
+                <a href="javascript:void(0)" class="swiper-slide journal__item">
                     <img src="img/j1.jpg" alt="" />
 
                     <div class="journal__tags">
@@ -4071,13 +4107,13 @@
                         и перфораторов Makita
                     </div>
 
-                    <a href="javascript:void(0)" class="journal__link">
+                    <div class="journal__link">
                         <svg class="icon">
                             <use xlink:href="img/symbol-defs.svg#icon-more"></use>
                         </svg>
-                    </a>
-                </div>
-                <div class="swiper-slide journal__item">
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="swiper-slide journal__item">
                     <img src="img/j2.jpg" alt="" />
 
                     <div class="journal__tags">
@@ -4087,13 +4123,13 @@
 
                     <div class="journal__title">Новое поступление дрелей Makita</div>
 
-                    <a href="javascript:void(0)" class="journal__link">
+                    <div class="journal__link">
                         <svg class="icon">
                             <use xlink:href="img/symbol-defs.svg#icon-more"></use>
                         </svg>
-                    </a>
-                </div>
-                <div class="swiper-slide journal__item">
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="swiper-slide journal__item">
                     <img src="img/j3.jpg" alt="" />
 
                     <div class="journal__tags">
@@ -4105,12 +4141,12 @@
                         и перфораторов Makita
                     </div>
 
-                    <a href="javascript:void(0)" class="journal__link">
+                    <div class="journal__link">
                         <svg class="icon">
                             <use xlink:href="img/symbol-defs.svg#icon-more"></use>
                         </svg>
-                    </a>
-                </div>
+                    </div>
+                </a>
             </div>
         </div>
 
@@ -4186,12 +4222,24 @@
 
         <form action="url">
             <div class="form-group">
-                <input type="text" placeholder="Имя *" />
-                <input type="text" placeholder="Телефон *" class="phone-mask" />
+                <div class="control">
+                    <input type="text" />
+                    <div class="placeholder">Имя <span class="red">*</span></div>
+                </div>
+                <div class="control">
+                    <input type="text" class="phone-mask" />
+                    <div class="placeholder">Телефон <span class="red">*</span></div>
+                </div>
             </div>
             <div class="form-group">
-                <input type="text" placeholder="E-mail *" />
-                <input type="text" placeholder="Время звонка *" />
+                <div class="control">
+                    <input type="text" />
+                    <div class="placeholder">E-mail <span class="red">*</span></div>
+                </div>
+                <div class="control">
+                    <input type="text" />
+                    <div class="placeholder">Время звонка <span class="red">*</span></div>
+                </div>
             </div>
             <textarea placeholder="Сообщение"></textarea>
             <div class="callback__controls">
@@ -4217,8 +4265,14 @@
 
         <form action="url">
             <div class="form-group">
-                <input type="text" placeholder="Имя *">
-                <input type="text" placeholder="E-mail *">
+                <div class="control">
+                    <input type="text">
+                    <div class="placeholder">Имя <span class="red">*</span></div>
+                </div>
+                <div class="control">
+                    <input type="text">
+                    <div class="placeholder">E-mail <span class="red">*</span></div>
+                </div>
                 <button class="btn btn-fill">Подписаться</button>
             </div>
             <div class="checkbox">
@@ -4432,7 +4486,10 @@
 
                         <div class="form-group">
                             <input type="text" placeholder="Имя">
-                            <input type="text" placeholder="Телефон *" class="phone-mask">
+                            <div class="control">
+                                <input type="text" class="phone-mask">
+                                <div class="placeholder">Телефон <span class="red">*</span></div>
+                            </div>
                         </div>
 
                         <div class="sale__controls">
@@ -4476,7 +4533,10 @@
                     <form action="url" class="sale__form">
                         <div class="form-group">
                             <input type="text" placeholder="Имя">
-                            <input type="text" placeholder="Телефон *" class="phone-mask">
+                            <div class="control">
+                                <input type="text" class="phone-mask">
+                                <div class="placeholder">Телефон <span class="red">*</span></div>
+                            </div>
                         </div>
 
                         <div class="sale__controls">
@@ -4504,11 +4564,20 @@
                     консультант свяжется с вами в ближайшее время</div>
                 <div class="sale__body">
                     <form action="url" class="sale__form">
-                        <input type="text" placeholder="ФИО *">
+                        <div class="control">
+                            <input type="text">
+                            <div class="placeholder">ФИО <span class="red">*</span></div>
+                        </div>
 
                         <div class="form-group">
-                            <input type="text" placeholder="Телефон *" class="phone-mask">
-                            <input type="text" placeholder="E-mail *">
+                            <div class="control">
+                                <input type="text" class="phone-mask">
+                                <div class="placeholder">Телефон <span class="red">*</span></div>
+                            </div>
+                            <div class="control">
+                                <input type="text">
+                                <div class="placeholder">E-mail <span class="red">*</span></div>
+                            </div>
                         </div>
 
                         <textarea placeholder="Комментарий к заказу"></textarea>

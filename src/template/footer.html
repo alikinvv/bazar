@@ -5,8 +5,14 @@
 
         <form action="url">
             <div class="form-group">
-                <input type="text" placeholder="Имя *">
-                <input type="text" placeholder="E-mail *">
+                <div class="control">
+                    <input type="text">
+                    <div class="placeholder">Имя <span class="red">*</span></div>
+                </div>
+                <div class="control">
+                    <input type="text">
+                    <div class="placeholder">E-mail <span class="red">*</span></div>
+                </div>
                 <button class="btn btn-fill">Подписаться</button>
             </div>
             <div class="checkbox">
@@ -220,7 +226,10 @@
 
                         <div class="form-group">
                             <input type="text" placeholder="Имя">
-                            <input type="text" placeholder="Телефон *" class="phone-mask">
+                            <div class="control">
+                                <input type="text" class="phone-mask">
+                                <div class="placeholder">Телефон <span class="red">*</span></div>
+                            </div>
                         </div>
 
                         <div class="sale__controls">
@@ -264,7 +273,10 @@
                     <form action="url" class="sale__form">
                         <div class="form-group">
                             <input type="text" placeholder="Имя">
-                            <input type="text" placeholder="Телефон *" class="phone-mask">
+                            <div class="control">
+                                <input type="text" class="phone-mask">
+                                <div class="placeholder">Телефон <span class="red">*</span></div>
+                            </div>
                         </div>
 
                         <div class="sale__controls">
@@ -292,11 +304,20 @@
                     консультант свяжется с вами в ближайшее время</div>
                 <div class="sale__body">
                     <form action="url" class="sale__form">
-                        <input type="text" placeholder="ФИО *">
+                        <div class="control">
+                            <input type="text">
+                            <div class="placeholder">ФИО <span class="red">*</span></div>
+                        </div>
 
                         <div class="form-group">
-                            <input type="text" placeholder="Телефон *" class="phone-mask">
-                            <input type="text" placeholder="E-mail *">
+                            <div class="control">
+                                <input type="text" class="phone-mask">
+                                <div class="placeholder">Телефон <span class="red">*</span></div>
+                            </div>
+                            <div class="control">
+                                <input type="text">
+                                <div class="placeholder">E-mail <span class="red">*</span></div>
+                            </div>
                         </div>
 
                         <textarea placeholder="Комментарий к заказу"></textarea>

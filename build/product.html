@@ -159,7 +159,7 @@
             <div class="dropdown">
                 <div class="dropdown__close"></div>
 
-                <h3 class="dropdown__title">Каталог</h3>
+                <div class="dropdown__title h3">Каталог</div>
 
                 <form action="url" class="header__search">
                     <input type="text" placeholder="Поиск по каталогу">
@@ -1510,7 +1510,46 @@
                 </div>
             </div>
             <a href="javascript:void(0)">Климатическое оборудование</a>
-            <a href="javascript:void(0)">Ручные инструменты</a>
+            <div class="right">
+                <div class="parent active">
+                    Ручные инструменты
+                    <svg class="icon">
+                        <use xlink:href="img/symbol-defs.svg#icon-arrow-down"></use>
+                    </svg>
+                </div>
+
+                <div class="dropdown">
+                    <div class="dropdown__menu  custom-scroll">
+                        <a href="javascript:void(0)" class="active" data-page="1">Садовая техника</a>
+                        <a href="javascript:void(0)" data-page="2">Электроинструменты</a>
+                        <a href="javascript:void(0)" data-page="1">Силовая и строительная техника</a>
+                        <a href="javascript:void(0)" data-page="2">Климатическое оборудование</a>
+                        <a href="javascript:void(0)" data-page="1">Расходные материалы и оснастка</a>
+                        <a href="javascript:void(0)" data-page="2">Ручные инструменты и приспособления</a>
+                        <a href="javascript:void(0)" data-page="1">FISKARS</a>
+                        <a href="javascript:void(0)" data-page="2">Измерительные инструменты</a>
+                        <a href="javascript:void(0)" data-page="1">Пневматическое оборудование</a>
+                        <a href="javascript:void(0)" data-page="2">Снегоуборочная техника</a>
+                        <a href="javascript:void(0)" data-page="1">Компрессоры</a>
+                        <a href="javascript:void(0)" data-page="2">Моечное и уборочное оборудование</a>
+                    </div>
+                    <div class="dropdown__body">
+                        <div class="dropdown__page active" data-page="1">
+                            <div class="dropdown__list">
+                                <a href="javascript:void(0)">Садовая техника</a>
+                                <a href="javascript:void(0)">Электроинструменты</a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown__page" data-page="2">
+                            <div class="dropdown__list">
+                                <a href="javascript:void(0)" data-page="1">Пневматическое оборудование</a>
+                                <a href="javascript:void(0)" data-page="2">Снегоуборочная техника</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 <!-- START CONTENT  -->
@@ -1598,7 +1637,7 @@
                         </div>
                     </div>
                 </div>
-                <div thumbsSlider="" class="swiper product__main">
+                <div class="swiper product__main">
                     <div class="swiper-wrapper">
                         <a class="swiper-slide slide-video" href="https://www.youtube.com/watch?v=K0uAIFbuPm8&t=3s"
                             data-fancybox style="background-image: url(img/video1.png)"></a>
@@ -1671,7 +1710,7 @@
                         </a>
                         <div class="item__code">арт. 0000003</div>
                     </div>
-                    <div class="item__availability">в наличии</div>
+                    <div class="item__availability green">в наличии</div>
                 </div>
 
                 <div class="product__features">
@@ -1724,7 +1763,7 @@
 
                 <div class="item__price-wrap">
                     <div class="item__price-old">35 000 руб.</div>
-                    <div class="item__price"><strong>33 000</strong> руб.</div>
+                    <div class="item__price"><span class="strong">33 000</span> руб.</div>
                 </div>
 
                 <div class="item__add active">
@@ -1761,7 +1800,7 @@
 
 <section class="availability">
     <div class="container">
-        <h5>Наличие в магазинах</h5>
+        <div class="h5">Наличие в магазинах</div>
 
         <div class="availability__row">
             <div class="col">
@@ -2390,11 +2429,20 @@
                         <div class="send__list">
                             <div class="send__col">
                                 <div class="form-group">
-                                    <input type="text" placeholder="Имя *" />
-                                    <input type="text" placeholder="Телефон *" class="phone-mask" />
+                                    <div class="control">
+                                        <input type="text" />
+                                        <div class="placeholder">Имя <span class="red">*</span></div>
+                                    </div>
+                                    <div class="control">
+                                        <input type="text" class="phone-mask" />
+                                        <div class="placeholder">Телефон <span class="red">*</span></div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" placeholder="E-mail *" />
+                                    <div class="control">
+                                        <input type="text" />
+                                        <div class="placeholder">E-mail <span class="red">*</span></div>
+                                    </div>
                                     <div class="input">
                                         <span>Оценка *</span>
                                         <div class="stars rating" data-count="4">
@@ -2445,7 +2493,10 @@
                                 </div>
                             </div>
                             <div class="send__col">
-                                <textarea placeholder="Текст отзыва *"></textarea>
+                                <div class="control">
+                                    <textarea></textarea>
+                                    <div class="placeholder">Текст отзыва <span class="red">*</span></div>
+                                </div>
                             </div>
                         </div>
                         <div class="send__controls">
@@ -2512,12 +2563,24 @@
                         <p>Ответить Константиновскому Игорю</p>
                         <div class="faq__list">
                             <div class="faq__col">
-                                <input type="text" placeholder="Имя *" />
-                                <input type="text" placeholder="Телефон *" class="phone-mask" />
-                                <input type="text" placeholder="E-mail *" />
+                                <div class="control">
+                                    <input type="text" />
+                                    <div class="placeholder">Имя <span class="red">*</span></div>
+                                </div>
+                                <div class="control">
+                                    <input type="text" class="phone-mask" />
+                                    <div class="placeholder">Телефон <span class="red">*</span></div>
+                                </div>
+                                <div class="control">
+                                    <input type="text" />
+                                    <div class="placeholder">E-mail <span class="red">*</span></div>
+                                </div>
                             </div>
                             <div class="faq__col">
-                                <textarea placeholder="Ваш ответ *"></textarea>
+                                <div class="control">
+                                    <textarea></textarea>
+                                    <div class="placeholder">Ваш ответ <span class="red">*</span></div>
+                                </div>
                             </div>
                         </div>
                         <div class="send__controls">
@@ -2578,12 +2641,24 @@
                         <p>Ответить Константиновскому Игорю</p>
                         <div class="faq__list">
                             <div class="faq__col">
-                                <input type="text" placeholder="Имя *" />
-                                <input type="text" placeholder="Телефон *" class="phone-mask" />
-                                <input type="text" placeholder="E-mail *" />
+                                <div class="control">
+                                    <input type="text" />
+                                    <div class="placeholder">Имя <span class="red">*</span></div>
+                                </div>
+                                <div class="control">
+                                    <input type="text" class="phone-mask" />
+                                    <div class="placeholder">Телефон <span class="red">*</span></div>
+                                </div>
+                                <div class="control">
+                                    <input type="text" />
+                                    <div class="placeholder">E-mail <span class="red">*</span></div>
+                                </div>
                             </div>
                             <div class="faq__col">
-                                <textarea placeholder="Ваш ответ *"></textarea>
+                                <div class="control">
+                                    <textarea></textarea>
+                                    <div class="placeholder">Ваш ответ <span class="red">*</span></div>
+                                </div>
                             </div>
                         </div>
                         <div class="send__controls">
@@ -2615,12 +2690,24 @@
                         <p>Ответить Константиновскому Игорю</p>
                         <div class="faq__list">
                             <div class="faq__col">
-                                <input type="text" placeholder="Имя *" />
-                                <input type="text" placeholder="Телефон *" class="phone-mask" />
-                                <input type="text" placeholder="E-mail *" />
+                                <div class="control">
+                                    <input type="text" />
+                                    <div class="placeholder">Имя <span class="red">*</span></div>
+                                </div>
+                                <div class="control">
+                                    <input type="text" class="phone-mask" />
+                                    <div class="placeholder">Телефон <span class="red">*</span></div>
+                                </div>
+                                <div class="control">
+                                    <input type="text" />
+                                    <div class="placeholder">E-mail <span class="red">*</span></div>
+                                </div>
                             </div>
                             <div class="faq__col">
-                                <textarea placeholder="Ваш ответ *"></textarea>
+                                <div class="control">
+                                    <textarea></textarea>
+                                    <div class="placeholder">Ваш ответ <span class="red">*</span></div>
+                                </div>
                             </div>
                         </div>
                         <div class="send__controls">
@@ -2660,12 +2747,24 @@
                 <form action="url" class="faq__form active">
                     <div class="faq__list">
                         <div class="faq__col">
-                            <input type="text" placeholder="Имя *" />
-                            <input type="text" placeholder="Телефон *" class="phone-mask" />
-                            <input type="text" placeholder="E-mail *" />
+                            <div class="control">
+                                <input type="text" />
+                                <div class="placeholder">Имя <span class="red">*</span></div>
+                            </div>
+                            <div class="control">
+                                <input type="text" class="phone-mask" />
+                                <div class="placeholder">Телефон <span class="red">*</span></div>
+                            </div>
+                            <div class="control">
+                                <input type="text" />
+                                <div class="placeholder">E-mail <span class="red">*</span></div>
+                            </div>
                         </div>
                         <div class="faq__col">
-                            <textarea placeholder="Ваш ответ *"></textarea>
+                            <div class="control">
+                                <textarea></textarea>
+                                <div class="placeholder">Ваш ответ <span class="red">*</span></div>
+                            </div>
                         </div>
                     </div>
                     <div class="send__controls">
@@ -2712,7 +2811,7 @@
                         <span style="background: #ffeba4">Акция</span>
                         <span style="background: #e2e5ff">%</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
+                    <a href="javascript:void(0)" class="item__img" style="background-image: url('img/item5.png')"></a>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -2727,7 +2826,7 @@
                     </div>
                     <div class="item__top">
                         <div class="item__code">арт. 0000003</div>
-                        <div class="item__availability">в наличии</div>
+                        <div class="item__availability green">в наличии</div>
                     </div>
 
                     <div class="stars" data-count="4">
@@ -2765,12 +2864,13 @@
                         </svg>
                     </div>
 
-                    <div class="item__title">Ультра-легкие открытые очки с&nbsp;янтарными линзами из&nbsp;поликарбоната
-                        HONEYWELL</div>
+                    <a href="javascript:void(0)" class="item__title">Ультра-легкие открытые очки с&nbsp;янтарными
+                        линзами из&nbsp;поликарбоната
+                        HONEYWELL</a>
                     <div class="item__price-label">цена</div>
                     <div class="item__price-wrap">
                         <div class="item__price-old">35 000 руб.</div>
-                        <div class="item__price"><strong>33 000</strong> руб.</div>
+                        <div class="item__price"><span class="strong">33 000</span> руб.</div>
                     </div>
 
                     <a href="javascript:void(0)" class="btn add-cart">
@@ -2805,7 +2905,7 @@
                         <span style="background: #e2ffa4">Распродажа</span>
                         <span style="background: #cef6ff">Новинка</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
+                    <a href="javascript:void(0)" class="item__img" style="background-image: url('img/item5.png')"></a>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -2820,7 +2920,7 @@
                     </div>
                     <div class="item__top">
                         <div class="item__code">арт. 0000003</div>
-                        <div class="item__availability">в наличии</div>
+                        <div class="item__availability green">в наличии</div>
                     </div>
 
                     <div class="stars" data-count="4">
@@ -2858,10 +2958,10 @@
                         </svg>
                     </div>
 
-                    <div class="item__title">Шуруповерт HILTI</div>
+                    <a href="javascript:void(0)" class="item__title">Шуруповерт HILTI</a>
                     <div class="item__price-label">цена</div>
                     <div class="item__price-wrap">
-                        <div class="item__price"><strong>33 000</strong> руб.</div>
+                        <div class="item__price"><span class="strong">33 000</span> руб.</div>
                     </div>
 
                     <a href="javascript:void(0)" class="btn add-cart">
@@ -2894,7 +2994,7 @@
                     <div class="item__tags">
                         <span style="background: #ffcdcd">Хит продаж</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
+                    <a href="javascript:void(0)" class="item__img" style="background-image: url('img/item5.png')"></a>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -2909,7 +3009,7 @@
                     </div>
                     <div class="item__top">
                         <div class="item__code">арт. 0000003</div>
-                        <div class="item__availability">в наличии</div>
+                        <div class="item__availability green">в наличии</div>
                     </div>
 
                     <div class="stars" data-count="4">
@@ -2947,10 +3047,10 @@
                         </svg>
                     </div>
 
-                    <div class="item__title">Электрический аккумуляторный шуруповерт HILTI</div>
+                    <a href="javascript:void(0)" class="item__title">Электрический аккумуляторный шуруповерт HILTI</a>
                     <div class="item__price-label">цена</div>
                     <div class="item__price-wrap">
-                        <div class="item__price"><strong>33 000</strong> руб.</div>
+                        <div class="item__price"><span class="strong">33 000</span> руб.</div>
                     </div>
 
                     <a href="javascript:void(0)" class="btn add-cart">
@@ -2983,7 +3083,7 @@
                     <div class="item__tags">
                         <span style="background: #ffcdcd">Хит продаж</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
+                    <a href="javascript:void(0)" class="item__img" style="background-image: url('img/item5.png')"></a>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -2998,7 +3098,7 @@
                     </div>
                     <div class="item__top">
                         <div class="item__code">арт. 0000003</div>
-                        <div class="item__availability">в наличии</div>
+                        <div class="item__availability green">в наличии</div>
                     </div>
 
                     <div class="stars" data-count="4">
@@ -3036,10 +3136,10 @@
                         </svg>
                     </div>
 
-                    <div class="item__title">Электрический аккумуляторный шуруповерт HILTI</div>
+                    <a href="javascript:void(0)" class="item__title">Электрический аккумуляторный шуруповерт HILTI</a>
                     <div class="item__price-label">цена</div>
                     <div class="item__price-wrap">
-                        <div class="item__price"><strong>33 000</strong> руб.</div>
+                        <div class="item__price"><span class="strong">33 000</span> руб.</div>
                     </div>
 
                     <a href="javascript:void(0)" class="btn add-cart">
@@ -3104,7 +3204,7 @@
                         <span style="background: #ffeba4">Акция</span>
                         <span style="background: #e2e5ff">%</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
+                    <a href="javascript:void(0)" class="item__img" style="background-image: url('img/item5.png')"></a>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -3119,7 +3219,7 @@
                     </div>
                     <div class="item__top">
                         <div class="item__code">арт. 0000003</div>
-                        <div class="item__availability">в наличии</div>
+                        <div class="item__availability green">в наличии</div>
                     </div>
 
                     <div class="stars" data-count="4">
@@ -3157,12 +3257,13 @@
                         </svg>
                     </div>
 
-                    <div class="item__title">Ультра-легкие открытые очки с&nbsp;янтарными линзами из&nbsp;поликарбоната
-                        HONEYWELL</div>
+                    <a href="javascript:void(0)" class="item__title">Ультра-легкие открытые очки с&nbsp;янтарными
+                        линзами из&nbsp;поликарбоната
+                        HONEYWELL</a>
                     <div class="item__price-label">цена</div>
                     <div class="item__price-wrap">
                         <div class="item__price-old">35 000 руб.</div>
-                        <div class="item__price"><strong>33 000</strong> руб.</div>
+                        <div class="item__price"><span class="strong">33 000</span> руб.</div>
                     </div>
 
                     <a href="javascript:void(0)" class="btn add-cart">
@@ -3197,7 +3298,7 @@
                         <span style="background: #e2ffa4">Распродажа</span>
                         <span style="background: #cef6ff">Новинка</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
+                    <a href="javascript:void(0)" class="item__img" style="background-image: url('img/item5.png')"></a>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -3212,7 +3313,7 @@
                     </div>
                     <div class="item__top">
                         <div class="item__code">арт. 0000003</div>
-                        <div class="item__availability">в наличии</div>
+                        <div class="item__availability green">в наличии</div>
                     </div>
 
                     <div class="stars" data-count="4">
@@ -3250,10 +3351,10 @@
                         </svg>
                     </div>
 
-                    <div class="item__title">Шуруповерт HILTI</div>
+                    <a href="javascript:void(0)" class="item__title">Шуруповерт HILTI</a>
                     <div class="item__price-label">цена</div>
                     <div class="item__price-wrap">
-                        <div class="item__price"><strong>33 000</strong> руб.</div>
+                        <div class="item__price"><span class="strong">33 000</span> руб.</div>
                     </div>
 
                     <a href="javascript:void(0)" class="btn add-cart">
@@ -3286,7 +3387,7 @@
                     <div class="item__tags">
                         <span style="background: #ffcdcd">Хит продаж</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
+                    <a href="javascript:void(0)" class="item__img" style="background-image: url('img/item5.png')"></a>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -3301,7 +3402,7 @@
                     </div>
                     <div class="item__top">
                         <div class="item__code">арт. 0000003</div>
-                        <div class="item__availability">в наличии</div>
+                        <div class="item__availability green">в наличии</div>
                     </div>
 
                     <div class="stars" data-count="4">
@@ -3339,10 +3440,10 @@
                         </svg>
                     </div>
 
-                    <div class="item__title">Электрический аккумуляторный шуруповерт HILTI</div>
+                    <a href="javascript:void(0)" class="item__title">Электрический аккумуляторный шуруповерт HILTI</a>
                     <div class="item__price-label">цена</div>
                     <div class="item__price-wrap">
-                        <div class="item__price"><strong>33 000</strong> руб.</div>
+                        <div class="item__price"><span class="strong">33 000</span> руб.</div>
                     </div>
 
                     <a href="javascript:void(0)" class="btn add-cart">
@@ -3375,7 +3476,7 @@
                     <div class="item__tags">
                         <span style="background: #ffcdcd">Хит продаж</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
+                    <a href="javascript:void(0)" class="item__img" style="background-image: url('img/item5.png')"></a>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -3390,7 +3491,7 @@
                     </div>
                     <div class="item__top">
                         <div class="item__code">арт. 0000003</div>
-                        <div class="item__availability">в наличии</div>
+                        <div class="item__availability green">в наличии</div>
                     </div>
 
                     <div class="stars" data-count="4">
@@ -3428,10 +3529,10 @@
                         </svg>
                     </div>
 
-                    <div class="item__title">Электрический аккумуляторный шуруповерт HILTI</div>
+                    <a href="javascript:void(0)" class="item__title">Электрический аккумуляторный шуруповерт HILTI</a>
                     <div class="item__price-label">цена</div>
                     <div class="item__price-wrap">
-                        <div class="item__price"><strong>33 000</strong> руб.</div>
+                        <div class="item__price"><span class="strong">33 000</span> руб.</div>
                     </div>
 
                     <a href="javascript:void(0)" class="btn add-cart">
@@ -3496,7 +3597,7 @@
                         <span style="background: #ffeba4">Акция</span>
                         <span style="background: #e2e5ff">%</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
+                    <a href="javascript:void(0)" class="item__img" style="background-image: url('img/item5.png')"></a>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -3511,7 +3612,7 @@
                     </div>
                     <div class="item__top">
                         <div class="item__code">арт. 0000003</div>
-                        <div class="item__availability">в наличии</div>
+                        <div class="item__availability green">в наличии</div>
                     </div>
 
                     <div class="stars" data-count="4">
@@ -3549,12 +3650,13 @@
                         </svg>
                     </div>
 
-                    <div class="item__title">Ультра-легкие открытые очки с&nbsp;янтарными линзами из&nbsp;поликарбоната
-                        HONEYWELL</div>
+                    <a href="javascript:void(0)" class="item__title">Ультра-легкие открытые очки с&nbsp;янтарными
+                        линзами из&nbsp;поликарбоната
+                        HONEYWELL</a>
                     <div class="item__price-label">цена</div>
                     <div class="item__price-wrap">
                         <div class="item__price-old">35 000 руб.</div>
-                        <div class="item__price"><strong>33 000</strong> руб.</div>
+                        <div class="item__price"><span class="strong">33 000</span> руб.</div>
                     </div>
 
                     <a href="javascript:void(0)" class="btn add-cart">
@@ -3589,7 +3691,7 @@
                         <span style="background: #e2ffa4">Распродажа</span>
                         <span style="background: #cef6ff">Новинка</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
+                    <a href="javascript:void(0)" class="item__img" style="background-image: url('img/item5.png')"></a>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -3604,7 +3706,7 @@
                     </div>
                     <div class="item__top">
                         <div class="item__code">арт. 0000003</div>
-                        <div class="item__availability">в наличии</div>
+                        <div class="item__availability green">в наличии</div>
                     </div>
 
                     <div class="stars" data-count="4">
@@ -3642,10 +3744,10 @@
                         </svg>
                     </div>
 
-                    <div class="item__title">Шуруповерт HILTI</div>
+                    <a href="javascript:void(0)" class="item__title">Шуруповерт HILTI</a>
                     <div class="item__price-label">цена</div>
                     <div class="item__price-wrap">
-                        <div class="item__price"><strong>33 000</strong> руб.</div>
+                        <div class="item__price"><span class="strong">33 000</span> руб.</div>
                     </div>
 
                     <a href="javascript:void(0)" class="btn add-cart">
@@ -3678,7 +3780,7 @@
                     <div class="item__tags">
                         <span style="background: #ffcdcd">Хит продаж</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
+                    <a href="javascript:void(0)" class="item__img" style="background-image: url('img/item5.png')"></a>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -3693,7 +3795,7 @@
                     </div>
                     <div class="item__top">
                         <div class="item__code">арт. 0000003</div>
-                        <div class="item__availability">в наличии</div>
+                        <div class="item__availability green">в наличии</div>
                     </div>
 
                     <div class="stars" data-count="4">
@@ -3731,10 +3833,10 @@
                         </svg>
                     </div>
 
-                    <div class="item__title">Электрический аккумуляторный шуруповерт HILTI</div>
+                    <a href="javascript:void(0)" class="item__title">Электрический аккумуляторный шуруповерт HILTI</a>
                     <div class="item__price-label">цена</div>
                     <div class="item__price-wrap">
-                        <div class="item__price"><strong>33 000</strong> руб.</div>
+                        <div class="item__price"><span class="strong">33 000</span> руб.</div>
                     </div>
 
                     <a href="javascript:void(0)" class="btn add-cart">
@@ -3767,7 +3869,7 @@
                     <div class="item__tags">
                         <span style="background: #ffcdcd">Хит продаж</span>
                     </div>
-                    <div class="item__img" style="background-image: url('img/item5.png')"></div>
+                    <a href="javascript:void(0)" class="item__img" style="background-image: url('img/item5.png')"></a>
                     <div class="item__controls">
                         <a href="javascript:void(0)">
                             <svg class="icon">
@@ -3782,7 +3884,7 @@
                     </div>
                     <div class="item__top">
                         <div class="item__code">арт. 0000003</div>
-                        <div class="item__availability">в наличии</div>
+                        <div class="item__availability green">в наличии</div>
                     </div>
 
                     <div class="stars" data-count="4">
@@ -3820,10 +3922,10 @@
                         </svg>
                     </div>
 
-                    <div class="item__title">Электрический аккумуляторный шуруповерт HILTI</div>
+                    <a href="javascript:void(0)" class="item__title">Электрический аккумуляторный шуруповерт HILTI</a>
                     <div class="item__price-label">цена</div>
                     <div class="item__price-wrap">
-                        <div class="item__price"><strong>33 000</strong> руб.</div>
+                        <div class="item__price"><span class="strong">33 000</span> руб.</div>
                     </div>
 
                     <a href="javascript:void(0)" class="btn add-cart">
@@ -3867,8 +3969,14 @@
 
         <form action="url">
             <div class="form-group">
-                <input type="text" placeholder="Имя *">
-                <input type="text" placeholder="E-mail *">
+                <div class="control">
+                    <input type="text">
+                    <div class="placeholder">Имя <span class="red">*</span></div>
+                </div>
+                <div class="control">
+                    <input type="text">
+                    <div class="placeholder">E-mail <span class="red">*</span></div>
+                </div>
                 <button class="btn btn-fill">Подписаться</button>
             </div>
             <div class="checkbox">
@@ -4082,7 +4190,10 @@
 
                         <div class="form-group">
                             <input type="text" placeholder="Имя">
-                            <input type="text" placeholder="Телефон *" class="phone-mask">
+                            <div class="control">
+                                <input type="text" class="phone-mask">
+                                <div class="placeholder">Телефон <span class="red">*</span></div>
+                            </div>
                         </div>
 
                         <div class="sale__controls">
@@ -4126,7 +4237,10 @@
                     <form action="url" class="sale__form">
                         <div class="form-group">
                             <input type="text" placeholder="Имя">
-                            <input type="text" placeholder="Телефон *" class="phone-mask">
+                            <div class="control">
+                                <input type="text" class="phone-mask">
+                                <div class="placeholder">Телефон <span class="red">*</span></div>
+                            </div>
                         </div>
 
                         <div class="sale__controls">
@@ -4154,11 +4268,20 @@
                     консультант свяжется с вами в ближайшее время</div>
                 <div class="sale__body">
                     <form action="url" class="sale__form">
-                        <input type="text" placeholder="ФИО *">
+                        <div class="control">
+                            <input type="text">
+                            <div class="placeholder">ФИО <span class="red">*</span></div>
+                        </div>
 
                         <div class="form-group">
-                            <input type="text" placeholder="Телефон *" class="phone-mask">
-                            <input type="text" placeholder="E-mail *">
+                            <div class="control">
+                                <input type="text" class="phone-mask">
+                                <div class="placeholder">Телефон <span class="red">*</span></div>
+                            </div>
+                            <div class="control">
+                                <input type="text">
+                                <div class="placeholder">E-mail <span class="red">*</span></div>
+                            </div>
                         </div>
 
                         <textarea placeholder="Комментарий к заказу"></textarea>

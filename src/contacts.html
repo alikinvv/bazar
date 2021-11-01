@@ -58,7 +58,7 @@
 <section class="contacts">
     <div class="container">
         <div class="contacts__item">
-            <h4>Реквизиты</h4>
+            <div class="h4">Реквизиты</div>
 
             <div class="cart__list">
                 <div><span>Наименование</span><span>ИП АПЕРЯН Меджлум Андраникович </span></div>
@@ -79,15 +79,24 @@
         </div>
 
         <div class="contacts__item">
-            <h4>Обратная связь</h4>
+            <div class="h4">Обратная связь</div>
             <div class="contacts__desc">Заполните форму и отправьте заявку, консультант свяжется с вами в ближайшее
                 время</div>
 
             <form action="url" class="contacts__form">
                 <div class="form-group">
-                    <input type="text" placeholder="Имя *" />
-                    <input type="text" placeholder="Телефон *" class="phone-mask" />
-                    <input type="text" placeholder="E-mail *" />
+                    <div class="control">
+                        <input type="text" />
+                        <div class="placeholder">Имя <span class="red">*</span></div>
+                    </div>
+                    <div class="control">
+                        <input type="text" class="phone-mask" />
+                        <div class="placeholder">Телефон <span class="red">*</span></div>
+                    </div>
+                    <div class="control">
+                        <input type="text" />
+                        <div class="placeholder">E-mail <span class="red">*</span></div>
+                    </div>
                 </div>
                 <textarea placeholder="Сообщение"></textarea>
                 <div class="contacts__controls">
@@ -180,7 +189,7 @@
                 пн-вс 9:00 – 18:00
             </div>
             <div class="shops__phone">
-                <a href="tel: +79067459438">
+                <a href="tel:+79067459438">
                     <svg class="icon">
                         <use xlink:href="img/symbol-defs.svg#icon-phone"></use>
                     </svg>

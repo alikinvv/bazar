@@ -73,6 +73,9 @@ var main = new Swiper('.main .swiper', {
   navigation: {
     nextEl: '.main .swiper-button-next',
     prevEl: '.main .swiper-button-prev'
+  },
+  pagination: {
+    el: ".main .swiper-pagination"
   }
 });
 var slider1 = new Swiper('.catalog .slider1 .swiper', {
@@ -347,9 +350,9 @@ var command = new Swiper('.command .swiper:not(.center)', {
   loop: true,
   slidesPerView: 'auto',
   freeMode: true,
-  speed: 3000,
+  // speed: 3000,
   autoplay: {
-    delay: 1,
+    delay: 5000,
     disableOnInteraction: false
   },
   navigation: {
@@ -559,6 +562,11 @@ $('body').on('click', '.item .add-cart', function (e) {
   $(e.currentTarget).parent().find('.item__add').addClass('active');
   $('.add').addClass('active');
 });
+$('body').on('click', '.item__add.active .btn-green', function (e) {
+  $(e.currentTarget).closest('.item').find('.item__add').removeClass('active');
+  $(e.currentTarget).closest('.item').find('.add-cart').show();
+  $('.add').removeClass('active');
+});
 $('body').on('click', '.add__close', function (e) {
   $('.add').removeClass('active');
 }); //yandex map page
@@ -607,6 +615,10 @@ $('body').on('click', '.item__controls a', function (e) {
 
 if ($(window).width() >= 1280) {
   $('.scrolltop').css('left', $('.container').offset().left + $('.container').outerWidth() + 63);
+}
+
+if ($(window).width() >= 1279) {
+  $('.command__info').css('left', $('.container').offset().left);
 }
 
 $('body').on('click', '.scrolltop', function (e) {
@@ -860,7 +872,7 @@ $('body').on('mouseleave', '.menu', function (e) {
 });
 
 if ($(window).width() >= 1170) {
-  $('.container.full').css('padding-left', $('.header .container').offset().left);
+  $('.main .container.full').css('padding-left', $('.header .container').offset().left);
 }
 
 $('body').on('click', '.hamburger', function (e) {
@@ -884,4 +896,17 @@ $('body').on('click', '.filter.active', function (e) {
 $('body').on('click', '.sidebar__reset, .sidebar__close', function (e) {
   $('.filter').removeClass('active').text('Показать фильтры');
   $('.sidebar').removeClass('show');
+});
+$('body').on('blur', 'input, textarea', function (e) {
+  if ($(e.currentTarget).val() !== '') {
+    $(e.currentTarget).addClass('fill');
+  } else {
+    $(e.currentTarget).removeClass('fill');
+  }
+});
+$(document).click(function (event) {
+  if (!$(event.target).closest('.dropdown').length && !$(event.target).closest('.header__catalog').length) {
+    $('.header__catalog').toggleClass('active').html('<svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-menu"></use></svg> Каталог');
+    $('.dropdown').removeClass('active');
+  }
 });

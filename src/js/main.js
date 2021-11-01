@@ -62,6 +62,9 @@ let main = new Swiper('.main .swiper', {
         nextEl: '.main .swiper-button-next',
         prevEl: '.main .swiper-button-prev',
     },
+    pagination: {
+        el: ".main .swiper-pagination",
+    },
 });
 
 let slider1 = new Swiper('.catalog .slider1 .swiper', {
@@ -348,9 +351,9 @@ let command = new Swiper('.command .swiper:not(.center)', {
     loop: true,
     slidesPerView: 'auto',
     freeMode: true,
-    speed: 3000,
+    // speed: 3000,
     autoplay: {
-        delay: 1,
+        delay: 5000,
         disableOnInteraction: false,
     },
     navigation: {
@@ -578,6 +581,12 @@ $('body').on('click', '.item .add-cart', (e) => {
     $('.add').addClass('active');
 });
 
+$('body').on('click', '.item__add.active .btn-green', (e) => {
+    $(e.currentTarget).closest('.item').find('.item__add').removeClass('active');
+    $(e.currentTarget).closest('.item').find('.add-cart').show();
+    $('.add').removeClass('active');
+});
+
 $('body').on('click', '.add__close', (e) => {
     $('.add').removeClass('active');
 });
@@ -713,6 +722,10 @@ $('body').on('click', '.item__controls a', (e) => {
 
 if ($(window).width() >= 1280) {
     $('.scrolltop').css('left', $('.container').offset().left + $('.container').outerWidth() + 63);
+}
+
+if ($(window).width() >= 1279) {
+    $('.command__info').css('left', $('.container').offset().left);
 }
 
 $('body').on('click', '.scrolltop', (e) => {
@@ -986,7 +999,7 @@ $('body').on('mouseleave', '.menu', (e) => {
 });
 
 if ($(window).width() >= 1170) {
-    $('.container.full').css('padding-left', $('.header .container').offset().left);
+    $('.main .container.full').css('padding-left', $('.header .container').offset().left);
 }
 
 $('body').on('click', '.hamburger', (e) => {
@@ -1012,4 +1025,19 @@ $('body').on('click', '.filter.active', (e) => {
 $('body').on('click', '.sidebar__reset, .sidebar__close', (e) => {
     $('.filter').removeClass('active').text('Показать фильтры');
     $('.sidebar').removeClass('show');
+});
+
+$('body').on('blur', 'input, textarea', (e) => {
+    if ($(e.currentTarget).val() !== '') {
+        $(e.currentTarget).addClass('fill')
+    } else {
+        $(e.currentTarget).removeClass('fill')
+    }
+});
+
+$(document).click((event) => {
+    if (!$(event.target).closest('.dropdown').length && !$(event.target).closest('.header__catalog').length) {
+        $('.header__catalog').toggleClass('active').html('<svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-menu"></use></svg> Каталог');
+      $('.dropdown').removeClass('active');
+    }        
 });
