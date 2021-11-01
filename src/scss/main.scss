@@ -3140,6 +3140,7 @@ h5 {
         background-position: center;
         cursor: pointer;
         position: relative;
+        display: block;
 
         &:hover {
             &::before,
@@ -3458,6 +3459,7 @@ h5 {
         margin-bottom: 15px;
         position: relative;
         cursor: pointer;
+        display: block;
 
         &:hover::before {
             transform: translate(-50%, -50%) scale(1.1);
