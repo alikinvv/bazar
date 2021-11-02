@@ -4336,7 +4336,7 @@ h5 {
 
         width: 100%;
 
-        h2 {
+        .h2 {
             @include r(767) {
                 font-size: 30px;
             }
@@ -7891,7 +7891,7 @@ h5 {
     padding: 60px 0 158px;
     text-align: center;
 
-    h3 {
+    .h3 {
         @include r(767) {
             display: block;
             margin-bottom: 42px;
