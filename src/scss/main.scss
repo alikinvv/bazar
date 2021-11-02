@@ -3228,6 +3228,10 @@ h5 {
 .command {
     position: relative;
 
+    h4 {
+        margin-bottom: 20px;
+    }
+
     .slider__header {
         margin-bottom: 0;
     }
@@ -8276,7 +8280,7 @@ h5 {
 .direction {
     padding: 17px 0 86px;
 
-    h4 {
+    .h4 {
         font-weight: 500;
         font-size: 28px;
         margin-bottom: 44px;
