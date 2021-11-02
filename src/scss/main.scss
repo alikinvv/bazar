@@ -8151,6 +8151,12 @@ h5 {
             margin-top: 42px;
         }
 
+        .shops__addr {
+            @include r(767) {
+             flex-wrap: nowrap;   
+            }
+        }
+
         .yandex {
             @include r(1279) {
                 height: 400px;
