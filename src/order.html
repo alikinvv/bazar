@@ -15,8 +15,8 @@
                 <h3>Оформление заказа</h3>
 
                 <div class="order__auth">
-                    <a href="javascript:void(0)" class="order__registration">Есть регистрация?</a>
-                    <a href="javascript:void(0)" class="order__login">Автризуйтесь</a>
+                    <div class="order__registration">Есть регистрация?</div>
+                    <a href="javascript:void(0)" class="order__login">Авторизуйтесь</a>
                 </div>
 
                 <div class="login">
@@ -60,21 +60,21 @@
                     </div>
 
                     <div class="checkbox">
-                        <input type="checkbox" />
+                        <input type="checkbox" class="org" />
                         <label for="ss">Я представитель юридического лица / ИП</label>
                     </div>
 
-                    <div class="order__group">
+                    <div class="order__group hide">
                         <label>Название организации / ИП <span class="red">*</span></label>
                         <input type="text" />
                     </div>
 
-                    <div class="order__group">
+                    <div class="order__group hide">
                         <label>Юридический адрес <span class="red">*</span></label>
                         <input type="text" />
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group hide">
                         <div class="order__group">
                             <label>ИНН</label>
                             <input class="num" type="text" />
@@ -280,7 +280,7 @@
                             <textarea></textarea>
                         </div>
 
-                        <div class="copmany">
+                        <div class="company">
                             <div class="company__title">Выберите транспортную компанию</div>
 
                             <div class="company__row">

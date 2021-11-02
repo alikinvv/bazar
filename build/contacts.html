@@ -50,6 +50,18 @@
             <div class="top__phone">
                 <a href="tel:+74952151778">+7 (495) 215-17-78</a>
                 <a href="tel:88005550874">8 (800) 555-08-74</a>
+                <div class="top__menu-link top__mobile">
+                    <div class="parent">
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-phone"></use>
+                        </svg>
+                    </div>
+
+                    <div class="top__menu-dropdown">
+                        <a href="tel:+74952151778">+7 (495) 215-17-78</a>
+                        <a href="tel:88005550874">8 (800) 555-08-74</a>
+                    </div>
+                </div>
                 <div class="top__more">
                     <svg class="icon">
                         <use xlink:href="img/symbol-defs.svg#icon-arrow-down"></use>
@@ -1557,50 +1569,55 @@
 <div class="breadcrumbs">
     <div class="container">
         <a href="javascript:void(0)">Главная</a>
-        <a href="javascript:void(0)">Магазины</a>
-        <a href="javascript:void(0)">Магазин в ТЦ «Пикник»</a>
+        <a href="javascript:void(0)">Контакты</a>
     </div>
 </div>
 
 <section class="shop">
     <div class="container">
-        <h3>Магазин в ТЦ «Пикник»</h3>
+        <h3>Контакты</h3>
     </div>
 </section>
 
 <div class="shops__map">
     <div class="shop__info">
+        <h4>Центральный офис</h4>
         <div class="shops__addr">
             <svg class="icon">
                 <use xlink:href="img/symbol-defs.svg#icon-marker"></use>
             </svg>
             <div>
-                г. Москва, МО, Одинцовский район, <br />
-                пос. Новоивановское, ул. Западная, стр. 4 <br />
-                «ТЦ ПИКНИК», 1 этаж <br />
-                <span class="blue">м. Славянский бульвар</span>
+                г. Домодедово, ул. Текстильщиков, 2г <br>
+                <span class="pink">м. Нижегородская</span>
             </div>
         </div>
         <div>
-            <a href="tel:+79256272322">
+            <a href="tel:+74952151778">
                 <svg class="icon">
                     <use xlink:href="img/symbol-defs.svg#icon-phone"></use>
                 </svg>
-                +7 (925) 627-23-22
+                +7 (495) 215-17-78
+            </a>
+            <a href="tel:88005550874">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-phone"></use>
+                </svg>
+                8 (800) 555-08-74
             </a>
         </div>
         <div class="shops__date">
             <svg class="icon">
                 <use xlink:href="img/symbol-defs.svg#icon-time"></use>
             </svg>
-            пн-вс 9:00 – 19:00
+            пн-вс 9:00 – 19:00 <br>
+            сб 9:00 – 13:00
         </div>
         <div>
-            <a href="mailto:info@stroybazar.ru ">
+            <a href="mailto:order@stroybazar.ru">
                 <svg class="icon">
                     <use xlink:href="img/symbol-defs.svg#icon-mail"></use>
                 </svg>
-                info@stroybazar.ru
+                order@stroybazar.ru
             </a>
         </div>
         <a href="javascript:void(0)" class="btn" data-modal="call">Распечатать</a>
@@ -1628,7 +1645,7 @@
                 <div><span>ОКВЭД</span><span>52.1</span></div>
             </div>
 
-            <a href="javascript:void(0)" class="btn">Скачать реквезиты</a>
+            <a href="javascript:void(0)" class="btn">Скачать реквизиты</a>
         </div>
 
         <div class="contacts__item">
@@ -2090,6 +2107,131 @@
                             <button class="btn btn-fill" data-modal="thanks">ОТПРАВИТЬ</button>
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal call" data-modal="click">
+        <div class="modal__content">
+            <div class="modal__close"></div>
+            <div class="modal__body">
+                <div class="call__title">Купить в 1 клик</div>
+                <div class="call__text">Заполните форму и отправьте заявку, <br>
+                    консультант свяжется с вами в ближайшее время</div>
+                <div class="sale__body">
+                    <form action="url" class="sale__form">
+                        <div class="control">
+                            <input type="text">
+                            <div class="placeholder">ФИО <span class="red">*</span></div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="control">
+                                <input type="text" class="phone-mask">
+                                <div class="placeholder">Телефон <span class="red">*</span></div>
+                            </div>
+                            <div class="control">
+                                <input type="text">
+                                <div class="placeholder">E-mail <span class="red">*</span></div>
+                            </div>
+                        </div>
+
+                        <textarea placeholder="Комментарий к заказу"></textarea>
+
+                        <div class="sale__controls">
+                            <div class="checkbox">
+                                <input type="checkbox">
+                                <label>Я даю свое согласие на обработку <br> персональных данных и соглашаюсь <br> с <a
+                                        href="javascript:void(0)">условиями</a> и <a href="javascript:void(0)">политикой
+                                        <br>
+                                        конфиденциальности</a></label>
+                            </div>
+                            <button class="btn btn-fill" data-modal="thanks">ОТПРАВИТЬ</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal call" data-modal="cheap">
+        <div class="modal__content">
+            <div class="modal__close"></div>
+            <div class="modal__body">
+                <div class="item">
+                    <div class="item__tags">
+                        <span style="background: #ffcdcd">Хит продаж</span>
+                        <span style="background: #e2ffa4">Распродажа</span>
+                        <span style="background: #cef6ff">Новинка</span>
+                        <span style="background: #ffeba4">Акция</span>
+                        <span style="background: #e2e5ff">%</span>
+                    </div>
+                    <a href="javascript:void(0)" class="item__img" style="background-image: url('img/item5.png')"></a>
+                    <div class="item__controls">
+                        <a href="javascript:void(0)">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-chart"></use>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="active">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-heart"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="item__top">
+                        <div class="item__code">арт. 0000003</div>
+                        <div class="item__availability green yellow">под заказ</div>
+                    </div>
+
+                    <a href="javascript:void(0)" class="item__title">Ультра-легкие открытые очки с янтарными линзами</a>
+                    <div class="item__price-label">цена</div>
+                    <div class="item__price-wrap">
+                        <div class="item__price-old">35 000 руб.</div>
+                        <div class="item__price"><span class="strong">33 000</span> руб.</div>
+                    </div>
+                </div>
+                <div class="cheap__info">
+                    <div class="call__title">Нашли дешевле? <br> Сообщите нам!</div>
+                    <a href="javascript:void(0)" class="cheap__link">Подробные условия</a>
+                    <div class="sale__body">
+                        <form action="url" class="sale__form">
+                            <div class="form-group">
+                                <div class="control">
+                                    <input type="text">
+                                    <div class="placeholder">Цена в другом магазине <span class="red">*</span></div>
+                                </div>
+                                <div class="control">
+                                    <input type="text">
+                                    <div class="placeholder">Ссылка на товар <span class="red">*</span></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="control">
+                                    <input type="text">
+                                    <div class="placeholder">Имя <span class="red">*</span></div>
+                                </div>
+                                <div class="control">
+                                    <input type="text" class="phone-mask">
+                                    <div class="placeholder">Телефон <span class="red">*</span></div>
+                                </div>
+                            </div>
+
+                            <div class="sale__controls">
+                                <div class="checkbox">
+                                    <input type="checkbox">
+                                    <label>Я даю свое согласие на обработку <br> персональных данных и соглашаюсь <br> с
+                                        <a href="javascript:void(0)">условиями</a> и <a
+                                            href="javascript:void(0)">политикой
+                                            <br>
+                                            конфиденциальности</a></label>
+                                </div>
+                                <button class="btn btn-fill" data-modal="thanks">ОТПРАВИТЬ ЗАЯВКУ</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

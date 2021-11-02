@@ -197,6 +197,8 @@ textarea {
         @include centerYa;
         left: 20px;
         padding: 0 !important;
+        pointer-events: none;
+        user-select: none;
     }
 
     input,
@@ -450,6 +452,24 @@ h5 {
         display: none;
     }
 
+    &__mobile {
+        @include r(767) {
+            display: block;    
+        }
+
+        display: none;
+
+        .icon {
+            font-size: 20px;
+            fill: #bebebe;
+        }
+
+        .top__menu-dropdown {
+            left: initial;
+            right: 0;
+        }
+    }
+
     &__divider {
         @include r(1023) {
             display: none !important;
@@ -597,9 +617,9 @@ h5 {
         @include r(767) {
             margin-left: auto;
 
-            & > a:first-child {
+            & > a {
                 @include r(767) {
-                 display: none;   
+                    display: none;   
                 }
             }
         }
@@ -607,18 +627,6 @@ h5 {
         @include fcn;
 
         & > a {
-            @include r(767) {
-                width: 25px;
-                height: 25px;
-                color: transparent !important;
-                background: url('../img/icons/phone.svg') no-repeat center;
-                background-size: contain;
-
-                &:hover {
-                    color: transparent;
-                }
-            }
-
             font-size: 15px;
             font-weight: 500;
             transition: $trans;
@@ -885,7 +893,7 @@ h5 {
 
     &__catalog {
         @include r(1279) {
-            width: 200px;
+            width: 150px;
 
             &:hover {
                 color: $text;
@@ -1060,7 +1068,7 @@ h5 {
     bottom: -20px;
     left: 0;
     transform: translateY(100%);
-    z-index: 3;
+    z-index: 4;
     background: #ffffff;
     border: 1px solid #ededed;
     box-shadow: 0px 22px 26px rgba(0, 0, 0, 0.04);
@@ -2185,8 +2193,16 @@ h5 {
             &.active,
             &:hover {
                 .icon {
+                    @include r(1279) {
+                        fill: #e4e4e4;
+                    }
+
                     fill: $red;
                 }
+            }
+
+            &.active .icon {
+                fill: $red !important;
             }
 
             .icon {
@@ -2362,6 +2378,7 @@ h5 {
         width: 45px;
         text-align: center;
         padding: 0 3px;
+        user-select: none;
     }
 }
 
@@ -2544,6 +2561,7 @@ h5 {
     }
 }
 
+.shops__map,
 .map {
     position: relative;
     margin: 45px 0 0;
@@ -2592,7 +2610,11 @@ h5 {
         }
 
         &[class$='-balloon__content'] {
-            font: inherit;
+            @include r(767) {
+                padding: 15px 20px !important;
+            }
+
+            font-family: 'Lato', sans-serif;
             margin: 0 !important;
             padding: 24px 29px !important;
         }
@@ -3626,6 +3648,11 @@ h5 {
     .form-group {
         @include r(1023) {
             @include fcsb;
+            margin-bottom: 15px;
+        }
+
+        @include r(767) {
+            margin-bottom: 5px;   
         }
 
         @include r(374) {
@@ -3642,8 +3669,11 @@ h5 {
             }
 
             @include r(767) {
+                margin-bottom: 10px;
+            }
+
+            @include r(374) {
                 width: 100%;   
-                margin-bottom: 15px;
             }
         }
 
@@ -4233,6 +4263,11 @@ h5 {
 }
 
 .breadcrumbs {
+    @include r(1260) {
+        white-space: nowrap;
+        overflow: scroll;
+    }
+
     background: #f3f3f3;
     padding: 10px 0;
 
@@ -4257,6 +4292,10 @@ h5 {
         }
 
         &:last-child {
+            @include r(1279) {
+                margin-right: 40px;    
+            }
+
             pointer-events: none;
             user-select: none;
             color: #939393;
@@ -4750,7 +4789,7 @@ h5 {
         @include r(767) {
             margin-top: 30px;
 
-            &:last-child {
+            span {
                 display: none;
             }
         }
@@ -4771,16 +4810,12 @@ h5 {
         }
 
         svg {
-            @include r(1279) {
-                top: 1px;
-            }
-
             transition: $trans;
             fill: $red;
             font-size: 7px;
             margin-left: 7px;
             position: relative;
-            top: 3px;
+            top: 1px;
         }
     }
 }
@@ -4917,7 +4952,7 @@ h5 {
 .find {
     padding: 6px 0;
 
-    h3 {
+    .h4 {
         margin-bottom: 18px;
     }
 
@@ -4949,7 +4984,7 @@ h5 {
         margin-bottom: 0;
     }
 
-    margin: 56px 0;
+    margin: 56px 0 -26px;
 
     h2 {
         @include r(1023) {
@@ -5035,13 +5070,13 @@ h5 {
         }
     }
 
-    h4 {
-        margin-bottom: 31px;
+    .h4 {
+        margin-bottom: 21px;
     }
 
-    h5 {
-        margin-top: 57px;
-        margin-bottom: 37px;
+    .h5 {
+        margin-top: 37px;
+        margin-bottom: 17px;
     }
 
     img {
@@ -5115,7 +5150,7 @@ h5 {
     }
 
     &__title {
-        margin-top: 60px;
+        margin-top: 40px;
         margin-bottom: 22px;
         font-weight: 300;
         font-size: 21px;
@@ -5167,10 +5202,18 @@ h5 {
 }
 
 .product {
-    padding: 30px 0 0;
+    padding: 30px 0;
 
     h3 {
         margin-bottom: 25px;
+    }
+
+    .add-cart {
+        @include r(1279) {
+            padding: 13px 12px !important;    
+        }
+
+        margin-bottom: 20px;
     }
 
     &__more {
@@ -5198,18 +5241,18 @@ h5 {
                 margin-right: 0;
             }
 
+            a {
+                transition: $trans;
+                color: $blue;
+                font-size: 15px;
+    
+                &:hover {
+                    color: $red;
+                }
+            }
+
             .stars {
                 margin-left: 10px;
-            }
-        }
-
-        a {
-            transition: $trans;
-            color: $blue;
-            font-size: 15px;
-
-            &:hover {
-                color: $red;
             }
         }
     }
@@ -5230,7 +5273,8 @@ h5 {
         }
 
         @include r(767) {
-            display: block;
+            flex-direction: column;
+            margin-bottom: 20px;
         }
 
         @include fsn;
@@ -5245,6 +5289,8 @@ h5 {
         @include r(767) {
             width: 100%;
             margin-right: 0;
+            order: 2;
+            margin-top: 20px;
         }
 
         width: 93px;
@@ -5530,16 +5576,36 @@ h5 {
     }
 
     .item__add {
+        @include r(1023) {
+            @include fcs;
+
+            .counter {
+                margin: 0 30px;
+            }
+        }
+
         @include r(767) {
             flex-wrap: wrap;
-            @include fcs;
+
+            .counter {
+                margin: 0;
+            }
         }
 
         margin-bottom: 20px;
     }
 
     &__cheap {
+        @include r(1023) {
+            text-align: left;    
+        }
+
+        @include r(767) {
+            text-align: center;   
+        }
+
         text-align: center;
+        user-select: none;
 
         a {
             color: $blue;
@@ -5556,7 +5622,7 @@ h5 {
 .availability {
     padding: 11px 0 62px;
 
-    h5 {
+    .h5 {
         margin-bottom: 13px;
         font-size: 18px;
         font-weight: 700;
@@ -5665,10 +5731,7 @@ h5 {
 }
 
 .tabs {
-    @include r(1023) {
-        white-space: nowrap;
-        overflow-x: scroll;
-        @include fcs;
+    @include r(1279) {
         border: 0;
 
         &::before {
@@ -5682,6 +5745,13 @@ h5 {
         }
     }
 
+    @include r(1023) {
+        white-space: nowrap;
+        overflow-x: scroll;
+        @include fcs;
+        border: 0;
+    }
+
     position: relative;
     display: flex;
     align-items: center;
@@ -5689,7 +5759,7 @@ h5 {
     border-bottom: 2px solid #dfdfdf;
 
     .bar {
-        @include r(1023) {
+        @include r(1279) {
             display: none;
         }
 
@@ -5702,7 +5772,7 @@ h5 {
     }
 
     a {
-        @include r(1023) {
+        @include r(1279) {
             white-space: nowrap;
             margin: 0 10px;
             font-size: 14px;
@@ -5740,7 +5810,7 @@ h5 {
     }
 
     display: none;
-    padding: 42px 0;
+    padding: 42px 0 0;
 
     &.active {
         display: block;
@@ -5816,6 +5886,7 @@ h5 {
             li {
                 @include r(767) {
                     display: block;
+                    margin-bottom: 10px;
                 }
 
                 @include fcsb;
@@ -5852,11 +5923,19 @@ h5 {
                     @include fcn;
 
                     &:first-child {
+                        @include r(767) {
+                            font-size: 16px;    
+                        }
+
                         font-weight: 300;
                         font-size: 18px;
                     }
 
                     &:last-child {
+                        @include r(767) {
+                            font-size: 16px;    
+                        }
+
                         font-size: 18px;
                     }
                 }
@@ -5933,6 +6012,10 @@ h5 {
     }
 
     &__text {
+        @include r(767) {
+            font-size: 16px;   
+        }
+
         font-weight: 300;
         font-size: 17px;
         line-height: 1.83;
@@ -5963,6 +6046,10 @@ h5 {
 
     &__list {
         div {
+            @include r(767) {
+                font-size: 16px;    
+            }
+
             @include fcn;
             font-weight: 400;
             font-size: 17px;
@@ -6140,6 +6227,11 @@ h5 {
             margin-top: 22px;
         }
 
+        & + .placeholder {
+            transform: none;
+            top: 20px;
+        }
+
         height: 142px;
     }
 
@@ -6151,8 +6243,12 @@ h5 {
             margin-bottom: 0;
         }
 
-        .input,
         input {
+            width: 100%;
+        }
+
+        .input,
+        .control {
             width: 48%;
         }
     }
@@ -6405,6 +6501,10 @@ h5 {
         }
     }
 
+    .control {
+        margin-bottom: 18px;
+    }
+
     .input,
     input,
     textarea {
@@ -6420,7 +6520,6 @@ h5 {
         font-size: 18px;
         padding: 18px;
         width: 100%;
-        margin-bottom: 18px;
 
         &[type='checkbox'] {
             margin-bottom: 0;
@@ -6441,6 +6540,11 @@ h5 {
 
     textarea {
         height: 216px;
+
+        & + .placeholder {
+            top: 20px;
+            transform: none;
+        }
     }
 
     .form-group {
@@ -6527,6 +6631,7 @@ h5 {
 
         @include r(767) {
             display: block;
+            padding-right: 0;
         }
 
         @include fcn;
@@ -6599,9 +6704,14 @@ h5 {
 
         @include r(767) {
             height: 0;
-            padding-bottom: 77%;
+            padding-bottom: 0;
             margin: 0 0 20px;
-            width: calc(100% - 80px) !important;
+            width: 100px !important;
+            height: 100px;
+            position: absolute;
+            top: 20px;
+            left: 0;
+            min-width: initial;
         }
 
         width: 170px;
@@ -6623,6 +6733,8 @@ h5 {
 
         @include r(767) {
             width: 100% !important;
+            padding-left: 120px;
+            min-height: 100px;
         }
 
         font-size: 17px;
@@ -6880,6 +6992,11 @@ h5 {
         div {
             @include fcn;
             color: $green;
+            display: none;
+
+            &.active {
+                @include fcn;
+            }
 
             .icon {
                 fill: $green;
@@ -6899,6 +7016,16 @@ h5 {
         padding: 18px 17px;
         font-size: 17px;
         font-weight: 500;
+
+        & + button {
+            @include r(767) {
+                font-size: 16px;    
+            }
+
+            text-align: left;
+            color: $red;
+            font-size: 17px;
+        }
     }
 
     .btn {
@@ -6982,6 +7109,26 @@ h5 {
 
         .cart__form {
             margin-top: 37px;
+
+            .form-group {
+                @include r(767) {
+                    @include fcsb;
+
+                    input {
+                        width: 60%;
+                        flex-shrink: 0;
+                        margin-right: -1px;
+                    }   
+
+                    button {
+                        width: 40% !important;
+                        flex-shrink: 1;
+                        margin-top: 0 !important;
+                        position: relative;
+                        left: -2px;
+                    }
+                }
+            }
         }
 
         .cart__information {
@@ -7042,7 +7189,9 @@ h5 {
 
     &__auth {
         @include fcn;
+        margin-bottom: 65px;
 
+        div,
         a {
             color: $red;
             font-weight: 400;
@@ -7061,9 +7210,17 @@ h5 {
                 color: $text;
             }
         }
+
+        div {
+            color: $text;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
     }
 
-    h4 {
+    .h4 {
         font-weight: 500;
         font-size: 28px;
         margin-bottom: 31px;
@@ -7100,6 +7257,18 @@ h5 {
 
             margin-bottom: 0;
         }
+
+        &.hide {
+            display: none;
+
+            &.active {
+                @include r(767) {
+                    display: block;    
+                }
+
+                display: flex;
+            }
+        }
     }
 
     &__group {
@@ -7115,6 +7284,14 @@ h5 {
 
         label {
             display: block;
+        }
+
+        &.hide {
+            display: none;
+
+            &.active {
+                display: block;
+            }
         }
     }
 
@@ -7224,8 +7401,20 @@ h5 {
     }
 
     .login {
-        margin-top: 35px;
+        margin-top: -30px;
         margin-bottom: 65px;
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    .cart__info {
+        @include r(767) {
+            padding-left: 0;   
+            min-height: auto;
+        }
     }
 
     &__controls {
@@ -7518,6 +7707,8 @@ h5 {
 }
 
 .company {
+    padding-bottom: 40px;
+
     &__title {
         font-weight: 500;
         font-size: 17px;
@@ -7847,6 +8038,7 @@ h5 {
 
                 width: 22%;
             }
+
             &:nth-child(3) {
                 @include r(1023) {
                     width: 33.33%;
@@ -7859,6 +8051,7 @@ h5 {
 
                 width: 20%;
             }
+
             &:nth-child(4) {
                 @include r(1023) {
                     width: 33.33%;
@@ -7885,12 +8078,21 @@ h5 {
     }
 
     &__addr {
-        @include r(767) {
-            font-size: 16px;
+        @include r(1023) {
+            margin-bottom: 15px;
 
             br {
                 display: none;
             }
+
+            span {
+                display: inline-block;
+                margin-left: 5px;
+            }
+        }
+
+        @include r(767) {
+            font-size: 16px;
         }
 
         @include r(374) {
@@ -7902,6 +8104,12 @@ h5 {
 
         span {
             font-weight: 400;
+        }
+    }
+
+    .btn {
+        @include r(1023) {
+            padding: 9px 39px;   
         }
     }
 
@@ -7918,6 +8126,10 @@ h5 {
     }
 
     &__map {
+        @include r(767) {
+            margin-top: 0;    
+        }
+
         position: relative;
 
         & + .command {
@@ -7984,6 +8196,7 @@ h5 {
             }
 
             @include fsn;
+            flex-wrap: wrap;
             margin-bottom: 25px;
             font-size: 18px;
 
@@ -8025,6 +8238,8 @@ h5 {
         a:not(.btn) {
             transition: $trans;
             @include fcc;
+            display: block;
+            width: 100%;
 
             &:hover {
                 color: $red;
@@ -8161,7 +8376,6 @@ h5 {
         border-radius: 5px;
         font-weight: 500;
         font-size: 18px;
-        padding: 5px 15px;
         padding: 18px 18px;
 
         &::placeholder {
@@ -8175,7 +8389,6 @@ h5 {
 
     textarea {
         @include r(767) {
-            margin-top: -20px;
             font-size: 16px;
             padding: 13px;
         }
@@ -8195,21 +8408,30 @@ h5 {
             margin-bottom: 0;
         }
 
-        .control,
         .input,
         input {
             @include r(767) {
-                margin-bottom: 20px;
                 width: 100%;
                 font-size: 16px;
                 padding: 13px;
             }
 
-            width: 32%;
         }
     }
 
     .control {
+        @include r(767) {
+            margin-bottom: 20px;
+            width: 100%;
+
+            .placeholder {
+                left: 13px;
+                font-size: 16px;
+            }
+        }
+
+        width: 32%;
+        
         input {
             width: 100%;
         }
@@ -8233,6 +8455,11 @@ h5 {
                     display: none;
                 }
             }
+
+            @include r(767) {
+                @include fsn;    
+            }
+
 
             @include fcn;
 
@@ -8274,6 +8501,29 @@ h5 {
             border-radius: 5px;
             width: 354px;
             margin-left: 10px;
+        }
+    }
+}
+
+.cheap {
+    &__info {
+        width: 100%;
+    }
+
+    &__link {
+        @include r(767) {
+            font-size: 16px;
+            margin-bottom: 20px;    
+        }
+
+        color: $red;
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 30px;
+        display: inline-block;
+
+        &:hover {
+            text-decoration: underline;
         }
     }
 }
@@ -8326,6 +8576,65 @@ h5 {
         text-align: center;
     }
 
+    &[data-modal='cheap'] {
+        width: initial;
+
+        .modal__body {
+            @include r(767) {
+                padding: 15px 20px;    
+            }
+
+            @include fssb;
+            padding: 46px 67px;
+
+            .item {
+                @include r(1023) {
+                    display: none;    
+                }
+
+                width: 267px;
+                margin-right: 30px;
+                flex-shrink: 0;
+            }
+        }
+
+        .form-group {
+            @include r(767) {
+                display: block;
+                margin-bottom: 0;  
+            }
+
+            @include fcsb;
+
+            .control {
+                @include r(767) {
+                    width: 100%;   
+                    margin-bottom: 10px; 
+                }
+
+                width: 48%;
+            }
+
+            input {
+                width: 100%;
+                margin: 0;
+            }
+        }
+
+        .sale__body {
+            padding: 0;
+        }
+
+        .call__title {
+            @include r(767) {
+                margin-top: 20px;    
+            }
+
+            text-align: left;
+            margin-top: 0;
+        }
+    }
+
     &__header {
         padding: 40px 60px 20px;
         border-bottom: 1px solid #efefef;
@@ -8376,6 +8685,12 @@ h5 {
         &::after {
             transform: translate(-50%, -50%) rotate(-45deg);
         }
+    }
+}
+
+@media screen and (max-height: 730px) {
+    .modal {
+        overflow-y: scroll;
     }
 }
 
@@ -8710,6 +9025,7 @@ h5 {
         margin-bottom: 15px;
         text-align: center;
         margin-top: 41px;
+        line-height: 1.22;
     }
 
     &__text {
@@ -8752,7 +9068,6 @@ h5 {
         @include r(767) {
             padding: 13px;
             font-size: 16px;
-            margin-top: -20px;
         }
     }
 
@@ -8773,13 +9088,24 @@ h5 {
         }
 
         .placeholder {
+            @include r(767) {
+                left: 20px;    
+            }
+
             left: 30px;
+        }
+
+        .control {
+            @include r(767) {
+                width: 100%;
+                margin: 0 0 20px;
+            }
         }
 
         input {
             @include r(767) {
                 width: 100%;
-                margin: 0 0 20px;
+                margin: 0;
             }
 
             width: 267px;
@@ -8901,6 +9227,111 @@ h5 {
 
             &:last-child {
                 margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.topbar {
+    @include r(1260) {
+        display: none;    
+    }
+
+    background: #fff;
+    z-index: 21;
+
+    &.fixed {
+        border-bottom: 4px solid rgba(0, 0, 0, 0.07);
+        opacity: 0;
+        pointer-events: none;
+        user-select: none;
+
+        &.active {
+            opacity: 1;
+            pointer-events: all;
+            user-select: initial;
+        }
+    }
+
+    .container {
+        border-top: 1px solid rgba(237, 237, 237, 0.63);
+        padding: 10px 0;
+    }
+
+    &__col {
+        margin-right: 60px;
+
+        &.title {
+            width: 35%;
+        }
+    }
+
+    .item {
+        @include fcn;
+        border: 0;
+        padding: 0;
+
+        &__img {
+            width: 60px;
+            height: 60px;
+            flex-shrink: 0;
+            display: block;
+            margin-right: 18px;
+        }
+
+        &__controls {
+            margin-bottom: 10px;
+            margin-top: 0;
+            @include fcs;
+        }
+
+        &__availability {
+            white-space: nowrap;
+        }
+
+        &__title {
+            flex-shrink: 0;
+            width: 100%;
+            margin-bottom: 0;
+        }
+
+        &__add {
+            margin-bottom: 0;
+
+            .btn {
+                padding: 11px 22px;
+            }
+        }
+
+        .btn {
+            width: initial;
+            padding: 13px 39px;
+            white-space: nowrap;
+            margin-bottom: 0;
+        }
+
+        .product__more-item {
+            @include fcn;
+
+            .stars {
+                margin-bottom: 0;
+            }
+
+            a {
+                white-space: nowrap;
+            }
+        }
+
+        .item__price-wrap {
+            display: block;
+            margin-bottom: 0;
+
+            .item__price {
+                white-space: nowrap;
+            }
+
+            .item__price-old {
+                white-space: nowrap;
             }
         }
     }
