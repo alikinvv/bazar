@@ -8343,13 +8343,12 @@ h5 {
         }
 
         @include r(1170) {
-            padding: 0 15px !important;
+            padding: 30px 15px !important;
         }
 
         @include r(1023) {
             position: static;
             width: 100%;
-            padding: 30px 15px;
         }
 
         position: absolute;
