@@ -948,7 +948,7 @@ $(window).scroll(function (event) {
         }
     }
 
-    if (st > sidebarOffset) {
+    if (st > sidebarOffset && $(window).width() > 1023) {
         // if (st < $('.subscribe').offset().top - $('.order__sidebar').outerHeight()) {
         //     $('.order__sidebar')
         //         .css('right', 0)
