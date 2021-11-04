@@ -28,7 +28,9 @@ $('body').on('click', '.open-reviews', (e) => {
     $('.tabs a[data-tab="4"]').addClass('active');
     $('.tab[data-tab="4"]').addClass('active');
     $('.tabs .bar').animate({ left: $('.tabs a.active').offset().left - $('.container').offset().left, width: $('.tabs a.active').outerWidth() });
-    $('html, body').stop().animate({ scrollTop: $('.info').offset().top - 200 }, 500, 'swing');
+    $('html, body')
+        .stop()
+        .animate({ scrollTop: $('.info').offset().top - 200 }, 500, 'swing');
 });
 
 $('body').on('click', '.open-question', (e) => {
@@ -37,7 +39,9 @@ $('body').on('click', '.open-question', (e) => {
     $('.tabs a[data-tab="5"]').addClass('active');
     $('.tab[data-tab="5"]').addClass('active');
     $('.tabs .bar').animate({ left: $('.tabs a.active').offset().left - $('.container').offset().left, width: $('.tabs a.active').outerWidth() });
-    $('html, body').stop().animate({ scrollTop: $('.faq__desc').offset().top - 300 }, 500, 'swing');
+    $('html, body')
+        .stop()
+        .animate({ scrollTop: $('.faq__desc').offset().top - 300 }, 500, 'swing');
 });
 
 var productNav = new Swiper('.product__nav .swiper', {
@@ -81,7 +85,7 @@ let main = new Swiper('.main .swiper', {
         prevEl: '.main .swiper-button-prev',
     },
     pagination: {
-        el: ".main .swiper-pagination",
+        el: '.main .swiper-pagination',
     },
 });
 
@@ -577,14 +581,14 @@ $('body').on('click', '.topbar .item__add .btn-green', (e) => {
 });
 
 $('body').on('click', '.product .add-cart', (e) => {
-    $(e.currentTarget).hide();
-    $(e.currentTarget).parent().find('.item__add').addClass('active');
+    $(e.currentTarget).parent().hide();
+    $(e.currentTarget).parent().parent().find('.item__add').addClass('active');
     $('.add').addClass('active');
 });
 
 $('body').on('click', '.product .item__add .btn-green', (e) => {
     $(e.currentTarget).closest('.product').find('.item__add').removeClass('active');
-    $(e.currentTarget).closest('.product').find('.add-cart').show();
+    $(e.currentTarget).closest('.product').find('.product__bottom').show();
     $('.add').removeClass('active');
 });
 
@@ -736,38 +740,43 @@ let resize = () => {
         $('.command__info').css('left', $('.container').offset().left);
     }
 
+    if ($(window).width() >= 1140) {
+        $('.shop__info').css('padding-left', $('.container').offset().left);
+    }
+
     let titleHeight = 0;
     let items = [];
     let o = $(window).width() < 1280 ? 2 : 3;
 
+    $('.catalog .item__title').css('height', 'initial');
+
     if ($(window).width() >= 768) {
-        
         for (let i = 1; i < $('.catalog .item').length + 1; i++) {
             let $step = $('.catalog .item').eq(i - 1);
-    
+
             if (i !== 0 && i % o === 0) {
                 if ($step.find('.item__title').height() > titleHeight) {
                     titleHeight = $step.find('.item__title').height();
                 }
-    
+
                 items.push(i - 1);
-    
+
                 for (let j = 0; j < items.length; j++) {
                     $('.catalog .item').eq(items[j]).find('.item__title').height(titleHeight);
                 }
-    
+
                 items = [];
                 titleHeight = 0;
             } else {
                 items.push(i - 1);
-    
+
                 if ($step.find('.item__title').height() > titleHeight) {
                     titleHeight = $step.find('.item__title').height();
                 }
             }
         }
     }
-}
+};
 
 resize();
 $(window).on('resize', resize);
@@ -805,8 +814,19 @@ $('body').on('click', '.tags__item', (e) => {
     $(e.currentTarget).toggleClass('active');
 });
 
-$('body').on('click', '.sort__item', (e) => {
+$('body').on('click', '.sort__item-link', (e) => {
     $(e.currentTarget).toggleClass('active');
+    $(e.currentTarget).next().toggleClass('active');
+});
+
+$('body').on('click', '.tags__show span:not(.active)', (e) => {
+    $(e.currentTarget).toggleClass('active').text('Скрыть');
+    $('.tags.hide').toggleClass('active');
+});
+
+$('body').on('click', '.tags__show span.active', (e) => {
+    $(e.currentTarget).toggleClass('active').text('Показать все');
+    $('.tags.hide').toggleClass('active');
 });
 
 if ($('#price-slider').length > 0) {
@@ -913,20 +933,20 @@ if (!$('.order__sidebar').length > 0) {
 
 let lastScrollTop = 0;
 
-$(window).scroll(function(event){
+$(window).scroll(function (event) {
     let st = $(this).scrollTop();
 
-    if (st > lastScrollTop){
+    if (st > lastScrollTop) {
         if ($('.topbar').length > 0 && st > $('.product').offset().top + $('.product').height()) {
             $('.topbar').addClass('active');
         }
     } else {
-       if ($('.topbar').length > 0 && st < $('.product').offset().top + $('.product').height()) {
+        if ($('.topbar').length > 0 && st < $('.product').offset().top + $('.product').height()) {
             $('.topbar').removeClass('active');
         }
     }
     lastScrollTop = st;
- });
+});
 
 // show modal
 $('body').on('click', '[data-modal]:not(.modal)', (e) => {
@@ -1119,15 +1139,21 @@ $('body').on('click', '.sidebar__reset, .sidebar__close', (e) => {
 
 $('body').on('blur', 'input, textarea', (e) => {
     if ($(e.currentTarget).val() !== '') {
-        $(e.currentTarget).addClass('fill')
+        $(e.currentTarget).addClass('fill');
     } else {
-        $(e.currentTarget).removeClass('fill')
+        $(e.currentTarget).removeClass('fill');
     }
 });
 
 $(document).click((event) => {
-    if (!$(event.target).closest('.dropdown').length && !$(event.target).closest('.header__catalog').length) {
+    if (
+        !$(event.target).closest('.top__menu-link').length &&
+        !$(event.target).closest('.menu .parent').length &&
+        !$(event.target).closest('.dropdown').length &&
+        !$(event.target).closest('.header__catalog').length
+    ) {
         $('.header__catalog').toggleClass('active').html('<svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-menu"></use></svg> Каталог');
-      $('.dropdown').removeClass('active');
-    }        
+        $('.dropdown').removeClass('active');
+        $('.top__menu-dropdown').removeClass('active');
+    }
 });

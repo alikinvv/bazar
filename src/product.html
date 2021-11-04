@@ -73,7 +73,7 @@
                 </div>
             </div>
 
-            <a href="javascript:void(0)" class="btn add-cart">
+            <a href="javascript:void(0)" class="btn btn-fill add-cart">
                 <svg class="icon">
                     <use xlink:href="img/symbol-defs.svg#icon-cart"></use>
                 </svg>
@@ -184,58 +184,33 @@
                     </div>
                 </div>
                 <div class="swiper product__main">
+                    <div class="item__tags">
+                        <span style="background: #ffcdcd">Хит продаж</span>
+                        <span style="background: #e2ffa4">Распродажа</span>
+                        <span style="background: #cef6ff">Новинка</span>
+                    </div>
                     <div class="swiper-wrapper">
                         <a class="swiper-slide slide-video" href="https://www.youtube.com/watch?v=K0uAIFbuPm8&t=3s"
                             data-fancybox style="background-image: url(img/video1.png)"></a>
                         <a class="swiper-slide" data-fancybox href="img/item5.png"
                             style="background-image: url(img/item5.png)">
-                            <div class="item__tags">
-                                <span style="background: #ffcdcd">Хит продаж</span>
-                                <span style="background: #e2ffa4">Распродажа</span>
-                                <span style="background: #cef6ff">Новинка</span>
-                            </div>
                         </a>
                         <a class="swiper-slide" data-fancybox href="img/item4.png"
                             style="background-image: url(img/item4.png)">
-                            <div class="item__tags">
-                                <span style="background: #ffcdcd">Хит продаж</span>
-                                <span style="background: #e2ffa4">Распродажа</span>
-                                <span style="background: #cef6ff">Новинка</span>
-                            </div>
                         </a>
                         <a class="swiper-slide" data-fancybox href="img/item3.png"
                             style="background-image: url(img/item3.png)">
-                            <div class="item__tags">
-                                <span style="background: #ffcdcd">Хит продаж</span>
-                                <span style="background: #e2ffa4">Распродажа</span>
-                                <span style="background: #cef6ff">Новинка</span>
-                            </div>
                         </a>
                         <a class="swiper-slide slide-video" href="https://www.youtube.com/watch?v=K0uAIFbuPm8&t=3s"
                             data-fancybox style="background-image: url(img/video1.png)"></a>
                         <a class="swiper-slide" data-fancybox href="img/item5.png"
                             style="background-image: url(img/item5.png)">
-                            <div class="item__tags">
-                                <span style="background: #ffcdcd">Хит продаж</span>
-                                <span style="background: #e2ffa4">Распродажа</span>
-                                <span style="background: #cef6ff">Новинка</span>
-                            </div>
                         </a>
                         <a class="swiper-slide" data-fancybox href="img/item4.png"
                             style="background-image: url(img/item4.png)">
-                            <div class="item__tags">
-                                <span style="background: #ffcdcd">Хит продаж</span>
-                                <span style="background: #e2ffa4">Распродажа</span>
-                                <span style="background: #cef6ff">Новинка</span>
-                            </div>
                         </a>
                         <a class="swiper-slide" data-fancybox href="img/item3.png"
                             style="background-image: url(img/item3.png)">
-                            <div class="item__tags">
-                                <span style="background: #ffcdcd">Хит продаж</span>
-                                <span style="background: #e2ffa4">Распродажа</span>
-                                <span style="background: #cef6ff">Новинка</span>
-                            </div>
                         </a>
                     </div>
                 </div>
@@ -312,12 +287,18 @@
                     <div class="item__price"><span class="strong">33 000</span> руб.</div>
                 </div>
 
-                <a href="javascript:void(0)" class="btn add-cart">
-                    <svg class="icon">
-                        <use xlink:href="img/symbol-defs.svg#icon-cart"></use>
-                    </svg>
-                    В корзину
-                </a>
+                <div class="product__bottom">
+                    <a href="javascript:void(0)" class="btn btn-fill add-cart">
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-cart"></use>
+                        </svg>
+                        В корзину
+                    </a>
+
+                    <a href="javascript:void(0)" class="btn">
+                        Купить в 1 клик
+                    </a>
+                </div>
 
                 <div class="item__add">
                     <a href="javascript:void(0)" class="btn btn-green btn-fill">
@@ -466,7 +447,7 @@
         <div class="tab active" data-tab="1">
             <div class="description">
                 <div class="description__main">
-                    <h3>Описание</h3>
+                    <div class="h3">Описание</div>
                     <p>
                         Ситуация в&nbsp;корне поменялась с&nbsp;появлением шуруповертов. Вначале их&nbsp;относили
                         в&nbsp;своеобразной инструментальной
@@ -491,7 +472,7 @@
                         входят в&nbsp;обязательный
                         &laquo;арсенал&raquo; подавляющего большинства хозяев домов или квартир.
                     </p>
-                    <h3>Характеристики</h3>
+                    <div class="h3">Характеристики</div>
                     <ul>
                         <li>
                             <div>
@@ -601,7 +582,7 @@
             </div>
         </div>
         <div class="tab" data-tab="2">
-            <h3>Как оплатить товар</h3>
+            <div class="h3">Как оплатить товар</div>
             <div class="features__item">
                 <div class="features__icon"><img src="img/icons/wallet.svg" alt="" /></div>
                 <div class="features__info">
@@ -641,7 +622,7 @@
                     </div>
                 </div>
             </div>
-            <h3>Как оплатить товар</h3>
+            <div class="h3">Как оплатить товар</div>
             <div class="features__item">
                 <div class="features__icon"><img src="img/icons/wallet.svg" alt="" /></div>
                 <div class="features__info">
@@ -683,7 +664,7 @@
             </div>
         </div>
         <div class="tab" data-tab="3">
-            <h3>Сервис и поддержка</h3>
+            <div class="h3">Сервис и поддержка</div>
             <div class="links">
                 <div class="links__col">
                     <a href="javascript:void(0)">
@@ -740,7 +721,7 @@
             </div>
         </div>
         <div class="tab" data-tab="4">
-            <h3>Отзывы</h3>
+            <div class="h3">Отзывы</div>
             <div class="reviews__list">
                 <div class="reviews__item">
                     <div class="reviews__user">
@@ -976,7 +957,7 @@
                 </div>
 
                 <div class="send">
-                    <h3>Оставить отзыв</h3>
+                    <h2 class="h3">Оставить отзыв</h2>
                     <div class="send__text">Оставьте свой отзыв об аккумуляторном шуруповерте Hilti</div>
                     <form action="url">
                         <div class="send__list">
@@ -997,7 +978,7 @@
                                         <div class="placeholder">E-mail <span class="red">*</span></div>
                                     </div>
                                     <div class="input">
-                                        <span>Оценка *</span>
+                                        <span>Оценка <span class="red">*</span></span>
                                         <div class="stars rating" data-count="4">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.2 14">
                                                 <g class="active" data-star="1">
@@ -1066,7 +1047,7 @@
             </div>
         </div>
         <div class="tab" data-tab="5">
-            <h3>Вопросы</h3>
+            <h2 class="h3">Вопросы</h2>
 
             <div class="faq">
                 <div class="faq__item">
@@ -1295,7 +1276,7 @@
                     </div>
                 </div>
 
-                <h3>Задать вопрос</h3>
+                <h2 class="h3">Задать вопрос</h2>
                 <div class="faq__desc">Задайте вопрос о данном товаре</div>
                 <form action="url" class="faq__form active">
                     <div class="faq__list">
@@ -1338,7 +1319,7 @@
 <section class="popular block1">
     <div class="container">
         <div class="slider__header">
-            <h3>Сопутствующие товары</h3>
+            <h2 class="h3">Сопутствующие товары</h2>
 
             <div class="slider__controls">
                 <div class="swiper-button-prev outline">
@@ -1729,7 +1710,7 @@
 <section class="popular bg-gray block2">
     <div class="container">
         <div class="slider__header">
-            <h3>Похожие товары</h3>
+            <h2 class="h3">Похожие товары</h2>
 
             <div class="slider__controls">
                 <div class="swiper-button-prev outline">
@@ -2120,7 +2101,7 @@
 <section class="popular block3">
     <div class="container">
         <div class="slider__header">
-            <h3>Вы недавно просматривали</h3>
+            <h2 class="h3">Вы недавно просматривали</h2>
 
             <div class="slider__controls">
                 <div class="swiper-button-prev outline">
