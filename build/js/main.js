@@ -511,10 +511,6 @@ var someHeight = function someHeight(selector, element) {
   }
 };
 
-someHeight('.popular', '.item__title');
-someHeight('.reviews', '.reviews__title');
-someHeight('.reviews', '.reviews__text');
-someHeight('.journal', '.journal__title');
 $('body').on('mouseenter', '.rating g', function (e) {
   $(e.currentTarget).closest('.rating').find('g').removeClass('active');
 
@@ -637,6 +633,14 @@ var resize = function resize() {
     $('.shop__info').css('padding-left', $('.container').offset().left);
   }
 
+  $('.popular .item__title').css('height', 'initial');
+  $('.reviews .reviews__title').css('height', 'initial');
+  $('.reviews .reviews__text').css('height', 'initial');
+  $('.journal .journal__text').css('height', 'initial');
+  someHeight('.popular', '.item__title');
+  someHeight('.reviews', '.reviews__title');
+  someHeight('.reviews', '.reviews__text');
+  someHeight('.journal', '.journal__title');
   var titleHeight = 0;
   var items = [];
   var o = $(window).width() < 1280 ? 2 : 3;

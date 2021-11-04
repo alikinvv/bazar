@@ -513,11 +513,6 @@ let someHeight = (selector, element) => {
     }
 };
 
-someHeight('.popular', '.item__title');
-someHeight('.reviews', '.reviews__title');
-someHeight('.reviews', '.reviews__text');
-someHeight('.journal', '.journal__title');
-
 $('body').on('mouseenter', '.rating g', (e) => {
     $(e.currentTarget).closest('.rating').find('g').removeClass('active');
 
@@ -743,6 +738,15 @@ let resize = () => {
     if ($(window).width() >= 1140) {
         $('.shop__info').css('padding-left', $('.container').offset().left);
     }
+
+    $('.popular .item__title').css('height', 'initial');
+    $('.reviews .reviews__title').css('height', 'initial');
+    $('.reviews .reviews__text').css('height', 'initial');
+    $('.journal .journal__text').css('height', 'initial');
+    someHeight('.popular', '.item__title');
+    someHeight('.reviews', '.reviews__title');
+    someHeight('.reviews', '.reviews__text');
+    someHeight('.journal', '.journal__title');
 
     let titleHeight = 0;
     let items = [];
