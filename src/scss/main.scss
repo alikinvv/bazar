@@ -3239,7 +3239,7 @@ h5 {
 .command {
     position: relative;
 
-    & > h2 {
+    & > .container:not(.show) {
         @include r(1279) {
             display: block;
         }
@@ -4826,8 +4826,10 @@ h5 {
 
         &:first-child {
             .sort__dropdown {
-                right: initial;
-                left: 0;
+                @include r(767) {
+                    right: initial;
+                    left: 0;
+                }
             }
         }
 
@@ -5503,8 +5505,8 @@ h5 {
 
         .item__tags {
             position: absolute;
-            right: 0;
-            top: 0;
+            right: 1px;
+            top: 10px;
             z-index: 2;
         }
 
@@ -5540,7 +5542,6 @@ h5 {
 
             &.slide-video {
                 background-size: cover;
-                border-color: transparent;
 
                 &:hover::after {
                     transform: translate(-50%, -50%) scale(1.1);
@@ -8441,6 +8442,11 @@ h5 {
     padding: 53px 0 86px;
 
     .h4 {
+        @include r(767) {
+            font-size: 22px;
+            text-align: center;
+        }
+
         font-weight: 500;
         font-size: 28px;
         margin-bottom: 44px;
