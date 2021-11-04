@@ -932,8 +932,11 @@ if (!$('.order__sidebar').length > 0) {
 }
 
 let lastScrollTop = 0;
-let sidebarOffset = $('.order__sidebar').offset().top;
-let transform = 0;
+
+if ($('.order__sidebar').length > 0) {
+    let sidebarOffset = $('.order__sidebar').offset().top;
+    let transform = 0;
+}
 
 $(window).scroll(function (event) {
     let st = $(this).scrollTop();

@@ -804,8 +804,12 @@ if (!$('.order__sidebar').length > 0) {
 }
 
 var lastScrollTop = 0;
-var sidebarOffset = $('.order__sidebar').offset().top;
-var transform = 0;
+
+if ($('.order__sidebar').length > 0) {
+  var _sidebarOffset = $('.order__sidebar').offset().top;
+  var _transform = 0;
+}
+
 $(window).scroll(function (event) {
   var st = $(this).scrollTop();
 
