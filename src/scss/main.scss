@@ -8289,6 +8289,10 @@ h5 {
         position: relative;
         padding-left: 50%;
 
+        h4 {
+            margin-top: 0;
+        }
+
         & + .command {
             margin-top: 42px;
         }
@@ -8301,7 +8305,7 @@ h5 {
 
         .yandex {
             @include r(1279) {
-                height: 400px;
+                height: 480px;
             }
 
             @include r(1023) {
