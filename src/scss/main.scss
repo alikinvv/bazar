@@ -7208,6 +7208,7 @@ h5 {
         }
 
         @include fssb;
+        position: relative;
     }
 
     &__main {
@@ -7225,6 +7226,8 @@ h5 {
     &__sidebar {
         @include r(1023) {
             width: 100%;
+            position: static;
+            top: 0 !important;
         }
 
         @include r(374) {
@@ -7236,6 +7239,7 @@ h5 {
         background: rgba(245, 245, 245, 0.79);
         border-radius: 3px;
         padding: 38px 31px;
+        position: relative;
 
         .form-group {
             margin-bottom: 16px !important;

@@ -782,10 +782,9 @@ $('body').on('click', '.order__login', function (e) {
   $('.login').slideToggle(300);
 });
 
-if ($('.order__sidebar').length > 0 && $(window).width() >= 1024) {
-  var sticky = new Sticky('.order__sidebar', {
-    marginTop: 0
-  });
+if ($('.order__sidebar').length > 0 && $(window).width() >= 1024) {// let sticky = new Sticky('.order__sidebar', {
+  //     marginTop: 0,
+  // });
 }
 
 if (!$('.order__sidebar').length > 0) {
@@ -805,6 +804,8 @@ if (!$('.order__sidebar').length > 0) {
 }
 
 var lastScrollTop = 0;
+var sidebarOffset = $('.order__sidebar').offset().top;
+var transform = 0;
 $(window).scroll(function (event) {
   var st = $(this).scrollTop();
 
@@ -816,6 +817,29 @@ $(window).scroll(function (event) {
     if ($('.topbar').length > 0 && st < $('.product').offset().top + $('.product').height()) {
       $('.topbar').removeClass('active');
     }
+  }
+
+  if (st > sidebarOffset) {
+    // if (st < $('.subscribe').offset().top - $('.order__sidebar').outerHeight()) {
+    //     $('.order__sidebar')
+    //         .css('right', 0)
+    //         .css('top', st - $('.order__wrap').offset().top);
+    // }
+    if (st < $('.subscribe').offset().top - $('.order__sidebar').outerHeight()) {
+      $('.order__sidebar').css('left', $('.order__sidebar').offset().left).css('top', 0).css('bottom', 'initial').css('right', 'initial').css('position', 'fixed');
+
+      if (st > lastScrollTop) {
+        transform = transform < $('.order__sidebar').outerHeight() - $(window).height() ? transform + 7 : transform;
+        $('.order__sidebar').css('transform', "translateY(-".concat(transform, "px)"));
+      } else {
+        transform = transform > 0 ? transform - 7 : transform;
+        $('.order__sidebar').css('transform', "translateY(-".concat(transform, "px)"));
+      }
+    } else {
+      $('.order__sidebar').css('top', 'initial').css('bottom', 0).css('left', 'initial').css('right', 0).css('position', 'absolute');
+    }
+  } else {
+    $('.order__sidebar').css('position', 'static');
   }
 
   lastScrollTop = st;
