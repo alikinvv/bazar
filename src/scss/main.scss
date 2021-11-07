@@ -2256,6 +2256,7 @@ h5 {
         margin-bottom: 14px;
         transition: $trans;
         display: block;
+        min-height: 66px; // DELETE
 
         &:hover {
             color: $red;
@@ -4257,6 +4258,15 @@ h5 {
     background: #fff;
     cursor: pointer;
     z-index: 12;
+    opacity: 0;
+
+    &.active {
+        @include r(1023) {
+            display: none;
+        }
+
+        opacity: 1;
+    }
 
     &:hover {
         background: transparent;
@@ -7241,6 +7251,10 @@ h5 {
         border-radius: 3px;
         padding: 38px 31px;
         position: relative;
+
+        &.bottom {
+            transform: none !important;
+        }
 
         .form-group {
             margin-bottom: 16px !important;
