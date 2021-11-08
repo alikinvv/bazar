@@ -1446,7 +1446,7 @@ h5 {
         white-space: nowrap;
         width: auto;
         height: auto;
-        max-height: 502px;
+        max-height: 567px;
 
         &.active {
             bottom: 0;
@@ -1462,6 +1462,8 @@ h5 {
 
         a {
             padding: 10px 29px;
+            padding-right: 45px;
+            white-space: initial;
         }
     }
 
