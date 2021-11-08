@@ -8306,6 +8306,10 @@ h5 {
         position: relative;
         padding-left: 50%;
 
+        &.full {
+            padding-left: 0;
+        }
+
         h4 {
             margin-top: 0;
         }
