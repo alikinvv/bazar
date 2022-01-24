@@ -44,6 +44,10 @@ $('body').on('click', '.open-question', (e) => {
         .animate({ scrollTop: $('.faq__desc').offset().top - 300 }, 500, 'swing');
 });
 
+if ($('.product__nav .swiper .swiper-slide').length === 0) {
+    $('.product__nav').hide();
+}
+
 var productNav = new Swiper('.product__nav .swiper', {
     spaceBetween: 10,
     slidesPerView: 2.5,
@@ -72,8 +76,10 @@ var productMain = new Swiper('.product__main', {
     },
 });
 
+let mainSliderLoop = $('.main .swiper-slide').length > 1 ? true : false;
+
 let main = new Swiper('.main .swiper', {
-    loop: true,
+    loop: mainSliderLoop,
     speed: 500,
     effect: 'fade',
     autoplay: {
@@ -86,11 +92,11 @@ let main = new Swiper('.main .swiper', {
     },
     pagination: {
         el: '.main .swiper-pagination',
+        clickable: true,
     },
 });
 
 let slider1 = new Swiper('.catalog .slider1 .swiper', {
-    loop: true,
     slidesPerView: 1.1,
     spaceBetween: 25,
     navigation: {
@@ -114,7 +120,6 @@ let slider1 = new Swiper('.catalog .slider1 .swiper', {
 });
 
 let slider2 = new Swiper('.catalog .slider2 .swiper', {
-    loop: true,
     slidesPerView: 1.1,
     spaceBetween: 25,
     navigation: {
@@ -138,7 +143,6 @@ let slider2 = new Swiper('.catalog .slider2 .swiper', {
 });
 
 let slider3 = new Swiper('.catalog .slider3 .swiper', {
-    loop: true,
     slidesPerView: 1.1,
     spaceBetween: 25,
     navigation: {
@@ -162,7 +166,6 @@ let slider3 = new Swiper('.catalog .slider3 .swiper', {
 });
 
 let stock = new Swiper('.stock .swiper', {
-    loop: true,
     slidesPerView: 1.1,
     spaceBetween: 20,
     slidesPerGroup: 1,
@@ -190,7 +193,6 @@ let stock = new Swiper('.stock .swiper', {
 });
 
 let reviewsThree = new Swiper('.reviews.three .swiper', {
-    loop: true,
     slidesPerView: 1.1,
     spaceBetween: 24,
     autoplay: {
@@ -215,7 +217,6 @@ let reviewsThree = new Swiper('.reviews.three .swiper', {
 });
 
 let reviewsTwo = new Swiper('.reviews.two .swiper', {
-    loop: true,
     slidesPerView: 1.1,
     spaceBetween: 24,
     autoplay: {
@@ -239,7 +240,6 @@ let reviewsTwo = new Swiper('.reviews.two .swiper', {
 });
 
 let platform = new Swiper('.platform .swiper', {
-    loop: true,
     slidesPerView: 1.1,
     spaceBetween: 24,
     autoplay: {
@@ -268,7 +268,6 @@ let platform = new Swiper('.platform .swiper', {
 });
 
 let brands = new Swiper('.brands .swiper', {
-    loop: true,
     slidesPerView: 1.5,
     autoplay: {
         delay: 5000,
@@ -295,7 +294,6 @@ let brands = new Swiper('.brands .swiper', {
 });
 
 let journal = new Swiper('.journal .swiper', {
-    loop: true,
     slidesPerView: 1.1,
     spaceBetween: 24,
     autoplay: {
@@ -320,7 +318,6 @@ let journal = new Swiper('.journal .swiper', {
 });
 
 let certThree = new Swiper('.cert.three .swiper', {
-    loop: true,
     slidesPerView: 1.1,
     spaceBetween: 24,
     autoplay: {
@@ -345,7 +342,6 @@ let certThree = new Swiper('.cert.three .swiper', {
 });
 
 let certFour = new Swiper('.cert.four .swiper', {
-    loop: true,
     slidesPerView: 1.1,
     spaceBetween: 24,
     autoplay: {
@@ -399,7 +395,6 @@ let commandCenter = new Swiper('.command .swiper.center', {
 });
 
 let popular1 = new Swiper('.popular.block1 .swiper', {
-    loop: true,
     slidesPerView: 1.1,
     spaceBetween: 24,
     autoplay: {
@@ -424,7 +419,6 @@ let popular1 = new Swiper('.popular.block1 .swiper', {
 });
 
 let popular2 = new Swiper('.popular.block2 .swiper', {
-    loop: true,
     slidesPerView: 1.1,
     spaceBetween: 24,
     autoplay: {
@@ -449,7 +443,6 @@ let popular2 = new Swiper('.popular.block2 .swiper', {
 });
 
 let popular3 = new Swiper('.popular.block3 .swiper', {
-    loop: true,
     slidesPerView: 1.1,
     spaceBetween: 24,
     autoplay: {
@@ -474,7 +467,6 @@ let popular3 = new Swiper('.popular.block3 .swiper', {
 });
 
 let youtube = new Swiper('.youtube .swiper', {
-    loop: true,
     slidesPerView: 1.1,
     spaceBetween: 24,
     autoplay: {
@@ -564,8 +556,8 @@ $('body').on('click', '.item .add-cart', (e) => {
 });
 
 $('body').on('click', '.topbar .add-cart', (e) => {
-    $('.product .add-cart').hide();
-    $('.product .add-cart').parent().find('.item__add').addClass('active');
+    $('.product .product__bottom').hide();
+    $('.product .item__add').addClass('active');
     $('.add').addClass('active');
 });
 
@@ -1039,6 +1031,12 @@ let masks = document.querySelectorAll('.phone-mask');
 
 masks.forEach((el) => {
     IMask(el, { mask: '+{7} (000) 000 00 00' });
+});
+
+let time = document.querySelectorAll('.time-mask');
+
+time.forEach((el) => {
+    IMask(el, { mask: '00:00' });
 });
 
 if ($(window).width() >= 1280) {

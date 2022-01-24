@@ -62,6 +62,11 @@ $('body').on('click', '.open-question', function (e) {
     scrollTop: $('.faq__desc').offset().top - 300
   }, 500, 'swing');
 });
+
+if ($('.product__nav .swiper .swiper-slide').length === 0) {
+  $('.product__nav').hide();
+}
+
 var productNav = new Swiper('.product__nav .swiper', {
   spaceBetween: 10,
   slidesPerView: 2.5,
@@ -88,8 +93,9 @@ var productMain = new Swiper('.product__main', {
     prevEl: '.product__nav .swiper-button-prev'
   }
 });
+var mainSliderLoop = $('.main .swiper-slide').length > 1 ? true : false;
 var main = new Swiper('.main .swiper', {
-  loop: true,
+  loop: mainSliderLoop,
   speed: 500,
   effect: 'fade',
   autoplay: {
@@ -101,11 +107,11 @@ var main = new Swiper('.main .swiper', {
     prevEl: '.main .swiper-button-prev'
   },
   pagination: {
-    el: '.main .swiper-pagination'
+    el: '.main .swiper-pagination',
+    clickable: true
   }
 });
 var slider1 = new Swiper('.catalog .slider1 .swiper', {
-  loop: true,
   slidesPerView: 1.1,
   spaceBetween: 25,
   navigation: {
@@ -128,7 +134,6 @@ var slider1 = new Swiper('.catalog .slider1 .swiper', {
   }
 });
 var slider2 = new Swiper('.catalog .slider2 .swiper', {
-  loop: true,
   slidesPerView: 1.1,
   spaceBetween: 25,
   navigation: {
@@ -151,7 +156,6 @@ var slider2 = new Swiper('.catalog .slider2 .swiper', {
   }
 });
 var slider3 = new Swiper('.catalog .slider3 .swiper', {
-  loop: true,
   slidesPerView: 1.1,
   spaceBetween: 25,
   navigation: {
@@ -174,7 +178,6 @@ var slider3 = new Swiper('.catalog .slider3 .swiper', {
   }
 });
 var stock = new Swiper('.stock .swiper', {
-  loop: true,
   slidesPerView: 1.1,
   spaceBetween: 20,
   slidesPerGroup: 1,
@@ -201,7 +204,6 @@ var stock = new Swiper('.stock .swiper', {
   }
 });
 var reviewsThree = new Swiper('.reviews.three .swiper', {
-  loop: true,
   slidesPerView: 1.1,
   spaceBetween: 24,
   autoplay: {
@@ -225,7 +227,6 @@ var reviewsThree = new Swiper('.reviews.three .swiper', {
   }
 });
 var reviewsTwo = new Swiper('.reviews.two .swiper', {
-  loop: true,
   slidesPerView: 1.1,
   spaceBetween: 24,
   autoplay: {
@@ -248,7 +249,6 @@ var reviewsTwo = new Swiper('.reviews.two .swiper', {
   }
 });
 var platform = new Swiper('.platform .swiper', {
-  loop: true,
   slidesPerView: 1.1,
   spaceBetween: 24,
   autoplay: {
@@ -275,7 +275,6 @@ var platform = new Swiper('.platform .swiper', {
   }
 });
 var brands = new Swiper('.brands .swiper', {
-  loop: true,
   slidesPerView: 1.5,
   autoplay: {
     delay: 5000,
@@ -301,7 +300,6 @@ var brands = new Swiper('.brands .swiper', {
   }
 });
 var journal = new Swiper('.journal .swiper', {
-  loop: true,
   slidesPerView: 1.1,
   spaceBetween: 24,
   autoplay: {
@@ -325,7 +323,6 @@ var journal = new Swiper('.journal .swiper', {
   }
 });
 var certThree = new Swiper('.cert.three .swiper', {
-  loop: true,
   slidesPerView: 1.1,
   spaceBetween: 24,
   autoplay: {
@@ -349,7 +346,6 @@ var certThree = new Swiper('.cert.three .swiper', {
   }
 });
 var certFour = new Swiper('.cert.four .swiper', {
-  loop: true,
   slidesPerView: 1.1,
   spaceBetween: 24,
   autoplay: {
@@ -400,7 +396,6 @@ var commandCenter = new Swiper('.command .swiper.center', {
   }
 });
 var popular1 = new Swiper('.popular.block1 .swiper', {
-  loop: true,
   slidesPerView: 1.1,
   spaceBetween: 24,
   autoplay: {
@@ -424,7 +419,6 @@ var popular1 = new Swiper('.popular.block1 .swiper', {
   }
 });
 var popular2 = new Swiper('.popular.block2 .swiper', {
-  loop: true,
   slidesPerView: 1.1,
   spaceBetween: 24,
   autoplay: {
@@ -448,7 +442,6 @@ var popular2 = new Swiper('.popular.block2 .swiper', {
   }
 });
 var popular3 = new Swiper('.popular.block3 .swiper', {
-  loop: true,
   slidesPerView: 1.1,
   spaceBetween: 24,
   autoplay: {
@@ -472,7 +465,6 @@ var popular3 = new Swiper('.popular.block3 .swiper', {
   }
 });
 var youtube = new Swiper('.youtube .swiper', {
-  loop: true,
   slidesPerView: 1.1,
   spaceBetween: 24,
   autoplay: {
@@ -550,8 +542,8 @@ $('body').on('click', '.item .add-cart', function (e) {
   $('.add').addClass('active');
 });
 $('body').on('click', '.topbar .add-cart', function (e) {
-  $('.product .add-cart').hide();
-  $('.product .add-cart').parent().find('.item__add').addClass('active');
+  $('.product .product__bottom').hide();
+  $('.product .item__add').addClass('active');
   $('.add').addClass('active');
 });
 $('body').on('click', '.topbar .item__add .btn-green', function (e) {
@@ -897,6 +889,12 @@ var masks = document.querySelectorAll('.phone-mask');
 masks.forEach(function (el) {
   IMask(el, {
     mask: '+{7} (000) 000 00 00'
+  });
+});
+var time = document.querySelectorAll('.time-mask');
+time.forEach(function (el) {
+  IMask(el, {
+    mask: '00:00'
   });
 });
 
