@@ -731,51 +731,18 @@ let resize = () => {
         $('.shop__info').css('padding-left', $('.container').offset().left);
     }
 
-    $('.popular .item__title').css('height', 'initial');
     $('.reviews .reviews__title').css('height', 'initial');
     $('.reviews .reviews__text').css('height', 'initial');
     $('.journal .journal__text').css('height', 'initial');
-    someHeight('.popular', '.item__title');
     someHeight('.reviews', '.reviews__title');
     someHeight('.reviews', '.reviews__text');
     someHeight('.journal', '.journal__title');
-
-    let titleHeight = 0;
-    let items = [];
-    let o = $(window).width() < 1280 ? 2 : 3;
-
-    $('.catalog .item__title').css('height', 'initial');
-
-    if ($(window).width() >= 768) {
-        for (let i = 1; i < $('.catalog .item').length + 1; i++) {
-            let $step = $('.catalog .item').eq(i - 1);
-
-            if (i !== 0 && i % o === 0) {
-                if ($step.find('.item__title').height() > titleHeight) {
-                    titleHeight = $step.find('.item__title').height();
-                }
-
-                items.push(i - 1);
-
-                for (let j = 0; j < items.length; j++) {
-                    $('.catalog .item').eq(items[j]).find('.item__title').height(titleHeight);
-                }
-
-                items = [];
-                titleHeight = 0;
-            } else {
-                items.push(i - 1);
-
-                if ($step.find('.item__title').height() > titleHeight) {
-                    titleHeight = $step.find('.item__title').height();
-                }
-            }
-        }
-    }
 };
 
 resize();
 $(window).on('resize', resize);
+
+$('.item__title').matchHeight();
 
 $('body').on('click', '.scrolltop', (e) => {
     $('html, body').stop().animate({ scrollTop: 0 }, 500, 'swing');
